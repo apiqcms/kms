@@ -1,5 +1,5 @@
 ## :muscle: KMS is (K)Candidate Master of Sports :muscle:
-We, at @webgradus, used this CMS for our clients needs over past 1 year and now it's ready to be open sourced.
+We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs over past 1 year and now it's ready to be open sourced.
 So feel free to use it in your projects.
 
 ## Built with good tools
