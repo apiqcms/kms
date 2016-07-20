@@ -1,0 +1,21 @@
+.row
+  .col-lg-12
+    .widget
+      .widget-header
+        i.fa.fa-users
+        = Kms::User.model_name.human(count: 1.1)
+        /a.pull-right href="#"  Manage
+        a.btn.btn-sm.btn-primary.pull-right ui-sref="users.new"
+          = I18n.t("add_user")
+      .widget-body.no-padding
+        .table-responsive
+          table.table
+            tbody
+              tr ng-repeat="user in users"
+                td style="width: 80%"
+                  | {{ user.email }}
+                td
+                  | {{ user.localized_role }}
+                td
+                  a.btn.btn-sm.btn-danger ng-click="destroy(user)"
+                    i.fa.fa-times

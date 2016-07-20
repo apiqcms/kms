@@ -1,0 +1,42 @@
+{
+  "name": "ng-alertify",
+  "main": "ng-alertify.js",
+  "version": "0.6.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "Gruntfile.js",
+    "package.json",
+    "index.html"
+  ],
+  "keywords": [
+    "angular",
+    "popup",
+    "message",
+    "alertify",
+    "angularjs",
+    "wrapper"
+  ],
+  "homepage": "https://github.com/kensho/ng-alertify",
+  "devDependencies": {
+    "alertify.js": "~0.3.11"
+  },
+  "authors": [
+    "Gleb Bahmutov <gleb@kensho.com>"
+  ],
+  "description": "AngularJS wrapper around alertify popup library",
+  "_release": "0.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.6.0",
+    "commit": "28162b821856076e4fd17c1dd172e62e4c50a409"
+  },
+  "_source": "git://github.com/kensho/ng-alertify.git",
+  "_target": "*",
+  "_originalSource": "ng-alertify"
+}

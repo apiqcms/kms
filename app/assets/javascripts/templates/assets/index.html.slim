@@ -1,0 +1,31 @@
+.row
+  .col-lg-12
+    .widget
+      .widget-header
+        i.fa.fa-image
+        = Kms::Asset.model_name.human(count: 1.1)
+        /a.pull-right href="#"  Manage
+        a.btn.btn-sm.btn-primary.pull-right ui-sref="assets.new"
+          = I18n.t("add_asset")
+      .widget-body.no-padding
+        .table-responsive
+          table.table ng-repeat="(content_type, typed_assets) in assets"
+            thead
+              tr
+                td.text-center.bg-info colspan="3"
+                  | {{ content_type }}
+            tbody
+              tr ng-repeat="asset in typed_assets"
+                td style="width: 40%"
+                  | {{ asset.filename }}
+                td style="width: 40%"
+                  | {{asset.file.url}}
+                td
+                  .btn-group.pull-right
+                    a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
+                      i.fa.fa-pencil
+                    a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
+                      i.fa.fa-times
+        /div ui-tree=""
+          /ol ui-tree-nodes="" ng-model="pages" id="tree-root"
+            /li ng-repeat="node in pages" ui-tree-node="" ng-include="'nodes_renderer.html'"

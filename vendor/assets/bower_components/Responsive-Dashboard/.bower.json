@@ -1,0 +1,40 @@
+{
+  "name": "Responsive-Dashboard",
+  "homepage": "https://github.com/Ehesp/Responsive-Dashboard",
+  "authors": [
+    "Elliot Hesp <elliot.hesp@gmail.com>",
+    "Ricardo Pascua Jr <rdpascua@outlook.com>",
+    "Leonel Samayoa <leonel.e.samayoa@gmail.com>"
+  ],
+  "description": "AngularJS + Bootstrap Responsive Dashboard",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-cookies": "~1.2.21",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "^0.2.10",
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Ehesp/Responsive-Dashboard.git"
+  },
+  "_release": "70ead0e867",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "70ead0e86771fd2b9b77b0e71e5a5346454391e9"
+  },
+  "_source": "git://github.com/Ehesp/Responsive-Dashboard.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/Ehesp/Responsive-Dashboard"
+}

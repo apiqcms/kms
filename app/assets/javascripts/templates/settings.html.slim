@@ -1,0 +1,20 @@
+.row
+  .col-lg-12
+    ul.nav.nav-tabs
+      - Kms::SettingsService.templates.each_with_index do |(engine_class, _),index|
+        li role="presentation" ng-class="{active: isActiveTab(#{index})}" ng-click="setActive(#{index})"
+          a href="##{engine_class.engine_name}" = engine_class.engine_name.humanize
+    div class="tab-content"
+      - if Kms::SettingsService.templates.present?
+        form role="form" ng-submit="update()"
+          - Kms::SettingsService.templates.each_with_index do |(engine_class, templates), index|
+            div role="tabpanel" class="tab-pane" ng-class="{active: isActiveTab(#{index})}" id=engine_class.engine_name
+              .widget
+                .widget-body.no-padding
+                  - templates.each do |template|
+                    .message
+                      ng-include src="'#{template}'"
+          .btn-group
+            button.btn.btn-default type="submit" = I18n.t(:update_settings)
+      - else
+        = I18n.t(:no_settings)

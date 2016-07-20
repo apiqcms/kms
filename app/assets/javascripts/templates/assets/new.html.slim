@@ -1,0 +1,16 @@
+.row
+  .col-lg-12 flow-init="{headers: setHeaders}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')"
+      /! The table listing the files available for upload/download
+      .form-group
+        button.btn.btn-primary flow-btn="" = I18n.t(:upload_assets)
+      table.table.table-striped.files.ng-cloak
+        tr ng-repeat="file in $flow.files"
+          td
+            img flow-img="file" width="50" height="50" ng-show="isImageType(file)"
+          td
+            | {{ file.name }}
+          td
+            .progress.progress-striped ng-class="{active: file.isUploading()}"
+              .progress-bar role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}"
+          td
+            | {{ file.msg }}

@@ -1,0 +1,51 @@
+h4 = I18n.t("liquor_help.filters")
+p
+  ul
+    li
+      var asset_path
+      p
+        span Фильтр asset_path позволяет получить путь к файлу из раздела "Файлы" по имени файла:&nbsp;
+      p
+        code
+          | &lt;img src="{{ 'logo.png' | asset_path }}"&gt;
+    li
+      var asset_tag
+      p
+        span Фильтр asset_tag позволяет подключать javascript и css файлы, загруженные в раздел "Файлы":&nbsp;
+      p
+        code
+          | {{ 'bootstrap.min.css' | asset_tag }}
+    li
+      var resize
+      p
+        span Функция выполняет изменение размеров изображения. Для функции необходим абсолютный URL изображения и аргумент "format", на выходе также URL. Для получения абсолютного URL следует использовать request.base_url:&nbsp;
+      p
+        code
+          | {{ 'http://example.com/image.png' | resize format: '100x100' }}
+          br
+          | {{ (request.base_url + item.image) | resize format: '100x100' }}
+    li
+      var add_watermark
+      p
+        span Функция выполняет добавление watermark к изображению. Для функции необходим URL изображения и 3 аргумента "image" - изображение для наложения (watermark), "dissolve" - прозрачность и "position" - позиция, на выходе также URL:&nbsp;
+      p
+        code
+          | {{ 'http://example.com/image.png' | add_watermark image: 'http://example.com/watermark.png' dissolve: '50%' position: 'center' }}
+    li
+      var ends_with
+      p
+        span Позволяет проверить, оканчивается строка определённым паттерном или нет:&nbsp;
+      p
+        code
+          | {% if ends_with(media_item.file pattern: 'mp4') then: %}
+    li
+      var currency
+      p
+        span Форматирование полей, хранящих денежные значения. Возможные опции - precision, delimiter, separator, format, unit:&nbsp;
+      p
+        code
+          | # item.price содержит значение 100.0
+          br
+          | {{ item.price | currency precision: 0 }}
+          br
+          | # результат - "100 руб."

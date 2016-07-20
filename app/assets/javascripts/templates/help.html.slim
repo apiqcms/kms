@@ -1,0 +1,172 @@
+.row
+  .col-lg-12
+    ul.nav.nav-tabs
+      li role="presentation" ng-class="{active: isActiveTab(0)}" ng-click="setActive(0)"
+        a href="#liquor" Liquor
+      - Kms::HelpService.templates.each_with_index do |(engine_class, _),index|
+        li role="presentation" ng-class="{active: isActiveTab(#{index + 1})}" ng-click="setActive(#{index + 1})"
+          a href="##{engine_class.engine_name}" = engine_class.engine_name.humanize
+    div class="tab-content"
+      div role="tabpanel" class="tab-pane" ng-class="{active: isActiveTab(0)}" id="liquor"
+        .widget
+          .widget-body.no-padding
+            .message
+              h4 = I18n.t("liquor_help.tags")
+              p
+                ul
+                  li
+                    var declare
+                    p
+                      span Тэг declare может быть использован для объявления и задания значений переменным в следующей форме:&nbsp;
+                    p
+                      code
+                        | {% declare var = expr %}
+                    p
+                      span Отличие от assign в том, что с declare можно создавать переменные с одинаковыми именами, но в разных областях видимости.
+                  li
+                    var assign
+                    p
+                      span Тэг assign может быть использован для объявления и задания значений переменным в следующей форме:&nbsp;
+                    p
+                      code
+                        | {% assign var = expr %}
+                  li
+                    em if
+                    p
+                      span Тэг if является стандартным условным оператором и имеет следующую форму:&nbsp;
+                    p
+                      code
+                        | {% if cond-1 then: %}
+                        br
+                        | &nbsp;&nbsp;code-1
+                        br
+                        | [{% elsif: cond-2 then: %}
+                        br
+                        | &nbsp;&nbsp;code-2] ...
+                        br
+                        | [{% else: %}
+                        br
+                        | &nbsp;&nbsp;code-else]
+                        br
+                        | {% end if %}
+                  li
+                    em unless
+                    p
+                      span Тэг unless выполняет "тело" условия, если результат выражения - false или null:&nbsp;
+                    p
+                      code
+                        | {% unless cond-1 then: %}
+                        br
+                        | &nbsp;&nbsp;code-1
+                        br
+                        | {% end unless %}
+                  li
+                    em for
+                    p
+                      span Тэг for является стандартным циклическим оператором и имеет следующую форму:&nbsp;
+                    p
+                      code
+                        | {% for var in: list do: %}
+                        br
+                        |  &nbsp;&nbsp;code
+                        br
+                        | {% end for %}
+                        br
+                        | {% for var from: lower-limit to: upper-limit do: %}
+                        br
+                        |  &nbsp;&nbsp;code
+                        br
+                        | {% end for %}
+                  li
+                    em capture
+                    p
+                      span Тэг capture выполняет code и сохраняет результат в var. Если var уже имела значение, capture изменяет его:&nbsp;
+                    p
+                      code
+                        | {% capture var = %}
+                        br
+                        | &nbsp;&nbsp;code
+                        br
+                        | {% end capture %}
+                  li
+                    em content_for
+                    p
+                      span Тэг content_for выполняет code и сохраняет результат в handle:&nbsp;
+                    p
+                      code
+                        | {% content_for "handle" capture: %}
+                        br
+                        | &nbsp;&nbsp;code
+                        br
+                        | {% end content_for %}
+                  li
+                    em yield
+                    p
+                      span Тэг yield имеет 3 формы написания. В самом простом случае (без аргументов) тэг вставляет содержимое внутреннего шаблона (в данной CMS это страница). Если строка с handle была задана с помощью {% content_for %}, тогда yield возвращает эту строку. Если не было задано строки с этим handle, yield либо возвращает результат выполнения блока if_none, если он задан, или пустую строку:&nbsp;
+                    p
+                      code
+                        | {% yield %}
+                        br
+                        | &nbsp;&nbsp;или
+                        br
+                        | {% yield "handle" %}
+                        br
+                        | &nbsp;&nbsp;или
+                        br
+                        | {% yield "handle" if_none: %}
+                        br
+                        | &nbsp;&nbsp;code
+                        br
+                        | {% end yield %}
+                  li
+                    em include
+                    p
+                      span Тэг include включает в шаблон содержимое Сниппета. Единственный аргумент include - это идентификатор Сниппета (поле "Идентификатор", указанное при создании сниппета в разделе "Сниппеты"):&nbsp;
+                    p
+                      code
+                        | {% include "partial_name" %}
+            .message
+              h4 = I18n.t("liquor_help.variables")
+              p
+                ul
+                  li
+                    var var_loop
+                    p
+                      span Переменная, предоставляющая доступ к текущему состоянию цикла. Может быть использована только внутри цикла for. var_loop - обобщённое имя, для получения настоящего имени переменной нужно сконкатенировать название переменной цикла и "_loop". Например:
+                    p
+                      code ng-non-bindable=""
+                        | {% for p in: index.children do: %}
+                        br
+                        | &nbsp;&nbsp;{{ p_loop.index }} # prints number of current iteration
+                    p
+                      table.table
+                        tr
+                          th Методы var_loop
+                          th Описание
+                        tr
+                          td length
+                          td Количество итераций (размер коллекции)
+                        tr
+                          td index
+                          td Номер текущей итерации - индекс элемента
+                        tr
+                          td rindex
+                          td
+                            | length - index - 1
+                        tr
+                          td is_first
+                          td
+                            | index == 0
+                        tr
+                          td is_last
+                          td
+                            | index == length - 1
+            .message
+              a href="http://evilmartians.github.io/liquor/language-spec.html" target="_blank" Подробная спецификация Liquor
+      - Kms::HelpService.templates.each_with_index do |(engine_class, templates), index|
+        div role="tabpanel" class="tab-pane" ng-class="{active: isActiveTab(#{index + 1})}" id=engine_class.engine_name
+          .widget
+            .widget-body.no-padding
+              - templates.each do |template|
+                .message
+                  ng-include src="'#{template}'"

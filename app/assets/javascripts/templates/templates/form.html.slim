@@ -1,0 +1,7 @@
+.form-group
+  label for="name" = Kms::Template.human_attribute_name(:name)
+  input#name.form-control type="text" ng-model="template.name"
+.form-group
+  label for="content" = Kms::Template.human_attribute_name(:content)
+  textarea#content.form-control ng-model="template.content" rows="15" ui-codemirror="editorOptions"
+  small = I18n.t(:toggle_fullscreen_mode_instruction)

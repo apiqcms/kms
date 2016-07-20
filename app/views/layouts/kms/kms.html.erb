@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" ng-app="KMS">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Kms</title>
+  <%= stylesheet_link_tag    'kms/application', media: 'all', 'data-turbolinks-track' => true %>
+  <script type="text/javascript">
+     var CKEDITOR_BASEPATH = '/assets/ng-ckeditor/libs/ckeditor/';
+   </script>
+  <%= csrf_meta_tags %>
+
+  <!-- build:js js/dashboard.js -->
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+	<base href="/">
+
+</head>
+<body>
+  <div id="page-wrapper" ng-controller="SidebarController" ng-class="{'active': toggle}" >
+
+    <!-- Sidebar -->
+
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a href="#" ng-click="toggleSidebar()">
+            Kms
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <% Kms::ResourceService.resources.each do |group, resources| %>
+          <% if resources.keys.any? {|r| can?(:index, r)} %>
+            <li class="sidebar-title"><span><%= t(group) %></span></li>
+          <% end %>
+          <% resources.each do |resource_class, tab_icon_class| %>
+            <% if can? :index, resource_class %>
+              <li class="sidebar-list">
+                <a ui-sref="<%= defined?(Kms::Model) && resource_class.is_a?(Kms::Model) ? "models.entries({modelId: #{resource_class.name}})" : resource_class.name.demodulize.tableize %>">
+                  <%= resource_class.model_name.human(count: 1.1) %>
+                  <span class="menu-icon fa <%= tab_icon_class %>"></span>
+                </a>
+              </li>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+      <div class="sidebar-footer">
+        <div class="col-xs-4">
+          <a href="http://webgradus.ru" target="_blank">
+            &copy;Градус
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a ui-sref="help">
+            <%= t(:help) %>
+          </a>
+        </div>
+        <!--
+        <div class="col-xs-4">
+          <a href="#">
+            Support
+          </a>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown">
+                <a href="#" class="dropdown-toggle">
+                  <img src="<%= asset_path "Responsive-Dashboard/src/img/avatar.jpg" %>">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    <%= current_kms_user.try(:email) %>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="link">
+                    <a ui-sref="settings">
+                      <%= t(:settings) %>
+                    </a>
+                  </li>
+                  <li class="link">
+                    <%= link_to t(:sign_out), destroy_kms_user_session_path, target: "_self" %>
+                  </li>
+                </ul>
+              </div>
+              <!--
+              <div class="item dropdown">
+               <a href="#" class="dropdown-toggle">
+                  <i class="fa fa-bell-o"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-header">
+                    Notifications
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">Server Down!</a>
+                  </li>
+                </ul>
+              </div>
+              -->
+            </div>
+            <div class="meta">
+              <div class="page" ui-view="header">
+                Dashboard
+              </div>
+              <!--
+              <div class="breadcrumb-links">
+                Home / Dashboard
+              </div>-->
+            </div>
+          </div>
+        </div>
+
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <section ui-view></section>
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+
+  <%= javascript_include_tag 'kms/application', 'data-turbolinks-track' => true %>
+
+</body>
+</html>

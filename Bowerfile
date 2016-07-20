@@ -1,0 +1,21 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+asset 'Responsive-Dashboard', github: 'Ehesp/Responsive-Dashboard'
+asset 'lodash', '3.6.0'
+asset 'restangular', '1.5.1'
+asset 'angular-ui-tree'
+asset 'angular-ui-codemirror'
+asset 'ng-flow'
+asset 'angular-ui-select'
+asset 'angular-sanitize'
+asset 'ng-ckeditor'
+asset 'font-awesome', '4.2.0'
+asset 'angular-toggle-switch'
+asset 'angular-loading-bar'
+asset 'angularjs-dropdown-multiselect'
+asset 'alertify'
+asset 'ng-alertify'
+asset 'angular-xeditable'
+asset 'ng-sortable'
+asset 'angular-i18n'

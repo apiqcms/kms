@@ -1,0 +1,5 @@
+Kms::ResourceService.register(:content_management, Kms::Template, "fa-support")
+Kms::ResourceService.register(:content_management, Kms::Page, "fa-sitemap")
+Kms::ResourceService.register(:content_management, Kms::Asset, "fa-image")
+Kms::ResourceService.register(:content_management, Kms::User, "fa-users")
+Kms::ResourceService.register(:content_management, Kms::Snippet, "fa-bookmark")

@@ -1,0 +1,14 @@
+.form-group
+  label for="email" = Kms::User.human_attribute_name(:email)
+  input#email.form-control type="email" ng-model="user.email" required=""
+.form-group
+  label for="password" = Kms::User.human_attribute_name(:password)
+  input#password.form-control type="password" ng-model="user.password" required=""
+.form-group
+  label for="password_confirmation" = Kms::User.human_attribute_name(:password_confirmation)
+  input#password_confirmation.form-control type="password" ng-model="user.password_confirmation" required=""
+.form-group
+  label for="role" = Kms::User.human_attribute_name(:role)
+  select#role.form-control ng-model="user.role" required=""
+    - Kms::User::ROLES.each do |role|
+      option value=role.to_s = I18n.t("roles.#{role.to_s}")

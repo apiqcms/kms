@@ -1,0 +1,22 @@
+.row
+  .col-lg-12
+    .widget
+      .widget-header
+        i.fa.fa-bookmark
+        = Kms::Snippet.model_name.human(count: 1.1)
+        /a.pull-right href="#"  Manage
+        a.btn.btn-sm.btn-primary.pull-right ui-sref="snippets.new" ng-show="currentUser.admin"
+          = I18n.t("add_snippet")
+      .widget-body.no-padding
+        .table-responsive
+          table.table
+            tbody
+              tr ng-repeat="snippet in snippets"
+                td style="width: 80%"
+                  | {{ snippet.name }}
+                td
+                  .btn-group.pull-right
+                    a.btn.btn-sm.btn-info ui-sref="snippets.edit({id: snippet.id})" ng-show="currentUser.admin"
+                      i.fa.fa-pencil
+                    a.btn.btn-sm.btn-danger ng-click="destroy(snippet)" ng-show="currentUser.admin"
+                      i.fa.fa-times

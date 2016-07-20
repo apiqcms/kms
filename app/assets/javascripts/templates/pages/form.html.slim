@@ -1,0 +1,32 @@
+.form-group
+  label for="title" = Kms::Page.human_attribute_name(:title)
+  input#title.form-control type="text" ng-model="page.title" required=""
+.form-group ng-hide="page.templatable"
+  label for="slug" = Kms::Page.human_attribute_name(:slug)
+  input#slug.form-control type="text" ng-model="page.slug" ng-attr-required="{{page.templatable ? undefined : ''}}" ng-disabled="page.slug == 'index'"
+.form-group
+  label for="template_id" = Kms::Page.human_attribute_name(:template)
+  select#template_id.form-control ng-model="page.template_id" ng-options="template.id as template.name for template in templates" required=""
+.form-group ng-if="page.slug != 'index'"
+  label for="parent_id" = Kms::Page.human_attribute_name(:parent)
+  select#parent_id.form-control ng-model="page.parent_id" ng-options="page.id as page.title for page in parentPages" required=""
+.form-group
+  label for="templatable" style="margin-right:10px;" = Kms::Page.human_attribute_name(:templatable)
+  toggle-switch ng-model="page.templatable" on-label=I18n.t(:yes_word) off-label=I18n.t(:no_word)
+.form-group ng-if="page.templatable"
+  label for="templatable_type" = Kms::Page.human_attribute_name(:templatable_type)
+  select#templatable_type.form-control ng-model="page.templatable_type" ng-options="templatable_type.type as templatable_type.title for templatable_type in templatable_types"
+.form-group
+  label for="hidden" style="margin-right:10px;"
+    = Kms::Page.human_attribute_name(:hidden)
+  toggle-switch ng-model="page.hidden" on-label=I18n.t(:yes_word) off-label=I18n.t(:no_word)
+.form-group
+  label for="content" = Kms::Page.human_attribute_name(:content)
+  textarea#content.form-control ng-model="page.content" rows="15" ng-if="currentUser.admin" ui-codemirror="codeMirrorOptions"
+  small ng-if="currentUser.admin" = I18n.t(:toggle_fullscreen_mode_instruction)
+  textarea#content.form-control ng-model="page.content" rows="15" ng-if="!currentUser.admin" ckeditor='editorOptions'
+.form-group
+  label for="published" style="margin-right:10px;" = Kms::Page.human_attribute_name(:published)
+  toggle-switch ng-model="page.published" on-label=I18n.t(:yes_word) off-label=I18n.t(:no_word)
+- Kms::FormCustomizationService.resources[Kms::Page].each do |template|
+  ng-include src="'pages/#{template}.html'"

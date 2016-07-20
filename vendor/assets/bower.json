@@ -1,0 +1,23 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "Responsive-Dashboard": "git://github.com/Ehesp/Responsive-Dashboard",
+    "lodash": "3.6.0",
+    "restangular": "1.5.1",
+    "angular-ui-tree": "latest",
+    "angular-ui-codemirror": "latest",
+    "ng-flow": "latest",
+    "angular-ui-select": "latest",
+    "angular-sanitize": "latest",
+    "ng-ckeditor": "latest",
+    "font-awesome": "4.2.0",
+    "angular-toggle-switch": "latest",
+    "angular-loading-bar": "latest",
+    "angularjs-dropdown-multiselect": "latest",
+    "alertify": "latest",
+    "ng-alertify": "latest",
+    "angular-xeditable": "latest",
+    "ng-sortable": "latest",
+    "angular-i18n": "latest"
+  }
+}

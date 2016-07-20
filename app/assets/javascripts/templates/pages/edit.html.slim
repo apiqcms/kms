@@ -1,0 +1,7 @@
+.row
+  .col-lg-12
+    form role="form"
+      ng-include src="'pages/form.html'"
+      .btn-group
+        button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_page)
+        button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_page_and_continue)
