@@ -7,10 +7,12 @@ So feel free to use it in your projects.
 * Angular.js
 * Responsive Dashboard template
 * Liquor template language
+* PostgreSQL (recommended for DB)
 
 ## Features included:
 - [x] Minimal **basis/core** - Templates, Pages, Assets and Snippets
 - [x] Extendable via Rails Engines
+- [x] Beautiful and responsive admin panel
 - [x] Simple and Powerful Template language - [Liquor](https://github.com/evilmartians/liquor)
 - [x] Built-in documentation/help
 
@@ -43,9 +45,9 @@ So feel free to use it in your projects.
         RAILS_ENV=production bundle exec rake assets:precompile
 
 8. Run it using your favorite webserver - unicorn, puma, thin
+9. Open your browser at **http://localhost:3000/kms** and sign up first admin user.
 
 ## Running problems
 
 * Make sure you have "pids" and "sockets" folders in project's "tmp" folder (if using Puma especially)
 * Won't work with Sprockets 3 (https://github.com/pitr/angular-rails-templates/issues/93). Solution: "gem 'sprockets', '2.12.4'"
-* If Init script doesn't work correctly, check it cause it was made by foreman export for Rails project with Capistrano support - replace "shared" in APPPIDDIR
