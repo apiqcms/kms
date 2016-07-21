@@ -20,7 +20,7 @@ So feel free to use it in your projects.
 
 1. Add to Gemfile
 
-        gem "kms", git: "git@gitlab.com:webgradus/kms.git"
+        gem "kms", github: "webgradus/kms"
 
 2. Setup database.yml
 
