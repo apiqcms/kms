@@ -1,9 +1,12 @@
 ## :muscle: KMS is (K)Candidate Master of Sports :muscle:
+
+KMS is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it KMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind KMS: minimal core, extendable via extensions (engines). So you can take only what you need.
+
 We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs over past 1 year and now it's ready to be open sourced.
 So feel free to use it in your projects.
 
 ## Built with good tools
-* Ruby on Rails (4.1+)
+* Ruby on Rails (4.1+). Not ready yet for Rails 5
 * Angular.js
 * Responsive Dashboard template
 * Liquor template language
@@ -24,7 +27,7 @@ So feel free to use it in your projects.
 
         gem "kms", github: "webgradus/kms"
 
-2. Setup database.yml
+2. Setup database.yml (only PostgreSQL 9.2+ supported)
 
 3. Run generator:
 
@@ -46,6 +49,11 @@ So feel free to use it in your projects.
 
 8. Run it using your favorite webserver - unicorn, puma, thin
 9. Open your browser at **http://localhost:3000/kms** and sign up first admin user.
+
+## Getting started
+Please watch this video to start working in KMS:
+
+[![Getting started in KMS - Ruby on Rails CMS](http://img.youtube.com/vi/WPZoWyd-thE/0.jpg)](https://youtu.be/WPZoWyd-thE "Getting started in KMS - Ruby on Rails CMS")
 
 ## Running problems
 
