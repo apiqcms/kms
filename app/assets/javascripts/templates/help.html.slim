@@ -11,29 +11,29 @@
         .widget
           .widget-body.no-padding
             .message
-              h4 = I18n.t("liquor_help.tags")
+              h4 = I18n.t("liquor_help.tags_title")
               p
                 ul
                   li
                     var declare
                     p
-                      span Тэг declare может быть использован для объявления и задания значений переменным в следующей форме:&nbsp;
+                      span = I18n.t('liquor_help.tags.declare.main_description')
                     p
                       code
                         | {% declare var = expr %}
                     p
-                      span Отличие от assign в том, что с declare можно создавать переменные с одинаковыми именами, но в разных областях видимости.
+                      span = I18n.t('liquor_help.tags.declare.additional_description')
                   li
                     var assign
                     p
-                      span Тэг assign может быть использован для объявления и задания значений переменным в следующей форме:&nbsp;
+                      span = I18n.t('liquor_help.tags.assign.main_description')
                     p
                       code
                         | {% assign var = expr %}
                   li
                     em if
                     p
-                      span Тэг if является стандартным условным оператором и имеет следующую форму:&nbsp;
+                      span = I18n.t('liquor_help.tags.if.main_description')
                     p
                       code
                         | {% if cond-1 then: %}
@@ -52,7 +52,7 @@
                   li
                     em unless
                     p
-                      span Тэг unless выполняет "тело" условия, если результат выражения - false или null:&nbsp;
+                      span = I18n.t('liquor_help.tags.unless.main_description')
                     p
                       code
                         | {% unless cond-1 then: %}
@@ -63,7 +63,7 @@
                   li
                     em for
                     p
-                      span Тэг for является стандартным циклическим оператором и имеет следующую форму:&nbsp;
+                      span = I18n.t('liquor_help.tags.for.main_description')
                     p
                       code
                         | {% for var in: list do: %}
@@ -80,7 +80,7 @@
                   li
                     em capture
                     p
-                      span Тэг capture выполняет code и сохраняет результат в var. Если var уже имела значение, capture изменяет его:&nbsp;
+                      span = I18n.t('liquor_help.tags.capture.main_description')
                     p
                       code
                         | {% capture var = %}
@@ -91,7 +91,7 @@
                   li
                     em content_for
                     p
-                      span Тэг content_for выполняет code и сохраняет результат в handle:&nbsp;
+                      span = I18n.t('liquor_help.tags.content_for.main_description')
                     p
                       code
                         | {% content_for "handle" capture: %}
@@ -102,16 +102,16 @@
                   li
                     em yield
                     p
-                      span Тэг yield имеет 3 формы написания. В самом простом случае (без аргументов) тэг вставляет содержимое внутреннего шаблона (в данной CMS это страница). Если строка с handle была задана с помощью {% content_for %}, тогда yield возвращает эту строку. Если не было задано строки с этим handle, yield либо возвращает результат выполнения блока if_none, если он задан, или пустую строку:&nbsp;
+                      span = I18n.t('liquor_help.tags.yield.main_description')
                     p
                       code
                         | {% yield %}
                         br
-                        | &nbsp;&nbsp;или
+                        | &nbsp;&nbsp;#{ I18n.t('or') }
                         br
                         | {% yield "handle" %}
                         br
-                        | &nbsp;&nbsp;или
+                        | &nbsp;&nbsp;#{ I18n.t('or') }
                         br
                         | {% yield "handle" if_none: %}
                         br
@@ -121,18 +121,18 @@
                   li
                     em include
                     p
-                      span Тэг include включает в шаблон содержимое Сниппета. Единственный аргумент include - это идентификатор Сниппета (поле "Идентификатор", указанное при создании сниппета в разделе "Сниппеты"):&nbsp;
+                      span = I18n.t('liquor_help.tags.include.main_description')
                     p
                       code
                         | {% include "partial_name" %}
             .message
-              h4 = I18n.t("liquor_help.variables")
+              h4 = I18n.t("liquor_help.variables_title")
               p
                 ul
                   li
                     var var_loop
                     p
-                      span Переменная, предоставляющая доступ к текущему состоянию цикла. Может быть использована только внутри цикла for. var_loop - обобщённое имя, для получения настоящего имени переменной нужно сконкатенировать название переменной цикла и "_loop". Например:
+                      span = I18n.t('liquor_help.variables.var_loop.main_description')
                     p
                       code ng-non-bindable=""
                         | {% for p in: index.children do: %}
@@ -141,14 +141,14 @@
                     p
                       table.table
                         tr
-                          th Методы var_loop
-                          th Описание
+                          th #{ I18n.t('liquor_help.properties') } var_loop
+                          th = I18n.t('liquor_help.description')
                         tr
                           td length
-                          td Количество итераций (размер коллекции)
+                          td = I18n.t('liquor_help.variables.var_loop.properties.length')
                         tr
                           td index
-                          td Номер текущей итерации - индекс элемента
+                          td = I18n.t('liquor_help.variables.var_loop.properties.index')
                         tr
                           td rindex
                           td
@@ -162,7 +162,7 @@
                           td
                             | index == length - 1
             .message
-              a href="http://evilmartians.github.io/liquor/language-spec.html" target="_blank" Подробная спецификация Liquor
+              a href="http://evilmartians.github.io/liquor/language-spec.html" target="_blank" = I18n.t('liquor_help.specification')
       - Kms::HelpService.templates.each_with_index do |(engine_class, templates), index|
         div role="tabpanel" class="tab-pane" ng-class="{active: isActiveTab(#{index + 1})}" id=engine_class.engine_name
           .widget

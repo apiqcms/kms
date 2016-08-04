@@ -1,96 +1,96 @@
-h4 = I18n.t("liquor_help.variables")
+h4 = I18n.t("liquor_help.variables_title")
 p
   ul
     li
       var page
       p
-        span Переменная page доступна в шаблонах и является ссылкой на текущую отображаемую страницу:&nbsp;
+        span = I18n.t('liquor_help.variables.page.main_description')
       p
         table.table
           tr
-            th Свойство объекта Page
-            th Описание
+            th #{ I18n.t('liquor_help.properties') } Page
+            th = I18n.t('liquor_help.description')
           tr
             td slug
-            td Значение поля "Ссылка" страницы
+            td = I18n.t('liquor_help.variables.page.properties.slug')
           tr
             td fullpath
-            td Полный путь страницы
+            td = I18n.t('liquor_help.variables.page.properties.fullpath')
           tr
             td title
-            td Значение поля "Название" страницы
+            td = I18n.t('liquor_help.variables.page.properties.title')
           tr
             td published
-            td Значение поля "Опубликована" страницы
+            td = I18n.t('liquor_help.variables.page.properties.published')
           tr
             td hidden
-            td Значение поля "Скрывать из общего списка" страницы (не отображать в меню)
+            td = I18n.t('liquor_help.variables.page.properties.hidden')
           tr
             td templatable
-            td Значение поля "Использовать как шаблон" страницы
+            td = I18n.t('liquor_help.variables.page.properties.templatable')
           tr
             td children
-            td Возвращает "дочерние" страницы - страницы, для которых данная страница проставлена в поле "Родительская страница"
+            td = I18n.t('liquor_help.variables.page.properties.children')
           tr
             td parent
-            td Родительская страница
+            td = I18n.t('liquor_help.variables.page.properties.parent')
     li
       var index
       p
-        span Переменная index доступна в шаблонах и является ссылкой на корневую страницу сайта (со ссылкой index). Свойства объекта такие же, как у переменной page.
+        span = I18n.t('liquor_help.variables.index.main_description')
     li
       var request
       p
-        span Переменная request предоставляет доступ к некоторым параметрам текущего запроса:&nbsp;
+        span = I18n.t('liquor_help.variables.request.main_description')
       p
         table.table
           tr
-            th Свойство объекта Request
-            th Описание
+            th #{ I18n.t('liquor_help.property') } Request
+            th = I18n.t('liquor_help.description')
           tr
             td path
-            td Возвращает относительный путь запроса
+            td = I18n.t('liquor_help.variables.request.properties.path')
           tr
             td url
-            td Возвращает URL запроса
+            td = I18n.t('liquor_help.variables.request.properties.url')
           tr
             td host
-            td Возвращает host запроса - доменное имя или IP адрес
+            td = I18n.t('liquor_help.variables.request.properties.host')
           tr
             td base_url
-            td Возвращает корневой URL запроса - протокол + доменное имя или IP адрес, напр., "http://example.com"
+            td = I18n.t('liquor_help.variables.request.properties.base_url')
           tr
             td referer
-            td Возвращает URL страницы, с которой произошёл текущий запрос
+            td = I18n.t('liquor_help.variables.request.properties.referer')
           tr
             td form_authenticity_token
-            td Возвращает authenticity token для текущего запроса - необходимо для защиты от CSRF при отправке форм
+            td = I18n.t('liquor_help.variables.request.properties.form_authenticity_token')
           tr
             td param()
-            td Возвращает значение параметра URL. Пример: request.param('page')
+            td = I18n.t('liquor_help.variables.request.properties.param')
     li
       var item
       p
-        span Переменная item предоставляет доступ к текущему объекту "шаблонной" страницы. Под "шаблонной" подразумевается страница с включенным переключателем "Использовать как шаблон" и выбранным объектом в поле "Объект". Свойства item зависят от выбранного объекта.
+        span = I18n.t('liquor_help.variables.item.main_description')
     li
       var search
       p
-        span Переменная search предоставляет доступ к результатам поиска. Используется на странице результатов поиска. Поиск возможен, если запрос содержит параметр 'query', т.е. URL вида /some_path?query=text. Сам объект search - это массив результатов поиска (объектов SearchItem). Свойства SearchItem см. ниже.
+        span = I18n.t('liquor_help.variables.search.main_description')
     li
-      var search_item (доступна через search)
+      var search_item
       p
-        span search_item это элемент результатов поиска.
+        span = I18n.t('liquor_help.variables.search_item.main_description')
       p
         table.table
           tr
-            th Свойство объекта
-            th Описание
+            th #{ I18n.t('liquor_help.property') } search_item
+            th = I18n.t('liquor_help.description')
           tr
             td title
-            td Заголовок страницы
+            td = I18n.t('liquor_help.variables.search_item.properties.title')
           tr
             td content
-            td Контент, содержащий искомый запрос
+            td = I18n.t('liquor_help.variables.search_item.properties.content')
           tr
             td link
-            td Ссылка на страницу, содержащую искомый запрос
+            td = I18n.t('liquor_help.variables.search_item.properties.link')

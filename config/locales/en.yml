@@ -34,14 +34,90 @@ en:
   no_settings: "No settings specified"
   yes_word: "Yes"
   no_word: "No"
+  or: "Или"
   roles:
     admin: "Admin"
     content_manager: "Content manager"
   liquor_help:
     header: "Liquor help"
-    tags: "Tags"
-    filters: "Filters"
-    variables: "Variables"
+    tags_title: "Tags"
+    filters_title: "Filters"
+    variables_title: "Variables"
+    property: "Property of"
+    description: "Description"
+    specification: "Detailed Liquor specification"
+    tags:
+      declare:
+        main_description: "Tag declare could be used for variables declaration and initial value setup in this form:&nbsp;"
+        additional_description: "Difference between declare and assign tag - with declare you can create variables with the same names but in different scopes."
+      assign:
+        main_description: "Tag assign could be used for variables declaration and its initial value setup in this form:&nbsp;"
+      if:
+        main_description: "Tag if is a standard conditional statement and has this form:&nbsp;"
+      unless:
+        main_description: 'Tag unless executes its "body" if conditional expression results in false or null:&nbsp;'
+      for:
+        main_description: "Tag for is a standard cycle statement and has this form:&nbsp;"
+      capture:
+        main_description: "Tag capture runs code and saves result in var. If var already contained value, capture changes it:&nbsp;"
+      content_for:
+        main_description: "Tag content_for runs code and saves result in some handle:&nbsp;"
+      yield:
+        main_description: "Tag yield has 3 forms. In the simples case (without arguments) it inserts content of internal template (Page content in terms of this CMS). If string with handle was setup with {% content_for %}, then yield returns this string. If no string with handle, yield returns result of if_none block execution, if such block was specified, or just empty string:&nbsp;"
+      include:
+        main_description: 'Tag include includes content of Snippet into template. The only argument of include - Snippet ID (field "Slug/ID" that you need to setup on Snippet creation in "Snippets"):&nbsp;'
+    variables:
+      var_loop:
+        main_description: 'Variable giving access to current state of cycle/iteration. Can be used only in "for" cycle. var_loop - common name, for accessing actual cycle variable you need to concatenate cycle variable name and "_loop". Example:'
+        properties:
+          length: "Iterations count (collection size)"
+          index: "Current iteration index - index of element"
+      page:
+        main_description: 'Variable "page" can be accessed in any template and references to current page:&nbsp;'
+        properties:
+          slug: 'Value of "Slug" field'
+          fullpath: 'Page fullpath'
+          title: 'Value of "Title" field'
+          published: 'Value of "Published" field'
+          hidden: 'Value of "Hidden (from navigation)" field'
+          templatable: 'Value of "Use as object template" field'
+          children: 'Returns "children" collection - pages having this page as parent in "Parent page" field'
+          parent: 'Parent page reference'
+      index:
+        main_description: 'Variable "index" accessible in templates and references to root page (with "index" slug). Object properties are the same as for "page" variable.'
+      request:
+        main_description: 'Variable "request" gives an access to some properties of current request:&nbsp;'
+        properties:
+          path: 'Returns request relative path'
+          url: 'Returns request URL'
+          host: 'Returns host - domain name or IP address'
+          base_url: 'Returns request root URL - protocol + domain name or IP, ex., "http://example.com"'
+          referer: 'Returns URL of page that initiated current request'
+          form_authenticity_token: 'Returns authenticity token for current request - for form protection from CSRF attack'
+          param: "Returns URL param. Example: request.param('page')"
+      item:
+        main_description: 'Variable "item" gives access to current object of "templatable" page. "Templatable" - page with enabled "Use as object template" field and chosen object in "Object" field. Properties of "item" depend on concrete object.'
+      search:
+        main_description: "Variable 'search' gives access to search results. Need to use on search results page. Searching possible, if request contains 'query' param, i.e. URL like /some_path?query=text. Object 'search' - array of search results (SearchItem objects). Properties of SearchItem could be found below."
+      search_item:
+        main_description: 'search_item is a search results element (element of "search" collection).'
+        properties:
+          title: 'Page title'
+          content: 'Content with search query'
+          link: 'Link to page, containing query'
+    filters:
+      asset_path:
+        main_description: 'Filter "asset_path" allows to get a relative path to any file from "Assets" section by filename:&nbsp;'
+      asset_tag:
+        main_description: 'Filter "asset_tag" allows to include javascript and css files, uploaded to "Assets" section:&nbsp;'
+      resize:
+        main_description: 'This function/filter helps to change image size on-the-fly. For this filter you need to use absolute URL of image and "format" argument. Returns also URL. To get absolute URL (having only relative - any asset from "Assets") you should use "request.base_url":&nbsp;'
+      add_watermark:
+        main_description: 'It allows to add watermark to image. You need image URL and 3 arguments: "image" - watermark image (watermark), "dissolve" - transparency and "position" - position. Returns also URL:&nbsp;'
+      ends_with:
+        main_description: 'Allows to check if string ends with some pattern:&nbsp;'
+      currency:
+        main_description: 'Formats currency values. Possible options: precision, delimiter, separator, format, unit:&nbsp;'
   activerecord:
     models:
       kms/template:
@@ -74,7 +150,7 @@ en:
         name: "Name"
         content: "Content"
       kms/page:
-        title: "Name"
+        title: "Title"
         content: "Content"
         slug: "Slug"
         published: "Published"
