@@ -25,6 +25,8 @@ So feel free to use it in your projects.
 
 1. Add to Gemfile
 
+        gem "kms"
+        # or for edge version:
         gem "kms", github: "webgradus/kms"
 
 2. Setup database.yml (only PostgreSQL 9.2+ supported)
