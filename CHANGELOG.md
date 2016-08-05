@@ -1,3 +1,11 @@
+## Version 0.4.0 2016-08-05
+
+* [changed] use new font - Casper
+* [changed] increase CodeMirror editor height
+* [added] add "save and continue" buttons for templates and assets
+* [added] add English translations
+* [added] add Settings model and service - extensions can use it too for specifying settings
+
 ## Version 0.3.0 2016-02-09
 
 * [fixed] code cleanup - remove redundant self
