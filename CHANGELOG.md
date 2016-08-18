@@ -1,6 +1,7 @@
 ## Unreleased
 
 * [fixed] show CodeMirror editor even if Asset content type - 'text/x-csrc' or any text content type
+* [added] matching tags in CodeMirror editor for pages, templates and snippets
 
 ## Version 0.4.0 2016-08-05
 

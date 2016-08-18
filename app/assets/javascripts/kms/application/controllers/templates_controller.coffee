@@ -3,6 +3,8 @@ TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, 
     lineNumbers: true
     mode:'htmlmixed'
     autoCloseTags: true
+    matchTags:
+      bothTags: true
     extraKeys:
       "F11": (cm)->
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))

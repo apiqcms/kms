@@ -17,6 +17,7 @@
 //= require "codemirror/mode/htmlmixed/htmlmixed"
 //= require "codemirror/addon/fold/xml-fold"
 //= require "codemirror/addon/edit/closetag"
+//= require "codemirror/addon/edit/matchtags"
 //= require "codemirror/addon/display/fullscreen"
 //= require "ng-ckeditor/libs/ckeditor/ckeditor"
 //= require "angular/angular.js"
