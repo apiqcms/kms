@@ -4,7 +4,7 @@ module Kms
 
     mount_uploader :file, AssetUploader
 
-    # заимствовано из Locomotive
+    # inspired by Locomotive
     before_validation :store_text
 
     validate :unique_filename, on: :create
@@ -33,6 +33,10 @@ module Kms
       stylesheet? || javascript?
     end
 
+    def text_or_javascript?
+      text_type? || javascript?
+    end
+
     def stylesheet?
       content_type.include?("css")
     end
@@ -41,12 +45,16 @@ module Kms
       content_type.include?("javascript")
     end
 
+    def text_type?
+      content_type.start_with?("text")
+    end
+
     def store_text
-      return if persisted? && !stylesheet_or_javascript?
+      return if persisted? && !text_or_javascript?
 
       data = performing_plain_text? ? text : (file.present? ? file.read : nil)
 
-      return if !stylesheet_or_javascript? || data.blank?
+      return if !text_or_javascript? || data.blank?
 
       sanitized_source = replace_urls(data)
 
@@ -55,7 +63,7 @@ module Kms
         filename: filename || file.filename
       })
 
-      @text = sanitized_source # no need to reset the plain_text instance variable to have the last version
+      @text = sanitized_source
     end
 
     protected

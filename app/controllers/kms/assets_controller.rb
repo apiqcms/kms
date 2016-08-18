@@ -39,7 +39,7 @@ module Kms
     def show
       @asset = Asset.find(params[:id])
       attrs = {}
-      attrs.merge!(methods: [:text, :performing_plain_text]) if @asset.stylesheet_or_javascript?
+      attrs.merge!(methods: [:text, :performing_plain_text]) if @asset.text_or_javascript?
       render json: @asset.to_json(attrs)
     end
 

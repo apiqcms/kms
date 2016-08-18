@@ -1,20 +1,14 @@
 AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateParams, Alertify, ErrorsService) ->
-  $scope.javascriptEditorOptions =
+
+  $scope.editorOptions = (asset)->
     lineNumbers: true
-    mode: 'javascript'
+    mode: $scope.getMode(asset)
     extraKeys:
       "F11": (cm)->
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
       "Esc": (cm)->
         if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
-  $scope.cssEditorOptions =
-    lineNumbers: true
-    mode: 'css'
-    extraKeys:
-      "F11": (cm)->
-        cm.setOption("fullScreen", !cm.getOption("fullScreen"))
-      "Esc": (cm)->
-        if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
+
 
   $scope.store = Restangular.all('assets')
   $scope.store.getList().then (assets)->
@@ -23,12 +17,8 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
   if $stateParams.id
     $scope.store.get($stateParams.id).then (asset)->
       $scope.asset = asset
-      if /javascript/.test($scope.asset.content_type) or /css/.test($scope.asset.content_type)
+      if /javascript/.test($scope.asset.content_type) or /css/.test($scope.asset.content_type) or /text\//.test($scope.asset.content_type)
         $scope.asset.performing_plain_text = true
-      if /javascript/.test($scope.asset.content_type)
-        $scope.asset.js = true
-      if /css/.test($scope.asset.content_type)
-        $scope.asset.css = true
   else
     {}
 

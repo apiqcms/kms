@@ -1,3 +1,7 @@
+## Unreleased
+
+* [fixed] show CodeMirror editor even if Asset content type - 'text/x-csrc' or any text content type
+
 ## Version 0.4.0 2016-08-05
 
 * [changed] use new font - Casper

@@ -3,8 +3,7 @@
     form role="form"
       .form-group
         small = I18n.t(:toggle_fullscreen_mode_instruction)
-        textarea#text.form-control ng-if="asset.css" ng-model="asset.text" rows="40" ui-codemirror="cssEditorOptions"
-        textarea#text.form-control ng-if="asset.js" ng-model="asset.text" rows="40" ui-codemirror="javascriptEditorOptions"
+        textarea#text.form-control ng-if="asset.performing_plain_text" ng-model="asset.text" rows="40" ui-codemirror="editorOptions(asset)"
       .btn-group
         button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_asset)
         button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_asset_and_continue)

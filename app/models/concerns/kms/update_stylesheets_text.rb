@@ -9,7 +9,7 @@ module Kms
     protected
 
     def restore_text
-      unless self.stylesheet_or_javascript?
+      unless stylesheet_or_javascript?
         Asset.where("content_type like '%css%'").each do |asset|
           asset.store_text
           asset.save
