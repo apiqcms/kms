@@ -17,13 +17,13 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 4.1"
+  s.add_dependency "rails", "~> 4.2.0"
   s.add_dependency "bower-rails", "~> 0.9.1"
   s.add_dependency "slim-rails"
   s.add_dependency "less-rails"
   s.add_dependency 'russian'
   s.add_dependency 'therubyracer'
-  s.add_dependency 'angular-rails-templates', '0.1.3'
+  s.add_dependency 'angular-rails-templates', '~> 1.0.0'
   s.add_dependency 'liquor'#, github: 'webgradus/liquor'
   s.add_dependency 'carrierwave'
   s.add_dependency 'active_model_serializers'
