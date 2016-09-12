@@ -1,3 +1,7 @@
+## Version 0.4.2 2016-09-12
+
+* [fixed] fix issue when installing from Rubygems - vendor folder not included in gem package
+
 ## Version 0.4.1 2016-08-21
 
 * [fixed] show CodeMirror editor even if Asset content type - 'text/x-csrc' or any text content type
