@@ -1,3 +1,8 @@
+## Version 0.5.0 2016-09-12
+
+* [changed] updated angular-rails-templates gem and now Kms works with Sprockets 3 (Rails 4.2+)
+* [changed] better page titles in admin section - issue #5
+
 ## Version 0.4.2 2016-09-12
 
 * [fixed] fix issue when installing from Rubygems - vendor folder not included in gem package

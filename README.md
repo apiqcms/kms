@@ -6,7 +6,7 @@ We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs o
 So feel free to use it in your projects.
 
 ## Built with good tools
-* Ruby on Rails (4.1+). Not ready yet for Rails 5
+* Ruby on Rails (4.2+). Not tested yet with Rails 5
 * Angular.js
 * Responsive Dashboard template
 * Liquor template language
@@ -60,4 +60,3 @@ Please watch this video to start working in KMS:
 ## Running problems
 
 * Make sure you have "pids" and "sockets" folders in project's "tmp" folder (if using Puma especially)
-* Won't work with Sprockets 3 (https://github.com/pitr/angular-rails-templates/issues/93). Solution: "gem 'sprockets', '2.12.4'"
