@@ -18,7 +18,8 @@ angular.module('KMS').config ['$httpProvider', '$locationProvider', 'Restangular
     testChunks: false
     fileParameterName: "asset[file]"
 ]
-  .run ['$http', '$cookies', 'editableOptions', ($http, $cookies, editableOptions) ->
+  .run ['$http', '$cookies', 'editableOptions', '$rootScope', '$state', ($http, $cookies, editableOptions, $rootScope, $state) ->
+    $rootScope.$state = $state
     $http.defaults.headers.common['X-XSRF-TOKEN'] = $cookies['XSRF-TOKEN']
     editableOptions.theme = 'bs3'
 ]
