@@ -2,7 +2,7 @@ require 'fileutils'
 
 desc "Create nondigest versions of all ckeditor digest assets"
 task "assets:precompile" => :environment do
-  fingerprint = /\-([0-9a-f]{32})\./
+  fingerprint = /\-([0-9a-f]{64})\./
   for file in Dir["public/assets/ng-ckeditor/libs/ckeditor/**/*"]
     # Skip file unless it has a fingerprint
     next unless file =~ fingerprint
