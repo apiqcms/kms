@@ -59,6 +59,9 @@ Please watch this video to start working in KMS:
 
 [![Getting started in KMS - Ruby on Rails CMS](http://img.youtube.com/vi/WPZoWyd-thE/0.jpg)](https://youtu.be/WPZoWyd-thE "Getting started in KMS - Ruby on Rails CMS")
 
+## Extensions
+* [kms_models](https://github.com/webgradus/kms_models)
+
 ## Running problems
 
 * Make sure you have "pids" and "sockets" folders in project's "tmp" folder (if using Puma especially)
