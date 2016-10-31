@@ -1,3 +1,7 @@
+## Not released yet
+
+* [changed] Rails 5 support
+
 ## Version 0.5.0 2016-09-12
 
 * [changed] updated angular-rails-templates gem and now Kms works with Sprockets 3 (Rails 4.2+)

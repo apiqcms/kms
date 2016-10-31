@@ -8,7 +8,7 @@ We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs o
 So feel free to use it in your projects.
 
 ## Built with good tools
-* Ruby on Rails (4.2+). Not tested yet with Rails 5
+* Ruby on Rails (>= 4.2, Rails 5 supported as well)
 * Angular.js
 * Responsive Dashboard template
 * Liquor template language
@@ -39,17 +39,17 @@ So feel free to use it in your projects.
 
 4. Copy migrations:
 
-        rake kms:install:migrations
+        rails kms:install:migrations
 
 5. Migrate:
 
-        rake db:migrate
+        rails db:migrate
 
 6. Set locale in your main app.
 
 7. Precompile assets (if it will be production app):
 
-        RAILS_ENV=production bundle exec rake assets:precompile
+        RAILS_ENV=production bundle exec rails assets:precompile
 
 8. Run it using your favorite webserver - unicorn, puma, thin
 9. Open your browser at **http://localhost:3000/kms** and sign up first admin user.
