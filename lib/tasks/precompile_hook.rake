@@ -17,7 +17,7 @@ task "assets:precompile" => :environment do
     filename = filename.sub /.gz$/, ''          # Remove .gz for correct asset checking
 
     # Fetch the latest digest for this file from assets
-    latest_digest = Rails.application.assets.find_asset(filename).digest
+    latest_digest = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset(filename).digest
 
     # Debug information
     STDOUT.puts '---- ' + file + ' ----'
