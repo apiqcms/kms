@@ -62,6 +62,10 @@ Please watch this video to start working in KMS:
 ## Extensions
 * [kms_models](https://github.com/webgradus/kms_models)
 
+## Contributing
+
+Please follow [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Running problems
 
 * Make sure you have "pids" and "sockets" folders in project's "tmp" folder (if using Puma especially)
