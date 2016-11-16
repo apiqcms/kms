@@ -3,6 +3,8 @@ rvm:
   - 2.3.0
 services:
   - postgresql
+addons:
+  postgresql: "9.2"
 script:
   - bundle exec rspec
 before_script:
