@@ -1,6 +1,6 @@
 ## :muscle: KMS is (K)Candidate Master of Sports :muscle:
 
-[![Gem Version](https://badge.fury.io/rb/kms.svg)](https://badge.fury.io/rb/kms)
+[![Gem Version](https://badge.fury.io/rb/kms.svg)](https://badge.fury.io/rb/kms) [![Build Status](https://travis-ci.org/webgradus/kms.svg?branch=master)](https://travis-ci.org/webgradus/kms)
 
 KMS is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it KMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind KMS: minimal core, extendable via extensions (engines). So you can take only what you need.
 
