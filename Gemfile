@@ -6,8 +6,8 @@ source "https://rubygems.org"
 gemspec
 
 group :test do
-  gem 'activerecord', '~> 4.1'
-  gem 'actionpack', '~> 4.1' # action_controller, action_view
+  # gem 'activerecord', '~> 4.1'
+  # gem 'actionpack', '~> 4.1' # action_controller, action_view
 end
 
 # Declare any dependencies that are still in development here instead of in

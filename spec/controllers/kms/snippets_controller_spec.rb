@@ -21,13 +21,10 @@ describe Kms::SnippetsController, type: :controller do
       end
     end
     context 'when save successful' do
-      it "returns snippet object without errors" do
+      it "returns 204 status" do
         snippet_params = FactoryGirl.attributes_for(:snippet)
         post :create, snippet: snippet_params, format: :json
-        expect(response).to be_success
-        expect(json['name']).to eq(snippet_params[:name])
-        expect(json['slug']).to eq(snippet_params[:slug])
-        expect(json['content']).to eq(snippet_params[:content])
+        expect(response).to have_http_status(204)
       end
     end
 
@@ -46,8 +43,7 @@ describe Kms::SnippetsController, type: :controller do
       it "returns 204 status" do
         snippet = FactoryGirl.create(:snippet)
         put :update, id: snippet.id, snippet: {slug: 'new-slug'}, format: :json
-        expect(response).to be_success
-        expect(response.status).to be 204 # No Content
+        expect(response).to have_http_status(204)
       end
     end
   end
@@ -67,8 +63,7 @@ describe Kms::SnippetsController, type: :controller do
     it 'deletes snippet and returns no content' do
       snippet = FactoryGirl.create(:snippet)
       delete :destroy, id: snippet.id, format: :json
-      expect(response).to be_success
-      expect(response.status).to be 204 # No Content
+      expect(response).to have_http_status(204)
     end
   end
 end

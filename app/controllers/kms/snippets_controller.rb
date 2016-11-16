@@ -7,14 +7,21 @@ module Kms
     end
 
     def create
-      @snippet = Snippet.create(snippet_params)
-      render json: @snippet, root: false
+      @snippet = Snippet.new(snippet_params)
+      if @snippet.save
+        head :no_content
+      else
+        render json: {errors: @snippet.errors}.to_json, status: :unprocessable_entity
+      end
     end
 
     def update
       @snippet = Snippet.find(params[:id])
-      @snippet.update(snippet_params)
-      render json: @snippet, root: false
+      if @snippet.update(snippet_params)
+        head :no_content
+      else
+        render json: {errors: @snippet.errors}.to_json, status: :unprocessable_entity
+      end
     end
 
     def show
@@ -25,7 +32,7 @@ module Kms
     def destroy
       @snippet = Snippet.find(params[:id])
       @snippet.destroy
-      render json: @snippet
+      head :no_content
     end
 
     protected
