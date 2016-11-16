@@ -1,0 +1,7 @@
+test:
+  adapter:  postgresql
+  database: kms_test
+  username: postgres
+  password:
+  encoding: utf-8
+  host: localhost

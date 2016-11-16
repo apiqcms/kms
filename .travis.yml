@@ -5,3 +5,5 @@ services:
   - postgresql
 script:
   - bundle exec rspec
+before_script:
+  - cp spec/internal/config/database.yml.travis spec/internal/config/database.yml
