@@ -22,10 +22,10 @@ UsersController = ($scope, $state, $cookieStore, Restangular, $stateParams) ->
       #console.log('bug')
 
   $scope.destroy = (user)->
-    user.remove().then ->
-      $scope.users = _.without($scope.users, user)
+    if(confirm('<%= I18n.t(:are_you_sure) %>'))
+      user.remove().then ->
+        $scope.users = _.without($scope.users, user)
 
 
 angular.module('KMS')
     .controller('UsersController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', UsersController])
-

@@ -78,7 +78,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
   $scope.destroy = (page)->
-    if(confirm('Вы уверены?'))
+    if(confirm('<%= I18n.t(:are_you_sure) %>'))
       Restangular.restangularizeElement(null, page, 'pages').remove().then ->
         $scope.store.getList().then (pages)->
           $scope.pages = pages

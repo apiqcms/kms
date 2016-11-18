@@ -38,7 +38,7 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
   $scope.destroy = (snippet)->
-    if(confirm('Вы уверены?'))
+    if(confirm('<%= I18n.t(:are_you_sure) %>'))
       snippet.remove().then ->
         $scope.snippets = _.without($scope.snippets, snippet)
 

@@ -35,6 +35,7 @@ en:
   yes_word: "Yes"
   no_word: "No"
   or: "Или"
+  are_you_sure: "Are you sure?"
   roles:
     admin: "Admin"
     content_manager: "Content manager"
