@@ -1,4 +1,4 @@
-## Not released yet
+## Version 0.6.0 2016-11-18
 
 * [changed] Rails 5 support
 
