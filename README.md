@@ -63,6 +63,7 @@ Please watch this video to start working in KMS:
 
 ## Extensions
 * [kms_models](https://github.com/webgradus/kms_models)
+* [kms_feedback](https://github.com/webgradus/kms_feedback)
 
 ## Contributing
 
