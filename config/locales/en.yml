@@ -16,6 +16,7 @@ en:
   update_page_and_continue: "Update page and continue"
   update_template_and_continue: "Update template and continue"
   update_asset_and_continue: "Update asset and continue"
+  update_snippet_and_continue: "Update snippet and continue"
   add_asset: "Add asset"
   new_asset: "New Asset"
   edit_asset: "Edit Asset"

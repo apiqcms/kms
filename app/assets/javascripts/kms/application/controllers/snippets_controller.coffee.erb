@@ -31,9 +31,10 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
     , (response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
-  $scope.update = ->
+  $scope.update = (event)->
     $scope.snippet.put().then ->
-      $state.go('snippets')
+      if event.target.attributes['data-redirect']
+        $state.go('snippets')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 

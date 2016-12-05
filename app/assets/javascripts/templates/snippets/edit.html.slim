@@ -2,4 +2,6 @@
   .col-lg-12
     form role="form" ng-submit="update()"
       ng-include src="'snippets/form.html'"
-      button.btn.btn-default type="submit" = I18n.t(:update_snippet)
+      .btn-group
+        button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_snippet)
+        button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_snippet_and_continue)

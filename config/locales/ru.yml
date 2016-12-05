@@ -16,6 +16,7 @@ ru:
   update_page_and_continue: "Обновить страницу и продолжить"
   update_template_and_continue: "Обновить шаблон и продолжить"
   update_asset_and_continue: "Обновить файл и продолжить"
+  update_snippet_and_continue: "Обновить сниппет и продолжить"
   add_asset: "Добавить файл"
   new_asset: "Новый Файл"
   edit_asset: "Редактирование Файла"
