@@ -12,12 +12,13 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
 
   $scope.store = Restangular.all('assets')
   $scope.store.getList().then (assets)->
-    $scope.assets = _.groupBy(assets, 'content_type')
+    $scope.assets = _.groupBy assets, (asset)->
+      $scope.getAssetGroup(asset)
 
   if $stateParams.id
     $scope.store.get($stateParams.id).then (asset)->
       $scope.asset = asset
-      if /javascript/.test($scope.asset.content_type) or /css/.test($scope.asset.content_type) or /text\//.test($scope.asset.content_type)
+      if /css|javascript/.test $scope.getAssetGroup(asset)
         $scope.asset.performing_plain_text = true
   else
     {}
@@ -51,6 +52,16 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
       "css"
     else
       "htmlmixed"
+
+  $scope.getAssetGroup = (asset)->
+    if /jpg|jpeg|bmp|gif|png/.test(asset.filename)
+      "images"
+    else if /css/.test(asset.filename)
+      "css"
+    else if /js/.test(asset.filename)
+      "javascript"
+    else
+      "other"
 
   $scope.isImageType = (file)->
     ['jpg', 'jpeg', 'gif','png'].indexOf(file.getType()) >= 0

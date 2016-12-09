@@ -37,6 +37,10 @@ ru:
   no_word: "Нет"
   or: "Или"
   are_you_sure: "Вы уверены?"
+  images: "Изображения"
+  stylesheets: "CSS"
+  javascripts: "Javascript"
+  other_assets: "Другое"
   roles:
     admin: "Администратор"
     content_manager: "Контент-менеджер"

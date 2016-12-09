@@ -65,3 +65,18 @@ table td {
 .CodeMirror {
   height: 500px;
 }
+.assets-block {
+  a.btn.add-asset {
+    border: none;
+    border-radius: 3px;
+    padding: 6px 12px;
+    margin-right: 0;
+    &:hover, &:focus {
+      background-color: #3071a9;
+    }
+  }
+  .table-responsive {
+    background: #fff;
+    color: #333333;
+  }
+}

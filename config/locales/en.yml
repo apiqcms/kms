@@ -35,8 +35,12 @@ en:
   no_settings: "No settings specified"
   yes_word: "Yes"
   no_word: "No"
-  or: "Или"
+  or: "Or"
   are_you_sure: "Are you sure?"
+  images: "Images"
+  stylesheets: "Stylesheets"
+  javascripts: "Javascript"
+  other_assets: "Other"
   roles:
     admin: "Admin"
     content_manager: "Content manager"

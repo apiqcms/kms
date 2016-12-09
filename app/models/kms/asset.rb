@@ -38,11 +38,11 @@ module Kms
     end
 
     def stylesheet?
-      content_type.include?("css")
+      filename.include?("css")
     end
 
     def javascript?
-      content_type.include?("javascript")
+      filename.include?("javascript")
     end
 
     def text_type?
