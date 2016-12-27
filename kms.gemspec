@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'therubyracer'
   s.add_dependency 'angular-rails-templates', '~> 1.0.0'
   s.add_dependency 'liquor'#, github: 'webgradus/liquor'
-  s.add_dependency 'carrierwave'
+  s.add_dependency 'carrierwave', '~> 1.0.0'
   s.add_dependency 'active_model_serializers'
   s.add_dependency 'ancestry'
   s.add_dependency 'devise'
