@@ -1,3 +1,10 @@
+## Version 0.7.0 2016-12-29
+
+* [fixed] set default value for Kms::Settings values field + some translations
+* [fixed] set correct carrierwave dependency
+* [changed] new UI for Assets managing - split into tabs
+* [added] add "save and continue" button for Snippets
+
 ## Version 0.6.0 2016-11-18
 
 * [changed] Rails 5 support
