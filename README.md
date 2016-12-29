@@ -65,6 +65,7 @@ Please watch this video to start working in KMS:
 * [kms_models](https://github.com/webgradus/kms_models)
 * [kms_feedback](https://github.com/webgradus/kms_feedback)
 * [kms_catalog](https://github.com/webgradus/kms_catalog)
+* [kms_seo](https://github.com/webgradus/kms_seo)
 
 ## Contributing
 
