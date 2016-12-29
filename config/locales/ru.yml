@@ -40,6 +40,7 @@ ru:
   images: "Изображения"
   stylesheets: "CSS"
   javascripts: "Javascript"
+  fonts: "Шрифты"
   other_assets: "Другое"
   roles:
     admin: "Администратор"

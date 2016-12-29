@@ -63,6 +63,24 @@
                           i.fa.fa-times
           tab
             tab-heading
+              i.fa.fa-font
+              = I18n.t(:fonts)
+            .table-responsive
+              table.table
+                tbody
+                  tr ng-repeat="asset in assets.fonts"
+                    td style="width: 40%"
+                      | {{ asset.filename }}
+                    td style="width: 40%"
+                      | {{asset.file.url}}
+                    td
+                      .btn-group.pull-right
+                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
+                          i.fa.fa-pencil
+                        a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
+                          i.fa.fa-times
+          tab
+            tab-heading
               i.fa.fa-file-text
               = I18n.t(:other_assets)
             .table-responsive

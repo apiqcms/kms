@@ -56,6 +56,8 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
   $scope.getAssetGroup = (asset)->
     if /jpg|jpeg|bmp|gif|png/.test(asset.filename)
       "images"
+    else if /eot|woff|ttf|woff2/.test(asset.filename)
+      "fonts"
     else if /css/.test(asset.filename)
       "css"
     else if /js/.test(asset.filename)

@@ -40,6 +40,7 @@ en:
   images: "Images"
   stylesheets: "Stylesheets"
   javascripts: "Javascript"
+  fonts: "Fonts"
   other_assets: "Other"
   roles:
     admin: "Admin"
