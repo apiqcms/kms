@@ -1,6 +1,8 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
+    "angular": "1.4.14",
+    "angular-cookies": "1.4.14",
     "Responsive-Dashboard": "git://github.com/Ehesp/Responsive-Dashboard",
     "lodash": "3.6.0",
     "restangular": "1.5.1",
@@ -8,7 +10,7 @@
     "angular-ui-codemirror": "latest",
     "ng-flow": "latest",
     "angular-ui-select": "latest",
-    "angular-sanitize": "latest",
+    "angular-sanitize": "1.4.14",
     "ng-ckeditor": "latest",
     "font-awesome": "4.2.0",
     "angular-toggle-switch": "latest",
