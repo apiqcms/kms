@@ -35,6 +35,9 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
   if $stateParams.id
     $scope.store.get($stateParams.id).then (page)->
       $scope.page = page
+      unless $scope.page.parent_id
+        index_page = _.select($scope.pages, (p) -> p.slug == 'index')[0]
+        $scope.page.parent_id = (if index_page then index_page.id else null)
   else
     $scope.page = {}
 
@@ -59,9 +62,6 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
       $scope.pages = $scope.exceptCurrentPage($scope.pages)
       $scope.parentPages = $scope.exceptCurrentPage($scope.parentPages)
     $scope.page.slug = "index" if $scope.pages.length == 0
-    unless $scope.page.parent_id
-      index_page = _.select($scope.pages, (p) -> p.slug == 'index')[0]
-      $scope.page.parent_id = (if index_page then index_page.id else null)
 
 
   $scope.create = ->

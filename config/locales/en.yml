@@ -50,29 +50,31 @@ en:
     tags_title: "Tags"
     filters_title: "Filters"
     variables_title: "Variables"
+    endpoints_title: "Endpoints"
     property: "Property of"
+    parameter: "Parameter for"
     description: "Description"
     specification: "Detailed Liquor specification"
     tags:
       declare:
-        main_description: "Tag declare could be used for variables declaration and initial value setup in this form:&nbsp;"
+        main_description: "Tag declare could be used for variables declaration and initial value setup in this form:"
         additional_description: "Difference between declare and assign tag - with declare you can create variables with the same names but in different scopes."
       assign:
-        main_description: "Tag assign could be used for variables declaration and its initial value setup in this form:&nbsp;"
+        main_description: "Tag assign could be used for variables declaration and its initial value setup in this form:"
       if:
-        main_description: "Tag if is a standard conditional statement and has this form:&nbsp;"
+        main_description: "Tag if is a standard conditional statement and has this form:"
       unless:
-        main_description: 'Tag unless executes its "body" if conditional expression results in false or null:&nbsp;'
+        main_description: 'Tag unless executes its "body" if conditional expression results in false or null:'
       for:
         main_description: "Tag for is a standard cycle statement and has this form:&nbsp;"
       capture:
-        main_description: "Tag capture runs code and saves result in var. If var already contained value, capture changes it:&nbsp;"
+        main_description: "Tag capture runs code and saves result in var. If var already contained value, capture changes it:"
       content_for:
-        main_description: "Tag content_for runs code and saves result in some handle:&nbsp;"
+        main_description: "Tag content_for runs code and saves result in some handle:"
       yield:
-        main_description: "Tag yield has 3 forms. In the simples case (without arguments) it inserts content of internal template (Page content in terms of this CMS). If string with handle was setup with {% content_for %}, then yield returns this string. If no string with handle, yield returns result of if_none block execution, if such block was specified, or just empty string:&nbsp;"
+        main_description: "Tag yield has 3 forms. In the simples case (without arguments) it inserts content of internal template (Page content in terms of this CMS). If string with handle was setup with {% content_for %}, then yield returns this string. If no string with handle, yield returns result of if_none block execution, if such block was specified, or just empty string:"
       include:
-        main_description: 'Tag include includes content of Snippet into template. The only argument of include - Snippet ID (field "Slug/ID" that you need to setup on Snippet creation in "Snippets"):&nbsp;'
+        main_description: 'Tag include includes content of Snippet into template. The only argument of include - Snippet ID (field "Slug/ID" that you need to setup on Snippet creation in "Snippets"):'
     variables:
       var_loop:
         main_description: 'Variable giving access to current state of cycle/iteration. Can be used only in "for" cycle. var_loop - common name, for accessing actual cycle variable you need to concatenate cycle variable name and "_loop". Example:'
@@ -80,7 +82,7 @@ en:
           length: "Iterations count (collection size)"
           index: "Current iteration index - index of element"
       page:
-        main_description: 'Variable "page" can be accessed in any template and references to current page:&nbsp;'
+        main_description: 'Variable "page" can be accessed in any template and references to current page:'
         properties:
           slug: 'Value of "Slug" field'
           fullpath: 'Page fullpath'
@@ -93,7 +95,7 @@ en:
       index:
         main_description: 'Variable "index" accessible in templates and references to root page (with "index" slug). Object properties are the same as for "page" variable.'
       request:
-        main_description: 'Variable "request" gives an access to some properties of current request:&nbsp;'
+        main_description: 'Variable "request" gives an access to some properties of current request:'
         properties:
           path: 'Returns request relative path'
           url: 'Returns request URL'
@@ -114,17 +116,17 @@ en:
           link: 'Link to page, containing query'
     filters:
       asset_path:
-        main_description: 'Filter "asset_path" allows to get a relative path to any file from "Assets" section by filename:&nbsp;'
+        main_description: 'Filter "asset_path" allows to get a relative path to any file from "Assets" section by filename:'
       asset_tag:
-        main_description: 'Filter "asset_tag" allows to include javascript and css files, uploaded to "Assets" section:&nbsp;'
+        main_description: 'Filter "asset_tag" allows to include javascript and css files, uploaded to "Assets" section:'
       resize:
-        main_description: 'This function/filter helps to change image size on-the-fly. For this filter you need to use absolute URL of image and "format" argument. Returns also URL. To get absolute URL (having only relative - any asset from "Assets") you should use "request.base_url":&nbsp;'
+        main_description: 'This function/filter helps to change image size on-the-fly. For this filter you need to use absolute URL of image and "format" argument. Returns also URL. To get absolute URL (having only relative - any asset from "Assets") you should use "request.base_url":'
       add_watermark:
-        main_description: 'It allows to add watermark to image. You need image URL and 3 arguments: "image" - watermark image (watermark), "dissolve" - transparency and "position" - position. Returns also URL:&nbsp;'
+        main_description: 'It allows to add watermark to image. You need image URL and 3 arguments: "image" - watermark image (watermark), "dissolve" - transparency and "position" - position. Returns also URL:'
       ends_with:
-        main_description: 'Allows to check if string ends with some pattern:&nbsp;'
+        main_description: 'Allows to check if string ends with some pattern:'
       currency:
-        main_description: 'Formats currency values. Possible options: precision, delimiter, separator, format, unit:&nbsp;'
+        main_description: 'Formats currency values. Possible options: precision, delimiter, separator, format, unit:'
   activerecord:
     models:
       kms/template:
