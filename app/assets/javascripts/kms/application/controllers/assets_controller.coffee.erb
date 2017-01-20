@@ -43,7 +43,7 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
           $scope.assets[content_type] = _.without($scope.assets[content_type], asset)
 
   $scope.setHeaders = ->
-    'X-XSRF-TOKEN': $cookies["XSRF-TOKEN"] # call func for getting a cookie
+    'X-XSRF-TOKEN': $cookies.get("XSRF-TOKEN") # call func for getting a cookie
 
   $scope.getMode = (asset)->
     if /javascript/.test(asset.content_type)

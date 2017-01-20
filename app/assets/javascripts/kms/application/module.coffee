@@ -20,6 +20,6 @@ angular.module('KMS').config ['$httpProvider', '$locationProvider', 'Restangular
 ]
   .run ['$http', '$cookies', 'editableOptions', '$rootScope', '$state', ($http, $cookies, editableOptions, $rootScope, $state) ->
     $rootScope.$state = $state
-    $http.defaults.headers.common['X-XSRF-TOKEN'] = $cookies['XSRF-TOKEN']
+    $http.defaults.headers.common['X-XSRF-TOKEN'] = $cookies.get('XSRF-TOKEN')
     editableOptions.theme = 'bs3'
 ]
