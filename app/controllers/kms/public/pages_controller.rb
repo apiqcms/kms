@@ -1,7 +1,7 @@
 module Kms
   class Public::PagesController < ActionController::Base
 
-    before_filter :eval_externals
+    before_action :eval_externals
 
     def show
         page_result = Kms.template_manager.render(@page.register_id, @externals)
