@@ -12,6 +12,7 @@
       <% end -%>
       <%= f.submit t("login"), class: "btn btn-lg btn-primary btn-block" %>
       <br>
-      <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %><br>
+      <%= link_to "Register", new_registration_path(resource_name) %>
     <% end %>
 </div>
