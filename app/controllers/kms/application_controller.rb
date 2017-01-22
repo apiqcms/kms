@@ -1,6 +1,5 @@
 module Kms
   class ApplicationController < ActionController::Base
-    layout 'kms/devise'
     before_action :authenticate_kms_user!
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
