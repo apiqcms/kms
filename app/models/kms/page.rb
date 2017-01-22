@@ -54,8 +54,5 @@ module Kms
       templatable_type.constantize.find_by_slug!(slug)
     end
 
-    def register_id
-      (self.class.name << "_" << self.id.to_s).parameterize(separator: "_")
-    end
   end
 end
