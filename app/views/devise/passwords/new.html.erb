@@ -1,0 +1,18 @@
+<div class="wrapper">
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-signin', method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <h2 class="form-signin-heading">KMS</h2>
+
+    <h4>Forgot your password?</h4>
+      <label>
+        <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %>
+      </label>
+      <label>
+        <%= f.submit "Send me reset password instructions", class: "btn btn-lg btn-primary btn-block" %>
+      </label>
+    <%= render "devise/shared/links" %>
+
+  <% end %>
+
+</div>

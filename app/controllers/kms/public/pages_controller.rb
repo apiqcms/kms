@@ -1,16 +1,16 @@
 module Kms
   class Public::PagesController < ActionController::Base
 
-    before_filter :eval_externals
+    before_action :eval_externals
 
     def show
-        page_result = Kms.template_manager.render(@page.register_id, @externals)
-        # apply typograph to page content
-        #page_result = EvilFront::Russian.typograph_html(page_result)
-        result   = Kms.template_manager.render(@template.register_id, @externals.
-                                merge(_inner_template: page_result))
+      page_result = Kms.template_manager.render(@page.register_id, @externals)
+      # apply typograph to page content
+      #page_result = EvilFront::Russian.typograph_html(page_result)
+      result   = Kms.template_manager.render(@template.register_id, @externals.
+                              merge(_inner_template: page_result))
 
-      render text: result, layout: false
+      render plain: result, content_type: "text/html"
     end
 
     protected

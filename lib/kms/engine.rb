@@ -12,6 +12,7 @@ module Kms
 
     config.to_prepare do
       ::Devise::SessionsController.layout "kms/devise"
+      ::Devise::PasswordsController.layout "kms/devise"
       ::Devise::RegistrationsController.layout "kms/devise"
       Dir.glob(Rails.root + "kms_*/**/*_decorator*.rb").each do |c|
         require_dependency(c)
