@@ -9,6 +9,10 @@ module Kms
       after_commit :compile_templates, on: [:create, :update]
     end
 
+    def register_id
+      [self.class.name.parameterize(separator: "_"), id.to_s].join('_')
+    end
+
     protected
 
     def compiled_templates

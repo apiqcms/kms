@@ -1,4 +1,4 @@
-class CreateKmsSnippets < ActiveRecord::Migration
+class CreateKmsSnippets < ActiveRecord::Migration[4.2]
   def change
     create_table :kms_snippets do |t|
       t.string :name
