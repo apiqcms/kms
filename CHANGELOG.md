@@ -1,3 +1,10 @@
+## Version 0.8.0 2017-03-01
+
+* [changed] update angular (angular-cookies, angular-sanitize) from 1.3 to 1.4
+* [fixed] fix translations - remove &nbsp; + fix setting page parent_id on frontend
+* [fixed] put settings form in each tab pane for correct display
+* [fixed] more Rails 5 friendly (removing deprecation messages) + add views for password reset
+
 ## Version 0.7.0 2016-12-29
 
 * [fixed] set default value for Kms::Settings values field + some translations
