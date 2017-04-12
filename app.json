@@ -1,0 +1,16 @@
+{
+  "name": "KMS",
+  "description": "Simple and powerful Ruby on Rails CMS for developers",
+  "repository": "https://github.com/webgradus/kms",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true"
+  },
+  "image": "webgradus/kms",
+  "addons": ["heroku-postgresql"]
+
+}
