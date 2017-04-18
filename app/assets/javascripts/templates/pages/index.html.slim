@@ -4,13 +4,14 @@ script type="text/ng-template" id="nodes_renderer.html"
     div style="width:50%;float:left;height:30px;line-height:30px;" ng-class="{'not-published': !node.published}"
       a data-nodrag="" ng-click="toggle(node)" ng-if="node.children" style="padding-right:5px;"
         i.fa ng-class="{'fa-plus': collapsed, 'fa-minus': !collapsed}"
-      | {{node.title}}&nbsp;
+      a ui-sref="pages.edit({id: node.id})" data-nodrag=""
+        | {{node.title}}&nbsp;
       i.fa.fa-cogs style="font-size:18px !important" ng-if="node.templatable"
     div style="width:30%;float:left;height:30px;line-height:30px;"
       | {{ node.fullpath }}
     .btn-group.pull-right
-      a.btn.btn-sm.btn-info data-nodrag="" ui-sref="pages.edit({id: node.id})"
-        i.fa.fa-pencil
+      /a.btn.btn-sm.btn-info data-nodrag="" ui-sref="pages.edit({id: node.id})"
+        /i.fa.fa-pencil
       a.btn.btn-sm.btn-danger data-nodrag="" ng-click="destroy(node)" style="margin-right: 8px;"
           i.fa.fa-times
   ol ui-tree-nodes="pages" ng-model="node.children" ng-class="{hidden: collapsed}"
