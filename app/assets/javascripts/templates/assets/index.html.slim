@@ -21,8 +21,6 @@
                       | {{asset.file.url}}
                     td
                       .btn-group.pull-right
-                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
-                          i.fa.fa-pencil
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
                           i.fa.fa-times
           tab
@@ -34,13 +32,12 @@
                 tbody
                   tr ng-repeat="asset in assets.css"
                     td style="width: 40%"
-                      | {{ asset.filename }}
+                      a ui-sref="assets.edit({id: asset.id})"
+                        | {{ asset.filename }}
                     td style="width: 40%"
                       | {{asset.file.url}}
                     td
                       .btn-group.pull-right
-                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
-                          i.fa.fa-pencil
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
                           i.fa.fa-times
           tab
@@ -52,13 +49,12 @@
                 tbody
                   tr ng-repeat="asset in assets.javascript"
                     td style="width: 40%"
-                      | {{ asset.filename }}
+                      a ui-sref="assets.edit({id: asset.id})"
+                        | {{ asset.filename }}
                     td style="width: 40%"
                       | {{asset.file.url}}
                     td
                       .btn-group.pull-right
-                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
-                          i.fa.fa-pencil
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
                           i.fa.fa-times
           tab
@@ -75,8 +71,6 @@
                       | {{asset.file.url}}
                     td
                       .btn-group.pull-right
-                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
-                          i.fa.fa-pencil
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
                           i.fa.fa-times
           tab
@@ -93,8 +87,6 @@
                       | {{asset.file.url}}
                     td
                       .btn-group.pull-right
-                        a.btn.btn-sm.btn-info ui-sref="assets.edit({id: asset.id})"
-                          i.fa.fa-pencil
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
                           i.fa.fa-times
           li.pull-right

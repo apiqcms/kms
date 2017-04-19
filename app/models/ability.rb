@@ -8,7 +8,6 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :index, Kms::Template
       can :manage, Kms::Page
       can :manage, Kms::Asset
       Kms::AbilityService.abilities.each do |ability_block|

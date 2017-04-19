@@ -13,10 +13,11 @@
             tbody
               tr ng-repeat="template in templates"
                 td style="width: 80%"
-                  | {{ template.name }}
+                  a ui-sref="templates.edit({id: template.id})"
+                    | {{ template.name }}
                 td
                   .btn-group.pull-right
-                    a.btn.btn-sm.btn-info ui-sref="templates.edit({id: template.id})" ng-show="currentUser.admin"
-                      i.fa.fa-pencil
+                    /a.btn.btn-sm.btn-info ui-sref="templates.edit({id: template.id})" ng-show="currentUser.admin"
+                      /i.fa.fa-pencil
                     a.btn.btn-sm.btn-danger ng-click="destroy(template)" ng-show="currentUser.admin"
                       i.fa.fa-times

@@ -13,10 +13,11 @@
             tbody
               tr ng-repeat="snippet in snippets"
                 td style="width: 80%"
-                  | {{ snippet.name }}
+                  a ui-sref="snippets.edit({id: snippet.id})"
+                    | {{ snippet.name }}
                 td
                   .btn-group.pull-right
-                    a.btn.btn-sm.btn-info ui-sref="snippets.edit({id: snippet.id})" ng-show="currentUser.admin"
-                      i.fa.fa-pencil
+                    /a.btn.btn-sm.btn-info ui-sref="snippets.edit({id: snippet.id})" ng-show="currentUser.admin"
+                      /i.fa.fa-pencil
                     a.btn.btn-sm.btn-danger ng-click="destroy(snippet)" ng-show="currentUser.admin"
                       i.fa.fa-times
