@@ -12,6 +12,8 @@ module Kms
 
       template 'dragonfly.rb', 'config/initializers/dragonfly.rb'
 
+      template 'carrierwave.rb', 'config/initializers/carrierwave.rb'
+
     end
 
     def insert_engine_routes
