@@ -8,7 +8,7 @@ module Kms
     # include CarrierWave::MiniMagick
 
     # Choose what kind of storage to use for this uploader:
-    storage (ENV['KMS_ASSETS_STORAGE'].to_sym || :file)
+    storage (ENV['KMS_ASSETS_STORAGE'] || :file)
     # storage :fog
 
     # Override the directory where uploaded files will be stored.
