@@ -4,6 +4,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/kms.svg)](https://badge.fury.io/rb/kms) [![Build Status](https://travis-ci.org/webgradus/kms.svg?branch=master)](https://travis-ci.org/webgradus/kms)
 
+[![Dependency Status](https://gemnasium.com/badges/github.com/webgradus/kms.svg)](https://gemnasium.com/github.com/webgradus/kms)
+
 KMS is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it KMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind KMS: minimal core, extendable via extensions (engines). So you can take only what you need.
 
 We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs over past 1 year and now it's ready to be open sourced.
