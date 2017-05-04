@@ -61,6 +61,29 @@ Please watch this video to start working in KMS:
 
 [![Getting started in KMS - Ruby on Rails CMS](http://img.youtube.com/vi/WPZoWyd-thE/0.jpg)](https://youtu.be/WPZoWyd-thE "Getting started in KMS - Ruby on Rails CMS")
 
+## Amazon S3 for assets storage
+
+By default, KMS offers local file system as storage for your assets. But you could use Amazon S3 as well. Just follow these simple steps:
+
+1. Add to Gemfile special gem for storing secrets. For example, this could be `dotenv-rails` or `figaro`. Don't forget to `bundle install`
+
+    gem 'dotenv-rails'
+
+2. Setup your `.env` file with these variables:
+
+    KMS_ASSETS_STORAGE=fog
+    AWS_ACCESS_KEY_ID=your_access_key
+    AWS_SECRET_ACCESS_KEY=your_secret_key
+    AWS_BUCKET=bucket_name
+    AWS_REGION=eu-central-1 # or region you want
+
+3. If you ran `rails g kms:install`, then you should have config/initializers/carrierwave.rb. Feel free to customize it.
+
+    CarrierWave.configure do |config|
+      if ENV['KMS_ASSETS_STORAGE'] == 'fog'
+        config.fog_provider = 'fog/aws'
+        ...
+
 ## Extensions
 * [kms_models](https://github.com/webgradus/kms_models)
 * [kms_feedback](https://github.com/webgradus/kms_feedback)
