@@ -67,22 +67,22 @@ By default, KMS offers local file system as storage for your assets. But you cou
 
 1. Add to Gemfile special gem for storing secrets. For example, this could be `dotenv-rails` or `figaro`. Don't forget to `bundle install`
 
-    gem 'dotenv-rails'
+        gem 'dotenv-rails'
 
 2. Setup your `.env` file with these variables:
 
-    KMS_ASSETS_STORAGE=fog
-    AWS_ACCESS_KEY_ID=your_access_key
-    AWS_SECRET_ACCESS_KEY=your_secret_key
-    AWS_BUCKET=bucket_name
-    AWS_REGION=eu-central-1 # or region you want
+        KMS_ASSETS_STORAGE=fog
+        AWS_ACCESS_KEY_ID=your_access_key
+        AWS_SECRET_ACCESS_KEY=your_secret_key
+        AWS_BUCKET=bucket_name
+        AWS_REGION=eu-central-1 # or region you want
 
 3. If you ran `rails g kms:install`, then you should have config/initializers/carrierwave.rb. Feel free to customize it.
 
-    CarrierWave.configure do |config|
-      if ENV['KMS_ASSETS_STORAGE'] == 'fog'
-        config.fog_provider = 'fog/aws'
-        ...
+        CarrierWave.configure do |config|
+          if ENV['KMS_ASSETS_STORAGE'] == 'fog'
+            config.fog_provider = 'fog/aws'
+            ...
 
 ## Extensions
 * [kms_models](https://github.com/webgradus/kms_models)
