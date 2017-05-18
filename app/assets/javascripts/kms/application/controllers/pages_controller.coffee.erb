@@ -88,8 +88,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
 
   $scope.treeOptions = {
       dropped: (event) ->
-        Restangular.all('pages').customPOST(angular.toJson($scope.pages),'sorting')
-        $scope.store.getList().then (pages) ->
+        Restangular.all('pages').customPOST(angular.toJson($scope.pages),'sorting').then (pages) ->
           $scope.pages = pages
   }
 

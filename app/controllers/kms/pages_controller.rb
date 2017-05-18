@@ -5,7 +5,7 @@ module Kms
 
     def index
       #render json: Page.order("created_at asc").to_json(methods: :parent_id, except: :ancestry)
-      render json: Page.arrange_serializable(:order => :position).to_json
+      render json: Page.arrange_serializable(order: :position).to_json
     end
 
     def create
@@ -44,7 +44,7 @@ module Kms
         p.update_attribute(:position, index)
         sort(page["id"], page["children"]) if page["children"].present?
       end
-      render json: Page.arrange_serializable.to_json
+      render json: Page.arrange_serializable(order: :position).to_json
     end
 
     protected
