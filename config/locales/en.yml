@@ -50,6 +50,7 @@ en:
     tags_title: "Tags"
     filters_title: "Filters"
     variables_title: "Variables"
+    scopes_title: "Scopes"
     endpoints_title: "Endpoints"
     property: "Property of"
     parameter: "Parameter for"
@@ -75,6 +76,27 @@ en:
         main_description: "Tag yield has 3 forms. In the simples case (without arguments) it inserts content of internal template (Page content in terms of this CMS). If string with handle was setup with {% content_for %}, then yield returns this string. If no string with handle, yield returns result of if_none block execution, if such block was specified, or just empty string:"
       include:
         main_description: 'Tag include includes content of Snippet into template. The only argument of include - Snippet ID (field "Slug/ID" that you need to setup on Snippet creation in "Snippets"):'
+    scopes:
+      find_by:
+        main_description: 'find_by allows you to find one element in collection by some condition/criteria'
+      find_all_by:
+        main_description: 'find_all_by finds all collection elements matching criterias'
+      except:
+        main_description: 'except returns you all collection elements except ones provided as argument'
+      find_except_by:
+        main_description: 'find_except_by finds all collection elements not matching provided criterias'
+      limit:
+        main_description: 'limit method is equal to SQL limit so it allows to limit number of collection items'
+      offset:
+        main_description: 'offset method is equal to SQL offset so it allows to fetch records by offset'
+      first:
+        main_description: 'returns first element in collection'
+      last:
+        main_description: 'returns last element in collection'
+      by_index:
+        main_description: 'returns element by its index'
+      pluck:
+        main_description: 'returns collection containing elements specific field values (not full object)'
     variables:
       var_loop:
         main_description: 'Variable giving access to current state of cycle/iteration. Can be used only in "for" cycle. var_loop - common name, for accessing actual cycle variable you need to concatenate cycle variable name and "_loop". Example:'

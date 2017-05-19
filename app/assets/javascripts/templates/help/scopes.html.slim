@@ -1,0 +1,73 @@
+h4 = I18n.t("liquor_help.scopes_title")
+p
+  ul
+    li
+      var find_by
+      p
+        span = I18n.t('liquor_help.scopes.find_by.main_description')
+      p
+        code
+          | {% assign news_page = index.children.find_by(title: 'News') %}
+    li
+      var find_all_by
+      p
+        span = I18n.t('liquor_help.scopes.find_all_by.main_description')
+      p
+        code
+          | {% for p in: index.children.find_all_by(published: true) do: %}
+    li
+      var except
+      p
+        span = I18n.t('liquor_help.scopes.except.main_description')
+      p
+        code
+          | {% assign correct_pages = index.children.except(excepted_page) %}
+    li
+      var find_except_by
+      p
+        span = I18n.t('liquor_help.scopes.find_except_by.main_description')
+      p
+        code
+          | {% for p in: index.children.find_except_by(hidden: true) do: %}
+    li
+      var limit
+      p
+        span = I18n.t('liquor_help.scopes.limit.main_description')
+      p
+        code
+          | {% for post in: models.posts.limit(3) do: %}
+    li
+      var offset
+      p
+        span = I18n.t('liquor_help.scopes.offset.main_description')
+      p
+        code
+          | {% for post in: models.posts.limit(3).offset(3) do: %}
+    li
+      var first
+      p
+        span = I18n.t('liquor_help.scopes.first.main_description')
+      p
+        code
+          | {% assign first_post = models.posts.first %}
+    li
+      var last
+      p
+        span = I18n.t('liquor_help.scopes.last.main_description')
+      p
+        code
+          | {% assign last_post = models.posts.last %}
+    li
+      var []
+      p
+        span = I18n.t('liquor_help.scopes.by_index.main_description')
+      p
+        code
+          | {% assign third_post = models.posts[2] %}
+    li
+      var pluck
+      p
+        span = I18n.t('liquor_help.scopes.pluck.main_description')
+      p
+        code
+          | {% for post_title in: models.posts.pluck('title') %}
