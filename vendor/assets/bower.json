@@ -1,7 +1,7 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "angular": "1.4.14",
+    "angular": "1.5.11",
     "angular-cookies": "1.4.14",
     "Responsive-Dashboard": "git://github.com/Ehesp/Responsive-Dashboard",
     "lodash": "3.6.0",
