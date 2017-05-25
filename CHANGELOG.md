@@ -1,3 +1,14 @@
+## Version 0.9.0 2017-05-25
+
+* [changed] extract set_position method to concern - used in kms as well as in some extensions
+* [added] add FunctionsRegistry service - for extending with Liquor functions
+* [changed] remove special edit button for pages, make page title clickable
+* [changed] make navigating to edit templates, snippets and assets simpler - just by clicking on names
+* [added] add ability to setup Amazon S3 for assets storage
+* [fixed] fix pages ordering issue - remove unnecessary request to pages - closes #14
+* [added] add more help - about scopes/collection methods
+* [changed] Angular 1.4 to 1.5 migration + angular-ui-tree update
+
 ## Version 0.8.0 2017-03-01
 
 * [changed] update angular (angular-cookies, angular-sanitize) from 1.3 to 1.4
