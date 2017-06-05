@@ -18,11 +18,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 5.0.0"
-  s.add_dependency "bower-rails", "~> 0.11.0"
   s.add_dependency "slim-rails"
-  s.add_dependency "less-rails"
   s.add_dependency 'russian'
-  s.add_dependency 'therubyracer'
   s.add_dependency 'angular-rails-templates', '~> 1.0.0'
   s.add_dependency 'liquor'
   s.add_dependency 'fog-aws'
@@ -30,7 +27,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'active_model_serializers'
   s.add_dependency 'ancestry'
   s.add_dependency 'devise'
-  #s.add_dependency 'evil-front'
   s.add_dependency 'cancancan', '~> 2.0.0'
   s.add_dependency 'dragonfly', '~> 1.1.3'
   s.add_dependency 'pg'

@@ -3,7 +3,8 @@
   "dependencies": {
     "angular": "1.5.11",
     "angular-cookies": "1.4.14",
-    "Responsive-Dashboard": "git://github.com/Ehesp/Responsive-Dashboard",
+    "rdash-ui": "latest",
+    "bootstrap": "3.3.7",
     "lodash": "3.6.0",
     "restangular": "1.5.1",
     "angular-ui-tree": "latest",

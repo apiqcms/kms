@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
- *= require font-awesome/less/font-awesome
+ *= require font-awesome/scss/font-awesome
  *= require angular-ui-tree/dist/angular-ui-tree.min
  *= require codemirror/lib/codemirror
  *= require codemirror/addon/display/fullscreen
@@ -23,7 +23,7 @@
  *= require alertify/themes/alertify.bootstrap
  *= require angular-xeditable/dist/css/xeditable
  *= require ng-sortable/dist/ng-sortable
- *= require kms/responsive_dashboard
+ *= require rdash-ui/dist/css/rdash
  *= require kms/custom
  *= require application
  *= require_self

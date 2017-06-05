@@ -27,7 +27,6 @@ module Kms
     end
 
     initializer "kms.assets" do |app|
-      app.config.less.paths << File.join(Rails.root,'vendor', 'assets', 'bower_components')
       app.config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
       app.config.assets.precompile += %w(kms/application.js kms/application.css)
       app.config.assets.precompile += %w( Responsive-Dashboard/src/img/** )
