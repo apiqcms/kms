@@ -29,7 +29,7 @@ module Kms
     initializer "kms.assets" do |app|
       app.config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
       app.config.assets.precompile += %w(kms/application.js kms/application.css)
-      app.config.assets.precompile += %w( Responsive-Dashboard/src/img/** )
+      app.config.assets.precompile += %w( avatar.jpg )
       app.config.assets.precompile += %w( **/*.svg **/*.eot **/*.woff **/*.ttf )
       app.config.assets.precompile += %w( ng-ckeditor/libs/ckeditor/** )
     end
