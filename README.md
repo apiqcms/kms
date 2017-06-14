@@ -1,4 +1,4 @@
-## :muscle: KMS is (K)Candidate Master of Sports :muscle:
+## :muscle: Simple and powerful Ruby on Rails CMS for developers :muscle:
 
 [![Join the chat at https://gitter.im/kms-app/Lobby](https://badges.gitter.im/kms-app/Lobby.svg)](https://gitter.im/kms-app/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -7,8 +7,14 @@
 
 KMS is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it KMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind KMS: minimal core, extendable via extensions (engines). So you can take only what you need.
 
-We, at [@webgradus](http://webgradus.com), used this CMS for our clients needs over past 1 year and now it's ready to be open sourced.
-So feel free to use it in your projects.
+![Gif](https://gitlab.com/PitOn/apiq_site/raw/909e5d509c1d21504d18996f7b80c2764c671c53/images/apiq_presentation_001.gif)
+
+## Demo
+Demo website: http://demo.apiq.io/
+
+Backend (as admin): http://demo.apiq.io/kms (login/password: demo@apiq.io/password)
+
+Backend (as content manager): http://demo.apiq.io/kms (login/password: content@apiq.io/password)
 
 ## Built with good tools
 * Ruby on Rails (>= 4.2, Rails 5 supported as well)
