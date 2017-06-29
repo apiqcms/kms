@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*", "spec/factories/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 5.0.0"
+  s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "slim-rails"
   s.add_dependency 'russian'
   s.add_dependency 'angular-rails-templates', '~> 1.0.0'
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cancancan', '~> 2.0.0'
   s.add_dependency 'dragonfly', '~> 1.1.3'
   s.add_dependency 'pg'
-  s.add_dependency 'textacular', '~> 4.0.0'
+  s.add_dependency 'textacular', '~> 5.0.0'
 
   s.add_development_dependency 'combustion', '~> 0.5.4'
   s.add_development_dependency 'factory_girl_rails'
