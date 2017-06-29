@@ -10,7 +10,7 @@
     "angular-ui-tree": "latest",
     "angular-ui-codemirror": "latest",
     "ng-flow": "latest",
-    "angular-ui-select": "latest",
+    "angular-ui-select": "0.17.0",
     "angular-sanitize": "1.4.14",
     "ng-ckeditor": "latest",
     "font-awesome": "4.2.0",
