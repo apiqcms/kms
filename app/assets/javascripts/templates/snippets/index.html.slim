@@ -1,10 +1,9 @@
-.row
+.row ng-show="snippets.length"
   .col-lg-12
     .widget
       .widget-header
         i.fa.fa-bookmark
         = Kms::Snippet.model_name.human(count: 1.1)
-        /a.pull-right href="#"  Manage
         a.btn.btn-sm.btn-primary.pull-right ui-sref="snippets.new" ng-show="currentUser.admin"
           = I18n.t("add_snippet")
       .widget-body.no-padding
@@ -17,7 +16,16 @@
                     | {{ snippet.name }}
                 td
                   .btn-group.pull-right
-                    /a.btn.btn-sm.btn-info ui-sref="snippets.edit({id: snippet.id})" ng-show="currentUser.admin"
-                      /i.fa.fa-pencil
                     a.btn.btn-sm.btn-danger ng-click="destroy(snippet)" ng-show="currentUser.admin"
                       i.fa.fa-times
+.row ng-show="!snippets.length"
+  .center-block
+    .jumbotron.vertical-center.text-center
+      .container
+        h1
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-bookmark.fa-stack-1x
+        p Snippets are pieces of HTML that you could include in templates or pages
+        p
+          a.btn.btn-primary.btn-lg ui-sref="snippets.new" role="button" Create first snippet

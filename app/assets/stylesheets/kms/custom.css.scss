@@ -86,3 +86,22 @@ table td {
 .widget .widget-header table i {
   margin-right: 0px;
 }
+.vertical-center {
+  min-height: 80%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.jumbotron {
+  background-color: inherit;
+  i.fa-stack-1x {
+    color: darkred;
+  }
+  i.fa-stack-2x {
+    color: white;
+  }
+}
+.row.header .meta .page {
+  padding-top: 17px;
+}

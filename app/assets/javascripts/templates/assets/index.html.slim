@@ -1,9 +1,7 @@
-.row
+.row ng-show="assets.length"
   .col-lg-12
     .widget.assets-block
       .widget-header
-        /i.fa.fa-image
-        /= Kms::Asset.model_name.human(count: 1.1)
         tabset
           tab
             tab-heading
@@ -92,3 +90,14 @@
           li.pull-right
             a.btn.btn-sm.btn-primary.add-asset ui-sref="assets.new"
               = I18n.t("add_asset")
+.row ng-show="!assets.length"
+  .center-block
+    .jumbotron.vertical-center.text-center
+      .container
+        h1
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-image.fa-stack-1x
+        p Upload stylesheets, javascripts, images and other files here (you can even pick multiple)
+        p
+          a.btn.btn-primary.btn-lg ui-sref="assets.new" role="button" Upload assets
