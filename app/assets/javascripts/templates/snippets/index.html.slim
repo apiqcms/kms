@@ -11,9 +11,12 @@
           table.table
             tbody
               tr ng-repeat="snippet in snippets"
-                td style="width: 80%"
+                td style="width: 70%"
                   a ui-sref="snippets.edit({id: snippet.id})"
                     | {{ snippet.name }}
+                td style="width: 20%"
+                  em
+                    | {{ snippet.slug }}
                 td
                   .btn-group.pull-right
                     a.btn.btn-sm.btn-danger ng-click="destroy(snippet)" ng-show="currentUser.admin"

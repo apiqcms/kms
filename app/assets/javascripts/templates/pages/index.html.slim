@@ -17,16 +17,28 @@ script type="text/ng-template" id="nodes_renderer.html"
 
 
 
-.row
+.row ng-show="pages.length"
   .col-lg-12
     .widget
       .widget-header
         i.fa.fa-sitemap
         = Kms::Page.model_name.human(count: 1.1)
-        /a.pull-right href="#"  Manage
         a.btn.btn-sm.btn-primary.pull-right ui-sref="pages.new"
           = I18n.t("add_page")
       .widget-body.no-padding
         div ui-tree="pages" callbacks="treeOptions"
           ol ui-tree-nodes="" ng-model="pages" id="tree-root" data-nodrop-enabled="true"
             li ng-repeat="node in pages" ui-tree-node="" ng-include="'nodes_renderer.html'" data-id="{{node.id}}"
+.row ng-show="!pages.length"
+  .center-block
+    .jumbotron.vertical-center.text-center
+      .container
+        h1
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-sitemap.fa-stack-1x
+        p Pages represent your website hierarchy and their content embeds in Templates
+        h5 ng-show="!templates.length" Looks like you don't have templates yet
+        p
+          a.btn.btn-primary.btn-lg ng-show="templates.length" ui-sref="pages.new" role="button" Create first page
+          a.btn.btn-primary.btn-lg ng-show="!templates.length" ui-sref="templates.new" role="button" Create first template
