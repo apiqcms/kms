@@ -1,6 +1,6 @@
 <div class="wrapper">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-    <h2 class="form-signin-heading">KMS</h2>
+    <h2 class="form-signin-heading">APIQ</h2>
       <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: Kms::User.human_attribute_name(:email), required: '' %>
       <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: Kms::User.human_attribute_name(:password), required: '' %>
       <% if devise_mapping.rememberable? -%>

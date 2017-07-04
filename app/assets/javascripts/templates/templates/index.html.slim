@@ -5,7 +5,7 @@
         i.fa.fa-support
         = Kms::Template.model_name.human(count: 1.1)
         a.btn.btn-sm.btn-primary.pull-right ui-sref="templates.new" ng-show="currentUser.admin"
-          = I18n.t("add_template")
+          = I18n.t(:add_template)
       .widget-body.no-padding
         .table-responsive
           table.table
@@ -16,8 +16,6 @@
                     | {{ template.name }}
                 td
                   .btn-group.pull-right
-                    /a.btn.btn-sm.btn-info ui-sref="templates.edit({id: template.id})" ng-show="currentUser.admin"
-                      /i.fa.fa-pencil
                     a.btn.btn-sm.btn-danger ng-click="destroy(template)" ng-show="currentUser.admin"
                       i.fa.fa-times
 .row ng-show="!templates.length"
@@ -28,6 +26,6 @@
           span.fa-stack.fa-lg
             i.fa.fa-circle.fa-stack-2x
             i.fa.fa-support.fa-stack-1x
-        p Templates are where your common HTML code should be placed
+        p = I18n.t(:templates_description)
         p
-          a.btn.btn-primary.btn-lg ui-sref="templates.new" role="button" Create first template
+          a.btn.btn-primary.btn-lg ui-sref="templates.new" role="button" = I18n.t(:create_first_template)

@@ -96,7 +96,7 @@ table td {
 .jumbotron {
   background-color: inherit;
   i.fa-stack-1x {
-    color: darkred;
+    color: #ff5274;
   }
   i.fa-stack-2x {
     color: white;
@@ -104,4 +104,14 @@ table td {
 }
 .row.header .meta .page {
   padding-top: 17px;
+}
+svg.logo {
+  vertical-align: top;
+  margin-right: -10px;
+}
+ul.sidebar .sidebar-main {
+  height: 75px;
+  a {
+    line-height: 70px;
+  }
 }

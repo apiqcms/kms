@@ -29,6 +29,6 @@
           span.fa-stack.fa-lg
             i.fa.fa-circle.fa-stack-2x
             i.fa.fa-bookmark.fa-stack-1x
-        p Snippets are pieces of HTML that you could include in templates or pages
+        p = I18n.t(:snippets_description)
         p
-          a.btn.btn-primary.btn-lg ui-sref="snippets.new" role="button" Create first snippet
+          a.btn.btn-primary.btn-lg ui-sref="snippets.new" role="button" = I18n.t(:create_first_snippet)

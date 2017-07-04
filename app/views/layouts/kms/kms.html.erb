@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{{ 'KMS - ' + ($state.current.views['header'] || $state.current.views['header@']).template || 'KMS' }}</title>
+	<title>{{ 'APIQ - ' + ($state.current.views['header'] || $state.current.views['header@']).template || 'APIQ' }}</title>
   <%= stylesheet_link_tag    'kms/application', media: 'all', 'data-turbolinks-track' => true %>
   <script type="text/javascript">
      var CKEDITOR_BASEPATH = '/assets/ng-ckeditor/libs/ckeditor/';
@@ -26,7 +26,43 @@
       <ul class="sidebar">
         <li class="sidebar-main">
           <a href="#" ng-click="toggleSidebar()">
-            Kms
+						<svg
+						xmlns:dc="http://purl.org/dc/elements/1.1/"
+						xmlns:cc="http://creativecommons.org/ns#"
+						xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 1250 1250"
+						height="70"
+						width="70"
+						xml:space="preserve"
+						version="1.1"
+						preserveAspectRation="none"
+						id="svg2" class="logo"><metadata
+						id="metadata8"><rdf:RDF><cc:Work
+						rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+						rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+						id="defs6"><clipPath
+						id="clipPath16"
+						clipPathUnits="userSpaceOnUse"><path
+						id="path18"
+						d="m 0,1000 1000,0 L 1000,0 0,0 0,1000 Z" /></clipPath></defs><g
+						transform="matrix(1.25,0,0,-1.25,0,1250)"
+						id="g10"><g
+						id="g12"><g
+						clip-path="url(#clipPath16)"
+						id="g14"><g
+						transform="translate(448.853,608.1104)"
+						id="g20"><path
+						id="path22"
+						style="fill:#ff5274;fill-opacity:1;fill-rule:nonzero;stroke:none"
+						d="m 0,0 48.851,25.155 c 1.443,0.743 3.157,0.743 4.601,-0.001 L 102.295,0 c 3.633,-1.87 3.632,-7.063 0,-8.933 L 53.447,-34.088 c -1.443,-0.743 -3.157,-0.743 -4.6,0 L 0,-8.934 C -3.632,-7.063 -3.632,-1.871 0,0" /></g><g
+						transform="translate(512.4707,338.8955)"
+						id="g24"><path
+						id="path26"
+						style="fill:#ff5274;fill-opacity:1;fill-rule:nonzero;stroke:none"
+						d="m 0,0 c -7.808,-4.021 -17.133,-4.021 -24.94,0 l -240.019,123.607 62.093,31.978 161.765,-83.31 c 8.965,-4.617 18.798,-6.925 28.633,-6.925 9.832,0 19.666,2.308 28.626,6.925 L 177.926,155.585 240.02,123.607 0,0 Z m -138.643,226.155 36.404,-18.748 61.138,-31.487 c 8.965,-4.617 18.798,-6.926 28.633,-6.926 9.832,0 19.666,2.309 28.626,6.926 l 61.144,31.487 36.405,18.746 62.091,-31.975 -36.405,-18.749 -139.394,-71.784 c -7.808,-4.033 -17.13,-4.021 -24.941,0 l -139.389,71.784 -36.405,18.749 62.093,31.977 z m 112.084,95.218 1.622,0.835 c 7.807,4.025 17.129,4.014 24.94,0 L 1.626,321.372 111.576,264.748 77.3,247.097 75.171,246 38.766,227.252 -0.001,207.289 c -7.808,-4.026 -17.13,-4.015 -24.941,0 l -38.763,19.963 -36.403,18.747 -2.132,1.098 -34.275,17.651 109.956,56.625 z m 297.835,-174.174 -56.722,29.213 c 4.34,4.79 6.883,11.046 6.883,17.766 0,9.975 -5.507,19.015 -14.382,23.592 l -56.722,29.211 c 4.342,4.792 6.886,11.049 6.886,17.767 0,9.976 -5.51,19.015 -14.386,23.592 l -126.67,65.236 c -17.929,9.235 -39.337,9.24 -57.26,0 l -126.674,-65.236 -0.007,0 c -8.869,-4.577 -14.38,-13.616 -14.38,-23.592 0,-6.718 2.545,-12.975 6.889,-17.767 l -56.722,-29.211 -0.006,0 c -8.87,-4.571 -14.382,-13.611 -14.382,-23.592 0,-6.72 2.543,-12.975 6.883,-17.765 l -56.726,-29.214 c -8.868,-4.577 -14.379,-13.616 -14.379,-23.592 0,-9.975 5.511,-19.015 14.387,-23.592 L -41.098,-31.369 c 8.965,-4.617 18.795,-6.926 28.629,-6.926 9.832,0 19.665,2.309 28.627,6.926 l 255.126,131.39 c 8.867,4.571 14.375,13.611 14.375,23.586 0,9.976 -5.508,19.015 -14.383,23.592" /></g></g></g></g></svg>
+            APIQ
             <span class="menu-icon glyphicon glyphicon-transfer"></span>
           </a>
         </li>
@@ -47,23 +83,16 @@
         <% end %>
       </ul>
       <div class="sidebar-footer">
-        <div class="col-xs-4">
-          <a href="http://webgradus.ru" target="_blank">
-            &copy;Градус
+        <div class="col-xs-6">
+          <a href="mailto:hello@apiq.io">
+            <%= t(:need_help) %>
           </a>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
           <a ui-sref="help">
-            <%= t(:help) %>
+            <%= t(:documentation) %>
           </a>
         </div>
-        <!--
-        <div class="col-xs-4">
-          <a href="#">
-            Support
-          </a>
-        </div>
-        -->
       </div>
     </div>
 

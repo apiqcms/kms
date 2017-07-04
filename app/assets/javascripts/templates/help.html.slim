@@ -5,7 +5,7 @@
         a href="#liquor" Liquor
       - Kms::HelpService.templates.each_with_index do |(engine_class, _),index|
         li role="presentation" ng-class="{active: isActiveTab(#{index + 1})}" ng-click="setActive(#{index + 1})"
-          a href="##{engine_class.engine_name}" = engine_class.engine_name.humanize
+          a href="##{engine_class.engine_name}" = engine_class.engine_name.humanize.gsub('Kms', 'APIQ')
     div class="tab-content"
       div role="tabpanel" class="tab-pane" ng-class="{active: isActiveTab(0)}" id="liquor"
         .widget

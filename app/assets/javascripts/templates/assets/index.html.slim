@@ -98,6 +98,6 @@
           span.fa-stack.fa-lg
             i.fa.fa-circle.fa-stack-2x
             i.fa.fa-image.fa-stack-1x
-        p Upload stylesheets, javascripts, images and other files here (you can even pick multiple)
+        p = I18n.t(:assets_description)
         p
-          a.btn.btn-primary.btn-lg ui-sref="assets.new" role="button" Upload assets
+          a.btn.btn-primary.btn-lg ui-sref="assets.new" role="button" = I18n.t(:upload_assets)

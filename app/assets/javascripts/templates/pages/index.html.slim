@@ -37,8 +37,8 @@ script type="text/ng-template" id="nodes_renderer.html"
           span.fa-stack.fa-lg
             i.fa.fa-circle.fa-stack-2x
             i.fa.fa-sitemap.fa-stack-1x
-        p Pages represent your website hierarchy and their content embeds in Templates
-        h5 ng-show="!templates.length" Looks like you don't have templates yet
+        p = I18n.t(:pages_description)
+        h5 ng-show="!templates.length" = I18n.t(:no_templates_yet) 
         p
-          a.btn.btn-primary.btn-lg ng-show="templates.length" ui-sref="pages.new" role="button" Create first page
-          a.btn.btn-primary.btn-lg ng-show="!templates.length" ui-sref="templates.new" role="button" Create first template
+          a.btn.btn-primary.btn-lg ng-show="templates.length" ui-sref="pages.new" role="button" = I18n.t(:create_first_page)
+          a.btn.btn-primary.btn-lg ng-show="!templates.length" ui-sref="templates.new" role="button" = I18n.t(:create_first_template)
