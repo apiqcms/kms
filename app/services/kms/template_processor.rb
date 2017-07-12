@@ -5,11 +5,15 @@ module Kms
     end
 
     def process
-      template_document = Nokogiri::HTML::DocumentFragment.parse @template.content
+      template_document = Nokogiri::HTML @template.content
       template_document.search('script, link[rel="stylesheet"]').each do |tag|
-        tag.replace("{% '#{File.basename(tag['src'] || tag['href'])}' | asset_tag %}")
+        tag.replace "{{ '#{File.basename(tag['src'] || tag['href'])}' | asset_tag }}"
       end
-      template_document.to_html
+      # can't use Nokogiri for images because of Nokogiri escaping
+      template_document.search('img').each do |tag|
+        tag.replace %Q(<img src="{{ '#{File.basename(tag['src'])}' | asset_path }}" alt="#{tag['alt']}">)
+      end
+      template_document.to_html.gsub(/(%7B|%7D|%20|%7C)/,'%7B' => '{', '%7D' => '}', '%20' => ' ', '%7C' => '|')
     end
   end
 end

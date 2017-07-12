@@ -2,15 +2,16 @@ module Kms
   class TemplatesController < ApplicationController
     load_and_authorize_resource
     def index
-      render json: Template.all.to_json
+      render json: Template.all
     end
 
     def create
       @template = Template.new(template_params)
+      @template.content = TemplateProcessor.new(@template).process
       if @template.save
-        render json: @template.to_json
+        head :no_content
       else
-        render json: @template.to_json(methods: :errors), status: :unprocessable_entity
+        render json: {errors: @template.errors}.to_json, status: :unprocessable_entity
       end
     end
 
