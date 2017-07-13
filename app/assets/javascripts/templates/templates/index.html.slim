@@ -12,7 +12,9 @@
             tbody
               tr ng-repeat="template in templates"
                 td style="width: 80%"
-                  a ui-sref="templates.edit({id: template.id})"
+                  a ui-sref="templates.edit({id: template.id})" ng-show="currentUser.admin"
+                    | {{ template.name }}
+                  span ng-hide="currentUser.admin"
                     | {{ template.name }}
                 td
                   .btn-group.pull-right

@@ -13,11 +13,12 @@ Kms::Engine.routes.draw do
       end
     end
     resources :assets, format: true, as: :kms_assets
-    resources :users, only: [:index, :destroy], format: true
+    resources :users, only: [:index, :destroy], format: true do
+      post :from_kms, on: :collection, action: :create
+      get :kms_user, on: :collection
+    end
     resources :resources, only: :index, format: true
     resource :settings, only: [:show, :update], format: true
-    get '/users/kms_user' => "users#kms_user", format: true
-    post "/users/from_kms" => "users#create", format: true
   end
   post "/assets/ckeditor" => "assets#ckeditor"
   constraints(format: "html") do

@@ -1,5 +1,6 @@
 module Kms
   class SnippetsController < ApplicationController
+    load_and_authorize_resource
     respond_to :json
 
     def index
@@ -38,7 +39,7 @@ module Kms
     protected
 
     def snippet_params
-      params.require(:snippet).permit!
+      params.require(:snippet).permit(:name, :slug, :content)
     end
   end
 end

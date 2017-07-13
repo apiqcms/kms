@@ -1,10 +1,12 @@
 FactoryGirl.define do
-  factory :user, class: Kms::User do
-    email "admin@example.com"
-    password "password"
-    password_confirmation "password"
-    factory :admin do
-      role 'admin'
+  factory :invalid_user, class: Kms::User do
+    sequence(:email){|n| "admin#{n}@example.com" }
+    factory :user, class: Kms::User do
+      password "password"
+      password_confirmation "password"
+      factory :admin do
+        role 'admin'
+      end
     end
   end
 end

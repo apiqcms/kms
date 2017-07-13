@@ -3,32 +3,35 @@ module Kms
     before_action :authenticate_kms_user!
     load_and_authorize_resource
     skip_authorize_resource only: :kms_user
+    wrap_parameters :user, include: [:email, :password, :password_confirmation, :role]
 
     def index
-      render json: User.all.to_json(except: [:created_at, :updated_at], methods: :localized_role)
+      render json: User.all
     end
 
     def create
-      user_params.merge!(password: params[:password], password_confirmation: params[:password_confirmation]) if params[:password]
       @user = User.new(user_params)
-      @user.save
-      render json: @user.to_json
+      if @user.save
+        head :no_content
+      else
+        render json: {errors: @user.errors}.to_json, status: :unprocessable_entity
+      end
     end
 
-    def destroy 
+    def destroy
       @user = User.find(params[:id])
       @user.destroy
-      render json: @user.to_json
+      head :no_content
     end
 
     def kms_user
-      render json: current_kms_user.to_json
+      render json: current_kms_user
     end
 
     protected
 
     def user_params
-      params.require(:user).permit!
+      params.require(:user).permit(:email, :password, :password_confirmation, :role)
     end
 
 

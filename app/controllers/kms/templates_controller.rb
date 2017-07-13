@@ -38,7 +38,7 @@ module Kms
     protected
 
     def template_params
-      params.require(:template).permit(:name,:content)
+      params.require(:template).permit(:name, :content)
     end
   end
 end

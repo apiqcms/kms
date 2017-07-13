@@ -10,6 +10,7 @@ class Ability
     else
       can :manage, Kms::Page
       can :manage, Kms::Asset
+      can :index, Kms::Template
       Kms::AbilityService.abilities.each do |ability_block|
         instance_eval(&ability_block)
       end

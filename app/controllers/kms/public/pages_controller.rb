@@ -1,5 +1,6 @@
 module Kms
   class Public::PagesController < ActionController::Base
+    protect_from_forgery with: :exception
 
     before_action :eval_externals
 

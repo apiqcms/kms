@@ -1,5 +1,7 @@
 module Kms
   class Public::SearchController < ActionController::Base
+    protect_from_forgery with: :exception
+
     def search
       results = Page.advanced_search(params[:query]).to_drop#.split(' ').join('|').to_drop
       if params[:result_page] and @page = Page.find_by_fullpath(params[:result_page])
