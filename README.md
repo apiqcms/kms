@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/kms.svg)](https://badge.fury.io/rb/kms) [![Build Status](https://travis-ci.org/apiqcms/kms.svg?branch=master)](https://travis-ci.org/apiqcms/kms) [![Code Climate](https://codeclimate.com/github/apiqcms/kms/badges/gpa.svg)](https://codeclimate.com/github/apiqcms/kms)
 [![Dependency Status](https://gemnasium.com/badges/github.com/apiqcms/kms.svg)](https://gemnasium.com/github.com/apiqcms/kms)
 
-KMS is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it KMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind KMS: minimal core, extendable via extensions (engines). So you can take only what you need.
+APIQ is a modern and flexible Ruby on Rails content management system with modular approach. It utilizes the most latest features from Rails and PostgreSQL (such as json column type, for example). Mostly inspired by LocomotiveCMS, but in contrast with it APIQ CMS relies on robust PostgreSQL database and doesn't provide all-in-one solution. The basic idea behind APIQ CMS: minimal core, extendable via extensions (engines). So you can take only what you need.
 
 ![Gif](https://www.apiq.io/images/apiq_presentation_001.gif)
 
@@ -63,13 +63,13 @@ Backend (as content manager): http://demo.apiq.io/kms (login/password: content@a
 9. Open your browser at **http://localhost:3000/kms** and sign up first admin user.
 
 ## Getting started
-Please watch this video to start working in KMS:
+Please watch this video to start working in APIQ:
 
-[![Getting started in KMS - Ruby on Rails CMS](http://img.youtube.com/vi/WPZoWyd-thE/0.jpg)](https://youtu.be/WPZoWyd-thE "Getting started in KMS - Ruby on Rails CMS")
+[![Getting started in APIQ - Ruby on Rails CMS](http://img.youtube.com/vi/WPZoWyd-thE/0.jpg)](https://youtu.be/WPZoWyd-thE "Getting started in KMS - Ruby on Rails CMS")
 
 ## Amazon S3 for assets storage
 
-By default, KMS offers local file system as storage for your assets. But you could use Amazon S3 as well. Just follow these simple steps:
+By default, APIQ offers local file system as storage for your assets. But you could use Amazon S3 as well. Just follow these simple steps:
 
 1. Add to Gemfile special gem for storing secrets. For example, this could be `dotenv-rails` or `figaro`. Don't forget to `bundle install`
 
@@ -91,11 +91,11 @@ By default, KMS offers local file system as storage for your assets. But you cou
             ...
 
 ## Extensions
-* [kms_models](https://github.com/webgradus/kms_models)
-* [kms_feedback](https://github.com/webgradus/kms_feedback)
-* [kms_catalog](https://github.com/webgradus/kms_catalog)
-* [kms_shop](https://github.com/webgradus/kms_shop)
-* [kms_seo](https://github.com/webgradus/kms_seo)
+* [kms_models](https://github.com/apiqcms/kms_models)
+* [kms_feedback](https://github.com/apiqcms/kms_feedback)
+* [kms_catalog](https://github.com/apiqcms/kms_catalog)
+* [kms_shop](https://github.com/apiqcms/kms_shop)
+* [kms_seo](https://github.com/apiqcms/kms_seo)
 
 ## Contributing
 
