@@ -7,6 +7,7 @@ script type="text/ng-template" id="nodes_renderer.html"
       a ui-sref="pages.edit({id: node.id})" data-nodrag=""
         | {{node.title}}&nbsp;
       i.fa.fa-cogs style="font-size:18px !important" ng-if="node.templatable"
+      i.fa.fa-exclamation-circle style="font-size:18px !important" ng-if="node.slug == '404'"
     div style="width:30%;float:left;height:30px;line-height:30px;"
       | {{ node.fullpath }}
     .btn-group.pull-right
@@ -38,7 +39,7 @@ script type="text/ng-template" id="nodes_renderer.html"
             i.fa.fa-circle.fa-stack-2x
             i.fa.fa-sitemap.fa-stack-1x
         p = I18n.t(:pages_description)
-        h5 ng-show="!templates.length" = I18n.t(:no_templates_yet) 
+        h5 ng-show="!templates.length" = I18n.t(:no_templates_yet)
         p
           a.btn.btn-primary.btn-lg ng-show="templates.length" ui-sref="pages.new" role="button" = I18n.t(:create_first_page)
           a.btn.btn-primary.btn-lg ng-show="!templates.length" ui-sref="templates.new" role="button" = I18n.t(:create_first_template)

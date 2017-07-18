@@ -2,26 +2,16 @@ include ActionView::Helpers::TextHelper
 Kms::ExternalsRegistry.register(:request) {|request, controller| Liquor::Rails::Request.new(request, controller) }
 Kms::ExternalsRegistry.register(:index) {|_,_| Kms::Page.find_by_slug!("index").to_drop }
 Kms::ExternalsRegistry.register(:page) do |request,_|
-    page = Kms::Page.published.find_by_fullpath(request.params[:path] || Kms::Page::INDEX_FULLPATH)
-    unless page # in case of templatable page
-      page_path = request.params[:path] || ''
-      parent_page_path = File.dirname(page_path)
-      parent_page_path = Kms::Page::INDEX_FULLPATH if parent_page_path == "."
-      parent_page = Kms::Page.published.find_by_fullpath!(parent_page_path)
-      templatable_pages = parent_page.children.where(templatable: true)
-      page = templatable_pages.detect do |templatable_page|
-        templatable_page.fetch_item!(File.basename(page_path))
-      end
-    end
-    page ? page.to_drop : raise(ActiveRecord::RecordNotFound)
+    page_fetcher = Kms::PageFetcher.new(request)
+    page_fetcher.fetch!
 end
 Kms::ExternalsRegistry.register(:item) do |request,controller|
   page = Kms::ExternalsRegistry.externals[:page].call(request, controller)
   if page && page.source.templatable?
-    page.source.fetch_item!(File.basename(request.params[:path])).try(:to_drop)
+    page.source.fetch_item(File.basename(request.params[:path])).try(:to_drop)
   end
 end
-Kms::ExternalsRegistry.register(:search) do |request,controller|
+Kms::ExternalsRegistry.register(:search) do |request,_|
     results = []
     if request.params[:query].present?
         key_words = request.params[:query].split(' ')

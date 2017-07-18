@@ -7,6 +7,7 @@ FactoryGirl.define do
         </head>
         <body>
           <img src="images/slide.jpg" alt="">
+          {% yield %}
           <script src="compressed.js"></script>
         </body>
       </html>

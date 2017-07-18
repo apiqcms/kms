@@ -5,11 +5,11 @@ module Kms
     before_action :eval_externals
 
     def show
-        page_result = Kms.template_manager.render(@page.register_id, @externals)
-        result   = Kms.template_manager.render(@template.register_id, @externals.
-                                merge(_inner_template: page_result))
+      page_result = Kms.template_manager.render(@page.register_id, @externals)
+      result = Kms.template_manager.render(@template.register_id,
+        @externals.merge(_inner_template: page_result))
 
-      render html: result.html_safe
+      render html: result.html_safe, status: (@page.not_found? ? :not_found : :ok)
     end
 
     protected

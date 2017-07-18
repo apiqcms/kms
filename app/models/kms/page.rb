@@ -4,8 +4,9 @@ module Kms
     include CompileTemplates
     include Positioned
 
-    INDEX_SLUG = "index".freeze
-    INDEX_FULLPATH = ""
+    INDEX_SLUG = 'index'.freeze
+    INDEX_FULLPATH = ''
+    NOT_FOUND_SLUG = '404'.freeze
 
     scope :published, lambda { where(published: true) }
     scope :listed, lambda { where(hidden: false) }
@@ -19,8 +20,16 @@ module Kms
 
     has_ancestry
 
+    def self.not_found_page
+      where(slug: NOT_FOUND_SLUG).first
+    end
+
     def index?
       slug == INDEX_SLUG
+    end
+
+    def not_found?
+      slug == NOT_FOUND_SLUG
     end
 
     def build_fullpath
@@ -39,9 +48,9 @@ module Kms
     end
 
     # fetch item by slug
-    def fetch_item!(slug)
+    def fetch_item(slug)
       return nil unless templatable?
-      templatable_type.constantize.find_by_slug!(slug)
+      templatable_type.constantize.find_by_slug(slug)
     end
 
   end
