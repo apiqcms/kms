@@ -1,7 +1,7 @@
 module Kms
   class PageFetcher
-    def initialize(request)
-      @path = request.params[:path] || Page::INDEX_FULLPATH
+    def initialize(path)
+      @path = path
     end
 
     def fetch!

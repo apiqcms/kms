@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe Kms::PageFetcher, type: :service do
   describe '#fetch' do
-    let(:request) {
-      request = ActionController::TestRequest.new({host:  'example.com', params: {path: '/about'}, request_uri: '/about', 'rack.input' => StringIO.new}, ActionController::TestRequest.new_session)
-      request.tap {|r| r.path_parameters = {path: 'about' } }
-    }
-    subject { Kms::PageFetcher.new(request) }
+    subject { Kms::PageFetcher.new('about') }
     context 'when there"s a page with exact fullpath' do
       it "returns current page drop by given path" do
         page = FactoryGirl.create(:page)

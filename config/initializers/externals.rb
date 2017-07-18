@@ -2,7 +2,7 @@ include ActionView::Helpers::TextHelper
 Kms::ExternalsRegistry.register(:request) {|request, controller| Liquor::Rails::Request.new(request, controller) }
 Kms::ExternalsRegistry.register(:index) {|_,_| Kms::Page.find_by_slug!("index").to_drop }
 Kms::ExternalsRegistry.register(:page) do |request,_|
-    page_fetcher = Kms::PageFetcher.new(request)
+    page_fetcher = Kms::PageFetcher.new(request.params[:path] || Kms::Page::INDEX_FULLPATH)
     page_fetcher.fetch!
 end
 Kms::ExternalsRegistry.register(:item) do |request,controller|
