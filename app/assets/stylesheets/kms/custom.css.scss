@@ -64,6 +64,10 @@ table td {
 }
 .CodeMirror {
   height: 500px;
+  pre {
+    font-family: 'casperregular';
+    span.cm-tag { font-family: monospace; }
+  }
 }
 .assets-block {
   a.btn.add-asset {
