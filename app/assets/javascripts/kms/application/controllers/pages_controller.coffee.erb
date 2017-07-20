@@ -1,6 +1,5 @@
-PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService) ->
+PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService, TransliterationService) ->
   $scope.editorOptions =
-    #filebrowserBrowseUrl: '/assets/asset/file'
     filebrowserUploadUrl: '/kms/assets/ckeditor'
     entities: false
   $scope.codeMirrorOptions =
@@ -14,6 +13,10 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
       "Esc": (cm)->
         if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
+
+  $scope.$watch 'page.title', (newValue, oldValue) ->
+    if newValue? and $scope.page.slug != 'index' and !$scope.page.id
+      $scope.page.slug = _.kebabCase TransliterationService.translit(newValue, 5).replace(/`/g, '')
 
   Restangular.all('resources').getList().then (templatable_types)->
     $scope.templatable_types = templatable_types
@@ -62,6 +65,8 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
       $scope.pages = $scope.exceptCurrentPage($scope.pages)
       $scope.parentPages = $scope.exceptCurrentPage($scope.parentPages)
     $scope.page.slug = "index" if $scope.pages.length == 0
+    if $scope.parentPages.length > 0 and $scope.page and !$scope.page.parent_id
+      $scope.page.parent_id = $scope.parentPages[0].id
 
 
   $scope.create = ->
@@ -93,4 +98,4 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
   }
 
 angular.module('KMS')
-    .controller('PagesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', PagesController])
+    .controller('PagesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'TransliterationService', PagesController])

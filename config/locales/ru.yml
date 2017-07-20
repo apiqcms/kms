@@ -159,6 +159,12 @@ ru:
       currency:
         main_description: 'Форматирование полей, хранящих денежные значения. Возможные опции - precision, delimiter, separator, format, unit:'
   activerecord:
+    errors:
+      models:
+        kms/page:
+          attributes:
+            template:
+              required: 'не может быть пустым'
     models:
       kms/template:
         one: "Шаблон"

@@ -159,6 +159,12 @@ en:
       currency:
         main_description: 'Formats currency values. Possible options: precision, delimiter, separator, format, unit:'
   activerecord:
+    errors:
+      models:
+        kms/page:
+          attributes:
+            template:
+              required: "can't be blank"
     models:
       kms/template:
         one: "Template"
