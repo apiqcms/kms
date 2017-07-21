@@ -1,3 +1,20 @@
+## Version 1.0.0 Unreleased
+
+* [changed] remove bunch of dependencies - less-rails, bower-rails and therubyracer
+* [changed] updated gems dependencies
+* [changed] updated Rails dependency (supporting Rails 5.1)
+* [changed] update angular-ui-select
+* [fixed] fix pages drag'n'drop issue allowing any other page to look like root page
+* [fixed] Fix incorrect layout when model name is too long
+* [added] some good looking blank slate screens
+* [added] Show snippet slug/identifier in snippets table
+* [changed] remove KMS mentions, a bit of translations additions + logo
+* [added] Smart template creation
+* [added] better specs coverage
+* [added] ability to add custom 404 page as regular page with 404 slug
+* [changed] use Casper font for text in CodeMirror
+* [added] add TransliterationService and auto slug generation on page title typing
+
 ## Version 0.9.0 2017-05-25
 
 * [changed] extract set_position method to concern - used in kms as well as in some extensions
