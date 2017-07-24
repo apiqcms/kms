@@ -6,9 +6,11 @@ FactoryGirl.define do
     published true
     template
     factory :index_page, class: Kms::Page do
+      title 'Index'
       slug 'index'
     end
     factory :page, class: Kms::Page do
+      title 'About'
       slug "about"
       association :parent, factory: :index_page
     end

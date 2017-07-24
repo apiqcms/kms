@@ -6,7 +6,7 @@ module Kms
     def permalink
       templatable_page = Kms::Page.where(templatable_type: self.class.name).first
       if templatable_page
-        Pathname.new(templatable_page.parent.fullpath).join(self.slug.to_s).to_s
+        Pathname.new(templatable_page.parent.fullpath).join(slug.to_s).to_s
       end
     end
   end
