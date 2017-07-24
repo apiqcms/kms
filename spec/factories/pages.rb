@@ -5,13 +5,14 @@ FactoryGirl.define do
     HTML
     published true
     template
+    slug nil
     factory :index_page, class: Kms::Page do
       title 'Index'
       slug 'index'
     end
     factory :page, class: Kms::Page do
-      title 'About'
-      slug "about"
+      sequence(:title){|n| "About#{n}" }
+      sequence(:slug){|n| "about#{n}" }
       association :parent, factory: :index_page
     end
     factory :page_404, class: Kms::Page do

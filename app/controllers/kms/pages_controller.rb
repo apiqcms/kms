@@ -4,37 +4,36 @@ module Kms
     wrap_parameters :page, include: [:title, :slug, :content, :published, :template_id, :templatable,:templatable_type,:position,:hidden, :parent_id]
 
     def index
-      #render json: Page.order("created_at asc").to_json(methods: :parent_id, except: :ancestry)
-      render json: Page.arrange_serializable(order: :position).to_json
+      render json: Page.arrange_serializable(order: :position)
     end
 
     def create
       @page = Page.new(page_params)
       if @page.save
-        render json: @page.to_json
+        head :no_content
       else
-        render json: @page.to_json(except: :ancestry, methods: :errors), status: :unprocessable_entity
+        render json: {errors: @page.errors}.to_json, status: :unprocessable_entity
       end
     end
 
     def update
       @page = Page.find(params[:id])
       if @page.update_attributes(page_params)
-        render json: @page.to_json
+        head :no_content
       else
-        render json: @page.to_json(except: :ancestry, methods: :errors), status: :unprocessable_entity
+        render json: {errors: @page.errors}.to_json, status: :unprocessable_entity
       end
     end
 
     def show
       @page = Page.find(params[:id])
-      render json: @page.to_json(methods: :parent_id, except: :ancestry)
+      render json: @page
     end
 
     def destroy
       @page = Page.find(params[:id])
       @page.destroy
-      render json: @page.to_json
+      head :no_content
     end
 
     def sorting
@@ -44,7 +43,7 @@ module Kms
         p.update_attribute(:position, index)
         sort(page["id"], page["children"]) if page["children"].present?
       end
-      render json: Page.arrange_serializable(order: :position).to_json
+      render json: Page.arrange_serializable(order: :position)
     end
 
     protected
@@ -61,7 +60,7 @@ module Kms
     end
 
     def page_params
-      params.require(:page).permit!
+      params.require(:page).permit(:title, :slug, :content, :published, :hidden, :template_id, :parent_id, :position, :templatable, :templatable_type)
     end
   end
 end

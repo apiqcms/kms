@@ -6,7 +6,8 @@ describe Kms::PageFetcher, type: :service do
     context 'when there"s a page with exact fullpath' do
       it "returns current page drop by given path" do
         page = FactoryGirl.create(:page)
-        result_page = subject.fetch!
+        fetcher = Kms::PageFetcher.new(page.slug)
+        result_page = fetcher.fetch!
         expect(result_page).to be_instance_of(Kms::PageDrop)
         expect(result_page.source).to be_eql(page)
       end

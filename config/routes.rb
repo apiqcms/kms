@@ -5,9 +5,9 @@ Kms::Engine.routes.draw do
     module: :devise,
     controllers: { registrations: "users/registrations" }
   constraints(format: "json") do
-    resources :templates, format: true
+    resources :templates, except: [:new, :edit], format: true
     resources :snippets, except: [:new, :edit], format: true
-    resources :pages, format: true do
+    resources :pages, except: [:new, :edit], format: true do
       collection do
         post 'sorting'
       end
