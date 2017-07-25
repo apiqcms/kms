@@ -2,14 +2,16 @@ module Kms
   class AssetsController < ApplicationController
     load_and_authorize_resource
     skip_before_action :verify_authenticity_token, only: :ckeditor
+    wrap_parameters :asset, include: [:file, :text, :performing_plain_text]
 
     def index
-      render json: Asset.all.to_json(methods: [:filename, :url])
+      render json: Asset.all
     end
 
     def create
       @asset = Asset.new(asset_params)
       if @asset.save
+        # special json for ng-flow
         render json: {success: true, files: [@asset]}.to_json
       else
         render text: '', status: :unprocessable_entity
@@ -31,28 +33,25 @@ module Kms
 
     def update
       @asset = Asset.find(params[:id])
-      asset_params.merge!(text: params[:text], performing_plain_text: params[:performing_plain_text]) if params[:text]
-      @asset.update_attributes(asset_params)
-      render json: @asset.to_json
+      @asset.update(asset_params)
+      render json: @asset
     end
 
     def show
       @asset = Asset.find(params[:id])
-      attrs = {}
-      attrs.merge!(methods: [:filename, :text]) if @asset.stylesheet_or_javascript?
-      render json: @asset.to_json(attrs)
+      render json: @asset
     end
 
     def destroy
       @asset = Asset.find(params[:id])
       @asset.destroy
-      render json: @asset.to_json
+      head :no_content
     end
 
     protected
 
     def asset_params
-      params.require(:asset).permit!
+      params.require(:asset).permit(:file, :text, :performing_plain_text)
     end
   end
 end

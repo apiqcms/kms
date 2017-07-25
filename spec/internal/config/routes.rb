@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         post :from_kms, on: :collection, action: :create
         get :kms_user, on: :collection
       end
+      resources :assets, except: [:new, :edit], format: true, as: :kms_assets
     end
   end
 end

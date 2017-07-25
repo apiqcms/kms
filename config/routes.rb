@@ -12,7 +12,7 @@ Kms::Engine.routes.draw do
         post 'sorting'
       end
     end
-    resources :assets, format: true, as: :kms_assets
+    resources :assets, except: [:new, :edit], format: true, as: :kms_assets
     resources :users, only: [:index, :destroy], format: true do
       post :from_kms, on: :collection, action: :create
       get :kms_user, on: :collection

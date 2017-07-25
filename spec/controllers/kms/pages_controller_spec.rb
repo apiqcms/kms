@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Kms::PagesController, type: :controller do
-    login_admin
+    login_user
 
     describe 'GET index' do
       it 'returns pages json representation' do

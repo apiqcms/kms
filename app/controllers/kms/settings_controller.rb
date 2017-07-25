@@ -8,7 +8,7 @@ module Kms
 
     def update
       @settings = Settings.instance
-      if @settings.update_attributes(settings_params)
+      if @settings.update(settings_params)
         render json: @settings
       else
         render json: @settings.to_json(methods: :errors), status: :unprocessable_entity

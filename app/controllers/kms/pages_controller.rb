@@ -18,7 +18,7 @@ module Kms
 
     def update
       @page = Page.find(params[:id])
-      if @page.update_attributes(page_params)
+      if @page.update(page_params)
         head :no_content
       else
         render json: {errors: @page.errors}.to_json, status: :unprocessable_entity

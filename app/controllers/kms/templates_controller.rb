@@ -17,7 +17,7 @@ module Kms
 
     def update
       @template = Template.find(params[:id])
-      if @template.update_attributes(template_params)
+      if @template.update(template_params)
         render json: @template.to_json
       else
         render json: @template.to_json(methods: :errors), status: :unprocessable_entity
