@@ -64,11 +64,16 @@ table td {
 }
 .CodeMirror {
   height: 500px;
-  pre {
-    font-family: 'casperregular';
-    span.cm-tag { font-family: monospace; }
-  }
+  font-size: 16px;
+  // pre {
+  //   font-family: 'casperregular';
+  // }
 }
+// .cm-s-default {
+//   .cm-tag, .cm-attribute, .cm-string, .cm-comment {
+//     font-family: monospace;
+//   }
+// }
 .assets-block {
   a.btn.add-asset {
     border: none;
