@@ -1,9 +1,31 @@
 .row
-  .col-lg-12
+  .col-lg-12 ng-if="asset.performing_plain_text"
     form role="form"
       .form-group
         small = I18n.t(:toggle_fullscreen_mode_instruction)
-        textarea#text.form-control ng-if="asset.performing_plain_text" ng-model="asset.text" rows="40" ui-codemirror="editorOptions(asset)"
+        textarea#text.form-control ng-model="asset.text" rows="40" ui-codemirror="editorOptions(asset)"
       .btn-group
         button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_asset)
         button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_asset_and_continue)
+  .center-block ng-unless="asset.performing_plain_text" flow-init="{headers: setHeaders, singleFile: true, uploadMethod: 'PUT', target: updateTarget, initFileFn: initFlowFile}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')" flow-drop=""
+    .jumbotron.vertical-center.text-center
+      .container
+        h1
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-image.fa-stack-1x
+        p
+          | {{ asset.filename }}
+        p
+          button.btn.btn-primary.btn-lg flow-btn="" = I18n.t(:update_asset)
+        table.table.table-striped.files.ng-cloak
+          tr ng-repeat="file in $flow.files"
+            td style="width: 10%"
+              img flow-img="file" width="50" height="50" ng-show="isImageType(file)"
+            td style="width: 50%"
+              | {{ file.name }}
+            td style="width: 40%"
+              .progress.progress-striped ng-class="{active: file.isUploading()}"
+                .progress-bar role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}"
+            /td
+              /| {{ file.msg }}

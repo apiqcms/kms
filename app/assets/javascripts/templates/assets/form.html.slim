@@ -1,0 +1,23 @@
+.center-block flow-init="{headers: setHeaders}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')" flow-drop=""
+  .jumbotron.vertical-center.text-center
+    .container
+      h1
+        span.fa-stack.fa-lg
+          i.fa.fa-circle.fa-stack-2x
+          i.fa.fa-image.fa-stack-1x
+      p = I18n.t(:assets_description)
+      p
+        button.btn.btn-primary.btn-lg flow-btn="" = I18n.t(:upload_assets)
+      p
+        h4 = I18n.t(:assets_drop_description)
+      table.table.table-striped.files.ng-cloak
+        tr ng-repeat="file in $flow.files"
+          td style="width: 10%"
+            img flow-img="file" width="50" height="50" ng-show="isImageType(file)"
+          td style="width: 50%"
+            | {{ file.name }}
+          td style="width: 40%"
+            .progress.progress-striped ng-class="{active: file.isUploading()}"
+              .progress-bar role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}"
+          /td
+            /| {{ file.msg }}

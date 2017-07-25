@@ -51,6 +51,7 @@ en:
   no_templates_yet: "Looks like you don't have templates yet"
   snippets_description: "Snippets are pieces of HTML that you could include in templates or pages"
   assets_description: "Upload stylesheets, javascripts, images and other files here (you can even pick multiple)"
+  assets_drop_description: "or just drag and drop them"
   roles:
     admin: "Admin"
     content_manager: "Content manager"

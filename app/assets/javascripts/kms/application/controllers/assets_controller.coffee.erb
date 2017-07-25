@@ -12,8 +12,10 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
 
   $scope.store = Restangular.all('assets')
   $scope.store.getList().then (assets)->
+    $scope.assetsArray = assets
     $scope.assets = _.groupBy assets, (asset)->
       $scope.getAssetGroup(asset)
+    $state.go('assets.new') if $scope.assetsArray.length == 0
 
   if $stateParams.id
     $scope.store.get($stateParams.id).then (asset)->
@@ -22,12 +24,6 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
         $scope.asset.performing_plain_text = true
   else
     {}
-
-  $scope.create = ->
-    $scope.store.post($scope.asset).then ->
-      $state.go('assets')
-    ,(response)->
-      Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
   $scope.update = ($event)->
     $scope.asset.put().then ->
@@ -39,6 +35,7 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
   $scope.destroy = (asset)->
     if(confirm('<%= I18n.t(:are_you_sure) %>'))
       asset.remove().then ->
+        $scope.assetsArray = _.without($scope.assetsArray, asset)
         for content_type, values of $scope.assets
           $scope.assets[content_type] = _.without($scope.assets[content_type], asset)
 
@@ -66,7 +63,14 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
       "other"
 
   $scope.isImageType = (file)->
-    ['jpg', 'jpeg', 'gif','png'].indexOf(file.getType()) >= 0
+    ['jpg', 'jpeg', 'gif', 'png'].indexOf(file.getType()) >= 0
+
+  $scope.updateTarget = (flowFile)->
+    "/kms/assets/#{flowFile.id}.json"
+
+  $scope.initFlowFile = (flowFile)->
+    flowFile['id'] = $scope.asset.id
+    flowFile
 
 
 angular.module('KMS')

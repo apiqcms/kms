@@ -1,4 +1,4 @@
-.row ng-show="assets.length"
+.row ng-show="assetsArray.length"
   .col-lg-12
     .widget.assets-block
       .widget-header
@@ -14,7 +14,8 @@
                     td style="width: 10%"
                       img.img-responsive ng-src="{{ asset.file.url }}"
                     td style="width: 40%"
-                      | {{ asset.filename }}
+                      a ui-sref="assets.edit({id: asset.id})"
+                        | {{ asset.filename }}
                     td style="width: 40%"
                       | {{asset.file.url}}
                     td
@@ -64,7 +65,8 @@
                 tbody
                   tr ng-repeat="asset in assets.fonts"
                     td style="width: 40%"
-                      | {{ asset.filename }}
+                      a ui-sref="assets.edit({id: asset.id})"
+                        | {{ asset.filename }}
                     td style="width: 40%"
                       | {{asset.file.url}}
                     td
@@ -80,7 +82,8 @@
                 tbody
                   tr ng-repeat="asset in assets.other"
                     td style="width: 40%"
-                      | {{ asset.filename }}
+                      a ui-sref="assets.edit({id: asset.id})"
+                        | {{ asset.filename }}
                     td style="width: 40%"
                       | {{asset.file.url}}
                     td
@@ -90,14 +93,3 @@
           li.pull-right
             a.btn.btn-sm.btn-primary.add-asset ui-sref="assets.new"
               = I18n.t("add_asset")
-.row ng-show="!assets.length"
-  .center-block
-    .jumbotron.vertical-center.text-center
-      .container
-        h1
-          span.fa-stack.fa-lg
-            i.fa.fa-circle.fa-stack-2x
-            i.fa.fa-image.fa-stack-1x
-        p = I18n.t(:assets_description)
-        p
-          a.btn.btn-primary.btn-lg ui-sref="assets.new" role="button" = I18n.t(:upload_assets)
