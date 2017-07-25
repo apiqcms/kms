@@ -12,12 +12,12 @@
                 tbody
                   tr ng-repeat="asset in assets.images"
                     td style="width: 10%"
-                      img.img-responsive ng-src="{{ asset.file.url }}"
+                      img.img-responsive ng-src="{{ asset.url }}"
                     td style="width: 40%"
                       a ui-sref="assets.edit({id: asset.id})"
                         | {{ asset.filename }}
                     td style="width: 40%"
-                      | {{asset.file.url}}
+                      | {{asset.url}}
                     td
                       .btn-group.pull-right
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
@@ -34,7 +34,7 @@
                       a ui-sref="assets.edit({id: asset.id})"
                         | {{ asset.filename }}
                     td style="width: 40%"
-                      | {{asset.file.url}}
+                      | {{asset.url}}
                     td
                       .btn-group.pull-right
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
@@ -51,7 +51,7 @@
                       a ui-sref="assets.edit({id: asset.id})"
                         | {{ asset.filename }}
                     td style="width: 40%"
-                      | {{asset.file.url}}
+                      | {{asset.url}}
                     td
                       .btn-group.pull-right
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
@@ -68,7 +68,7 @@
                       a ui-sref="assets.edit({id: asset.id})"
                         | {{ asset.filename }}
                     td style="width: 40%"
-                      | {{asset.file.url}}
+                      | {{asset.url}}
                     td
                       .btn-group.pull-right
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
@@ -85,7 +85,7 @@
                       a ui-sref="assets.edit({id: asset.id})"
                         | {{ asset.filename }}
                     td style="width: 40%"
-                      | {{asset.file.url}}
+                      | {{asset.url}}
                     td
                       .btn-group.pull-right
                         a.btn.btn-sm.btn-danger ng-click="destroy(asset)"
