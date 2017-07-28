@@ -29,8 +29,6 @@ Backend (as content manager): http://demo.apiq.io/kms (login/password: content@a
 - [x] Simple and Powerful Template language - [Liquor](https://github.com/evilmartians/liquor)
 - [x] Built-in documentation/help
 
-![Screenshot](http://webgradus.com/images/KMS.jpg)
-
 ## Installation
 
 1. Add to Gemfile

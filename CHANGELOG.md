@@ -1,4 +1,4 @@
-## Version 1.0.0 Unreleased
+## Version 1.0.0 2017-07-28
 
 * [changed] remove bunch of dependencies - less-rails, bower-rails and therubyracer
 * [changed] updated gems dependencies
@@ -12,8 +12,13 @@
 * [added] Smart template creation
 * [added] better specs coverage
 * [added] ability to add custom 404 page as regular page with 404 slug
-* [changed] use Casper font for text in CodeMirror
 * [added] add TransliterationService and auto slug generation on page title typing
+* [changed] refactored SearchService
+* [changed] update flow.js and ng-flow
+* [changed] better UX for assets uploading
+* [added] allow to update non-js and non-css files as well
+* [changed] increase CodeMirror font size
+* [added] enable 3 CodeMirror addons for Templates, Pages, Snippets and Assets - active-line, matchbrackets and autoCloseBrackets
 
 ## Version 0.9.0 2017-05-25
 
