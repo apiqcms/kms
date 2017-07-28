@@ -3,6 +3,9 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
   $scope.editorOptions = (asset)->
     lineNumbers: true
     mode: $scope.getMode(asset)
+    matchBrackets: true
+    autoCloseBrackets: true
+    styleActiveLine: true
     extraKeys:
       "F11": (cm)->
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
