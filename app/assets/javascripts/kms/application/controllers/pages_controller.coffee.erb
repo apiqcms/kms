@@ -68,7 +68,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
       $scope.pages = $scope.exceptCurrentPage($scope.pages)
       $scope.parentPages = $scope.exceptCurrentPage($scope.parentPages)
     $scope.page.slug = "index" if $scope.pages.length == 0
-    if $scope.parentPages.length > 0 and $scope.page and !$scope.page.parent_id
+    if $scope.parentPages.length > 0 and $scope.page and !$scope.page.parent_id and !$stateParams.id
       $scope.page.parent_id = $scope.parentPages[0].id
 
 
