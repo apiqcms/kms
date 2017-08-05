@@ -1,3 +1,8 @@
+## Version 1.0.1 2017-08-05
+
+* [fixed] initializing page parent_id should not happen on edit
+* [fixed] fix paths to glyphicon font
+
 ## Version 1.0.0 2017-07-28
 
 * [changed] remove bunch of dependencies - less-rails, bower-rails and therubyracer
