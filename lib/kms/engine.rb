@@ -35,7 +35,7 @@ module Kms
     end
 
     initializer "kms.compile_templates" do |app|
-      app.config.after_initialize do
+      app.config.before_initialize do
         Kms.template_manager = Liquor::Manager.new(import: Kms::FunctionsRegistry.modules)
 
         if ActiveRecord::Base.connection.tables.include?('kms_templates')
