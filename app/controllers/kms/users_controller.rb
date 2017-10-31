@@ -18,6 +18,20 @@ module Kms
       end
     end
 
+    def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        head :no_content
+      else
+        render json: {errors: @user.errors}.to_json, status: :unprocessable_entity
+      end
+    end
+
+    def show
+      @user = User.find(params[:id])
+      render json: @user
+    end
+
     def destroy
       @user = User.find(params[:id])
       @user.destroy

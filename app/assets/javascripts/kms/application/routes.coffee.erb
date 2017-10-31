@@ -138,6 +138,16 @@ angular.module('KMS').config ['$stateProvider', '$urlRouterProvider', ($statePro
                 controllerAs: 'users',
                 templateUrl: 'users/new.html',
         })
+        .state('users.edit', {
+          url: '/:id/edit',
+          views:
+            "header@":
+              template: "<%= I18n.t(:edit_user) %>"
+            "@":
+              controller: 'UsersController',
+              controllerAs: 'users',
+              templateUrl: 'users/edit.html',
+        })
         .state('snippets', {
             url: '/kms/snippets',
             views:

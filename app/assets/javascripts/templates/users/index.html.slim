@@ -13,7 +13,8 @@
             tbody
               tr ng-repeat="user in users"
                 td style="width: 80%"
-                  | {{ user.email }}
+                  a ui-sref="users.edit({id: user.id})"
+                    | {{ user.email }}
                 td
                   | {{ user.localized_role }}
                 td

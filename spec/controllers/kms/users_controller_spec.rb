@@ -28,6 +28,14 @@ describe Kms::UsersController, type: :controller do
         expect(json[0].keys).to include('id', 'email', 'role', 'localized_role')
       end
     end
+    describe 'GET show' do
+      it 'returns user json representation' do
+        user = Kms::User.first
+        get :show, params: { id: user.id }, format: :json
+        expect(response).to be_success
+        expect(json.keys).to include('id', 'email', 'role', 'localized_role')
+      end
+    end
     describe 'POST create' do
       context 'when save failed' do
         it "returns errors" do
@@ -40,6 +48,21 @@ describe Kms::UsersController, type: :controller do
         let(:user_params) { FactoryGirl.attributes_for(:user) }
         it "returns 204 status" do
           post :create, params: { user: user_params }, format: :json
+          expect(response).to have_http_status(204)
+        end
+      end
+    end
+    describe 'PUT update' do
+      let(:user) { FactoryGirl.create(:user) }
+      context 'when update failed' do
+        it 'returns errors' do
+          put :update, params: { user: { password: 'password1', password_confirmation: 'password' }, id: user.id }, format: :json
+          expect(json['errors']).to_not be nil
+        end
+      end
+      context 'when update successful' do
+        it "returns 204 status" do
+          put :update, params: { user: { password: 'password1', password_confirmation: 'password1' }, id: user.id }, format: :json
           expect(response).to have_http_status(204)
         end
       end

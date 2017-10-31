@@ -26,6 +26,8 @@ en:
   upload_assets: "Upload assets"
   add_user: "Add user"
   new_user: "New User"
+  edit_user: "Edit User"
+  update_user: "Update user"
   toggle_fullscreen_mode_instruction: "Press F11 when cursor is in the editor to toggle full screen editing. ESC can also be used to exit full screen editing."
   add_snippet: "Add snippet"
   create_first_snippet: "Create first snippet"
@@ -52,6 +54,7 @@ en:
   snippets_description: "Snippets are pieces of HTML that you could include in templates or pages"
   assets_description: "Upload stylesheets, javascripts, images and other files here (you can even pick multiple)"
   assets_drop_description: "or just drag and drop them"
+  roles_description: "Admins can manage any content. Content managers have access only to \"Pages\" and \"Assets\" under \"Content Management\" section (but also have access to other sections). The second difference is Admins see pages content in html editor, Content Managers - in WYSIWYG editor"
   roles:
     admin: "Admin"
     content_manager: "Content manager"

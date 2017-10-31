@@ -13,7 +13,7 @@ Kms::Engine.routes.draw do
       end
     end
     resources :assets, except: [:new, :edit], format: true, as: :kms_assets
-    resources :users, only: [:index, :destroy], format: true do
+    resources :users, only: [:index, :destroy, :update, :show], format: true do
       post :from_kms, on: :collection, action: :create
       get :kms_user, on: :collection
     end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       end
       resources :templates, except: [:new, :edit], format: true
       resources :snippets, except: [:new, :edit], format: true
-      resources :users, only: [:index, :destroy], format: true do
+      resources :users, only: [:index, :destroy, :update, :show], format: true do
         post :from_kms, on: :collection, action: :create
         get :kms_user, on: :collection
       end
