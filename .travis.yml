@@ -8,4 +8,5 @@ addons:
 script:
   - bundle exec rspec
 before_script:
+  - psql -c 'create database kms_test;' -U postgres
   - cp spec/internal/config/database.yml.travis spec/internal/config/database.yml
