@@ -1,4 +1,4 @@
-PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService, TransliterationService) ->
+PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService, TransliterationService, hotkeys) ->
   $scope.editorOptions =
     filebrowserUploadUrl: '/kms/assets/ckeditor'
     entities: false
@@ -71,10 +71,19 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
     if $scope.parentPages.length > 0 and $scope.page and !$scope.page.parent_id and !$stateParams.id
       $scope.page.parent_id = $scope.parentPages[0].id
 
+  hotkeys.add
+    combo: 'ctrl+s'
+    description: 'Saving a page'
+    allowIn: ['INPUT', 'SELECT', 'TEXTAREA']
+    callback: (event) ->
+      event.preventDefault()
+      if $scope.page.id then $scope.update(event) else $scope.create()
+
 
   $scope.create = ->
     $scope.store.post($scope.page).then ->
       $state.go('pages')
+      Alertify.success('<%= I18n.t(:page_successfully_created) %>')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -82,6 +91,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
     $scope.page.put().then ->
       if $event.target.attributes['data-redirect']
         $state.go('pages')
+      Alertify.success('<%= I18n.t(:page_successfully_updated) %>')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -101,4 +111,4 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
   }
 
 angular.module('KMS')
-    .controller('PagesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'TransliterationService', PagesController])
+    .controller('PagesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'TransliterationService', 'hotkeys', PagesController])

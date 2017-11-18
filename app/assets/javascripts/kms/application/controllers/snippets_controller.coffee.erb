@@ -1,4 +1,4 @@
-SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, ErrorsService) ->
+SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, ErrorsService, hotkeys) ->
   $scope.editorOptions =
     lineNumbers: true
     mode:'htmlmixed'
@@ -26,11 +26,20 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
     $scope.store.get($stateParams.id).then (snippet)->
       $scope.snippet = snippet
   else
-    $scope.snippet = {}
+    $scope.snippet = {content: ''}
+
+  hotkeys.add
+    combo: 'ctrl+s'
+    description: 'Saving a snippet'
+    allowIn: ['INPUT', 'SELECT', 'TEXTAREA']
+    callback: (event) ->
+      event.preventDefault()
+      if $scope.snippet.id then $scope.update(event) else $scope.create()
 
   $scope.create = ->
     $scope.store.post($scope.snippet).then ->
       $state.go('snippets')
+      Alertify.success('<%= I18n.t(:snippet_successfully_created) %>')
     , (response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -38,6 +47,7 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
     $scope.snippet.put().then ->
       if event.target.attributes['data-redirect']
         $state.go('snippets')
+      Alertify.success('<%= I18n.t(:snippet_successfully_updated) %>')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -47,4 +57,4 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
         $scope.snippets = _.without($scope.snippets, snippet)
 
 angular.module('KMS')
-    .controller('SnippetsController', ['$scope', '$state', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', SnippetsController])
+    .controller('SnippetsController', ['$scope', '$state', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'hotkeys', SnippetsController])
