@@ -1,4 +1,4 @@
-TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService) ->
+TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Alertify, ErrorsService, hotkeys) ->
   $scope.editorOptions =
     lineNumbers: true
     mode:'htmlmixed'
@@ -26,11 +26,20 @@ TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, 
     $scope.store.get($stateParams.id).then (template)->
       $scope.template = template
   else
-    $scope.template = {}
+    $scope.template = {name: '', content: ''}
+
+  hotkeys.add
+    combo: 'ctrl+s'
+    description: 'Saving a page'
+    allowIn: ['INPUT', 'SELECT', 'TEXTAREA']
+    callback: (event) ->
+      event.preventDefault()
+      if $scope.template.id then $scope.update(event) else $scope.create()
 
   $scope.create = ->
     $scope.store.post($scope.template).then ->
       $state.go('templates')
+      Alertify.success('<%= I18n.t(:template_successfully_created) %>')
     , (response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -38,6 +47,7 @@ TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, 
     $scope.template.put().then ->
       if $event.target.attributes['data-redirect']
         $state.go('templates')
+      Alertify.success('<%= I18n.t(:template_successfully_updated) %>')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -48,4 +58,4 @@ TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, 
 
 
 angular.module('KMS')
-    .controller('TemplatesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', TemplatesController])
+    .controller('TemplatesController', ['$scope', '$state', '$cookieStore', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'hotkeys', TemplatesController])

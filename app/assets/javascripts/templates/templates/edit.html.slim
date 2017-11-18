@@ -5,3 +5,9 @@
       .btn-group
         button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_template)
         button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_template_and_continue)
+        span.btn.hotkey-notification
+          = I18n.t(:or_hit)
+          span.label.label-info Ctrl
+          | &nbsp;+&nbsp;
+          span.label.label-info S
+          = I18n.t(:while_your_cursor_in_input)

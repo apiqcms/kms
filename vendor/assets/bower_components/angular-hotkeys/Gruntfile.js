@@ -18,8 +18,20 @@ module.exports = function(grunt) {
         report: 'gzip'
       },
       build: {
-        src: 'src/loading-bar.js',
-        dest: 'build/loading-bar.min.js'
+        src: ['build/hotkeys.js', 'bower_components/mousetrap/mousetrap.js'],
+        dest: 'build/hotkeys.min.js'
+      }
+    },
+
+    ngAnnotate: {
+      options: {
+        singleQuotes: true,
+      },
+      source: {
+        expand: true,
+        cwd: 'src',
+        src: ['*.js'],
+        dest: 'build'
       }
     },
 
@@ -29,30 +41,14 @@ module.exports = function(grunt) {
         report: 'gzip'
       },
       minify: {
-        src: 'src/loading-bar.css',
-        dest: 'build/loading-bar.min.css'
+        src: 'src/hotkeys.css',
+        dest: 'build/hotkeys.min.css'
       }
     },
 
     karma: {
       unit: {
-        configFile: 'test/karma-angular-1.2.conf.js',
-        singleRun: true,
-        coverageReporter: {
-          type: 'text',
-          dir: 'coverage/'
-        }
-      },
-      unit13: {
-        configFile: 'test/karma-angular-1.3.conf.js',
-        singleRun: true,
-        coverageReporter: {
-          type: 'text',
-          dir: 'coverage/'
-        }
-      },
-      unit14: {
-        configFile: 'test/karma-angular-1.4.conf.js',
+        configFile: 'test/karma.conf.js',
         singleRun: true,
         coverageReporter: {
           type: 'text',
@@ -60,7 +56,7 @@ module.exports = function(grunt) {
         }
       },
       watch: {
-        configFile: 'test/karma-angular-1.2.conf.js',
+        configFile: 'test/karma.conf.js',
         singleRun: false,
         reporters: ['progress']  // Don't display coverage
       }
@@ -82,20 +78,40 @@ module.exports = function(grunt) {
           banner: '<%= banner %>'
         },
         files: {
-          'build/loading-bar.css': 'src/loading-bar.css',
-          'build/loading-bar.js':  'src/loading-bar.js',
+          'build/hotkeys.css': 'src/hotkeys.css',
+          'build/hotkeys.js':  ['build/hotkeys.js', 'bower_components/mousetrap/mousetrap.js'],
         }
       }
-    }
+    },
+
+    watch: {
+      scripts: {
+        files: ['src/*.js'],
+        tasks: ['uglify', 'concat:build'],
+        options: {
+          spawn: false,
+        },
+      },
+      css: {
+        files: ['src/*.css'],
+        tasks: ['cssmin', 'concat:build'],
+        options: {
+          spawn: false,
+        },
+      }
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('default', ['jshint', 'karma:unit', 'karma:unit13', 'karma:unit14', 'uglify', 'cssmin', 'concat:build']);
+  grunt.registerTask('default', ['jshint', 'karma:unit', 'ngAnnotate', 'uglify', 'cssmin', 'concat:build']);
   grunt.registerTask('test', ['karma:watch']);
   grunt.registerTask('build', ['default']);
 

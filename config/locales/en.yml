@@ -10,6 +10,8 @@ en:
   new_template: "New Template"
   edit_template: "Edit Template"
   update_template: "Update template"
+  template_successfully_created: "Template successfully created"
+  template_successfully_updated: "Template successfully updated"
   add_page: "Add page"
   create_first_page: "Create first page"
   new_page: "New Page"
@@ -55,6 +57,8 @@ en:
   assets_description: "Upload stylesheets, javascripts, images and other files here (you can even pick multiple)"
   assets_drop_description: "or just drag and drop them"
   roles_description: "Admins can manage any content. Content managers have access only to \"Pages\" and \"Assets\" under \"Content Management\" section (but also have access to other sections). The second difference is Admins see pages content in html editor, Content Managers - in WYSIWYG editor"
+  or_hit: "or hit "
+  while_your_cursor_in_input: " while your cursor in input"
   roles:
     admin: "Admin"
     content_manager: "Content manager"

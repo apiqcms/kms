@@ -1,5 +1,38 @@
 Changelog
 ==========
+## 0.9.0
+- resolved issue with parentSelector when parent has no children
+([#244](https://github.com/chieffancypants/angular-loading-bar/pull/244))
+([#251](https://github.com/chieffancypants/angular-loading-bar/issues/251))
+([#239](https://github.com/chieffancypants/angular-loading-bar/issues/239))
+([#179](https://github.com/chieffancypants/angular-loading-bar/issues/179))
+- added style property to package.json
+([#271](https://github.com/chieffancypants/angular-loading-bar/pull/271))
+([#231](https://github.com/chieffancypants/angular-loading-bar/pull/231))
+- Removed duplicated property declaration in CSS
+([#226](https://github.com/chieffancypants/angular-loading-bar/pull/226))
+
+
+
+## 0.8.0
+- auto incrementing is now configurable
+([#209](https://github.com/chieffancypants/angular-loading-bar/pull/209))
+- removed `version` from bower.json
+([#207](https://github.com/chieffancypants/angular-loading-bar/pull/207))
+- added support for webpack and browserify
+([#200](https://github.com/chieffancypants/angular-loading-bar/pull/200))
+- spinner border radius 10px -> 50%
+([#184](https://github.com/chieffancypants/angular-loading-bar/issues/184))
+
+
+## 0.7.1
+- Merge correct PR for broken interceptor detection ([#133](https://github.com/chieffancypants/angular-loading-bar/pull/133), [#50](https://github.com/chieffancypants/angular-loading-bar/pull/50))
+
+## 0.7.0
+- Changes for animate.enter compatibility for 1.2 and 1.3 ([#170](https://github.com/chieffancypants/angular-loading-bar/pull/170))
+- Detect errors with other interceptors ([#133](https://github.com/chieffancypants/angular-loading-bar/pull/133), [#50](https://github.com/chieffancypants/angular-loading-bar/pull/50))
+- Provide more detail on response/responseError events ([#128](https://github.com/chieffancypants/angular-loading-bar/pull/128))
+- Change angular dependency in bower ([#126](https://github.com/chieffancypants/angular-loading-bar/issues/126))
 
 ## 0.6.0
 - Customize progress bar template: ([#111](https://github.com/chieffancypants/angular-loading-bar/pull/111))

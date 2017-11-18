@@ -1,7 +1,7 @@
 /*! 
- * angular-loading-bar v0.6.0
+ * angular-loading-bar v0.9.0
  * https://chieffancypants.github.io/angular-loading-bar
- * Copyright (c) 2014 Wes Cruver
+ * Copyright (c) 2016 Wes Cruver
  * License: MIT
  */
 
@@ -79,7 +79,7 @@
   border:  solid 2px transparent;
   border-top-color:  #29d;
   border-left-color: #29d;
-  border-radius: 10px;
+  border-radius: 50%;
 
   -webkit-animation: loading-bar-spinner 400ms linear infinite;
   -moz-animation:    loading-bar-spinner 400ms linear infinite;
@@ -105,6 +105,6 @@
   100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
 }
 @keyframes loading-bar-spinner {
-  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { transform: rotate(360deg); transform: rotate(360deg); }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

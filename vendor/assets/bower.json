@@ -21,6 +21,7 @@
     "ng-alertify": "latest",
     "angular-xeditable": "latest",
     "ng-sortable": "latest",
-    "angular-i18n": "latest"
+    "angular-i18n": "latest",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys"
   }
 }

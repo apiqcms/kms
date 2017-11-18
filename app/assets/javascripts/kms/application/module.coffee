@@ -1,4 +1,8 @@
-angular.module('KMS', ['ui.bootstrap', 'ui.router', 'ngCookies', 'restangular', 'templates', 'ui.tree', 'ui.codemirror', 'flow', 'ui.select', 'ngSanitize', 'ngCkeditor', 'toggle-switch', 'angular-loading-bar', 'angularjs-dropdown-multiselect', 'Alertify', 'xeditable', 'as.sortable'])
+angular.module('KMS', ['ui.bootstrap', 'ui.router', 'ngCookies', 'restangular',
+  'templates', 'ui.tree', 'ui.codemirror', 'flow', 'ui.select',
+  'ngSanitize', 'ngCkeditor', 'toggle-switch', 'angular-loading-bar',
+  'angularjs-dropdown-multiselect', 'Alertify', 'xeditable', 'as.sortable', 'cfp.hotkeys'
+])
 
 angular.module('KMS').config ['$httpProvider', '$locationProvider', 'RestangularProvider', 'flowFactoryProvider', 'cfpLoadingBarProvider', ($httpProvider, $locationProvider, RestangularProvider, flowFactoryProvider, cfpLoadingBarProvider) ->
   cfpLoadingBarProvider.includeSpinner = false

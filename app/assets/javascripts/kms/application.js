@@ -44,6 +44,7 @@
 //= require "ng-alertify/ng-alertify"
 //= require "angular-xeditable/dist/js/xeditable"
 //= require "ng-sortable/dist/ng-sortable"
+//= require "angular-hotkeys/build/hotkeys.min"
 //= require "kms/application/module"
 //= require "kms/application/routes"
 //= require angular-rails-templates
