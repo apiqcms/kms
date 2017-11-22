@@ -27,6 +27,7 @@ en:
   new_asset: "New Asset"
   edit_asset: "Edit Asset"
   update_asset: "Update asset"
+  asset_successfully_updated: "Asset successfully updated"
   upload_assets: "Upload assets"
   add_user: "Add user"
   new_user: "New User"

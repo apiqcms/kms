@@ -27,6 +27,7 @@ ru:
   new_asset: "Новый Файл"
   edit_asset: "Редактирование Файла"
   update_asset: "Обновить файл"
+  asset_successfully_updated: "Файл успешно обновлен"
   upload_assets: "Загрузить файлы"
   add_user: "Добавить пользователя"
   new_user: "Новый Пользователь"

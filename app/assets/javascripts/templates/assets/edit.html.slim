@@ -7,6 +7,7 @@
       .btn-group
         button.btn.btn-default type="submit" data-redirect="true" ng-click="update($event)" = I18n.t(:update_asset)
         button.btn.btn-default type="submit" ng-click="update($event)" = I18n.t(:update_asset_and_continue)
+        ng-include src="'shared/hotkey_notification.html'"
   .center-block ng-unless="asset.performing_plain_text" flow-init="{headers: setHeaders, singleFile: true, uploadMethod: 'PUT', target: updateTarget, initFileFn: initFlowFile}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')" flow-drop=""
     .jumbotron.vertical-center.text-center
       .container

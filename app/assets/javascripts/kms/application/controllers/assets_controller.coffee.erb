@@ -1,4 +1,4 @@
-AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateParams, Alertify, ErrorsService) ->
+AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateParams, Alertify, ErrorsService, hotkeys) ->
 
   $scope.editorOptions = (asset)->
     lineNumbers: true
@@ -25,13 +25,20 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
       $scope.asset = asset
       if /css|javascript/.test $scope.getAssetGroup(asset)
         $scope.asset.performing_plain_text = true
-  else
-    {}
+
+  hotkeys.add
+    combo: 'ctrl+s'
+    description: 'Saving an asset'
+    allowIn: ['INPUT', 'TEXTAREA']
+    callback: (event) ->
+      event.preventDefault()
+      $scope.update(event) if $scope.asset.id
 
   $scope.update = ($event)->
     $scope.asset.put().then ->
       if $event.target.attributes['data-redirect']
         $state.go('assets')
+      Alertify.success('<%= I18n.t(:asset_successfully_updated) %>')
     ,(response)->
       Alertify.error(ErrorsService.prepareErrorsString(response.data.errors))
 
@@ -77,4 +84,4 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
 
 
 angular.module('KMS')
-    .controller('AssetsController', ['$scope', '$state', '$cookieStore', '$cookies', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', AssetsController])
+    .controller('AssetsController', ['$scope', '$state', '$cookieStore', '$cookies', 'Restangular', '$stateParams', 'Alertify', 'ErrorsService', 'hotkeys', AssetsController])
