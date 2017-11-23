@@ -14,7 +14,7 @@ angular.module('KMS').config ['$httpProvider', '$locationProvider', 'Restangular
 
   flowFactoryProvider.defaults =
     target: '/kms/assets.json'
-    permanentErrors: [404, 500, 501]
+    permanentErrors: [404, 422, 500, 501]
     maxChunkRetries: 1
     chunkSize: 50*1024*1024
     chunkRetryInterval: 5000

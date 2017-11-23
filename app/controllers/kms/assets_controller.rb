@@ -14,7 +14,7 @@ module Kms
         # special json for ng-flow
         render json: {success: true, files: [@asset]}.to_json
       else
-        render text: '', status: :unprocessable_entity
+        render json: {errors: @asset.errors}.to_json, status: :unprocessable_entity
       end
     end
 
@@ -33,8 +33,11 @@ module Kms
 
     def update
       @asset = Asset.find(params[:id])
-      @asset.update(asset_params)
-      render json: @asset
+      if @asset.update(asset_params)
+        render json: @asset
+      else
+        render json: {errors: @asset.errors}.to_json, status: :unprocessable_entity
+      end
     end
 
     def show

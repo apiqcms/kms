@@ -34,6 +34,9 @@ AssetsController = ($scope, $state, $cookieStore, $cookies, Restangular, $stateP
       event.preventDefault()
       $scope.update(event) if $scope.asset.id
 
+  $scope.handleUploadError = (file, message, flow) ->
+    Alertify.error ErrorsService.prepareErrorsString(JSON.parse(message).errors)
+
   $scope.update = ($event)->
     $scope.asset.put().then ->
       if $event.target.attributes['data-redirect']

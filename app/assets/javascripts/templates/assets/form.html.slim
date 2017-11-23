@@ -1,4 +1,4 @@
-.center-block flow-init="{headers: setHeaders}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')" flow-drop=""
+.center-block flow-init="{headers: setHeaders}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-complete="$state.go('assets')" flow-drop="" flow-error="handleUploadError( $file, $message, $flow )"
   .jumbotron.vertical-center.text-center
     .container
       h1
