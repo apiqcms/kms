@@ -72,7 +72,7 @@
           <% end %>
           <% resources.each do |resource_class, tab_icon_class| %>
             <% if can? :index, resource_class %>
-              <li class="sidebar-list">
+              <li class="sidebar-list" ui-sref-active-eq="active">
                 <a ui-sref="<%= defined?(Kms::Model) && resource_class.is_a?(Kms::Model) ? "models.entries({modelId: #{resource_class.name}})" : resource_class.name.demodulize.tableize %>" title="<%= resource_class.model_name.human(count: 1.1) %>">
                   <%= truncate(resource_class.model_name.human(count: 1.1), length: 22) %>
                   <span class="menu-icon fa <%= tab_icon_class %>"></span>

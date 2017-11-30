@@ -128,3 +128,9 @@ ul.sidebar .sidebar-main {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+ul.sidebar .sidebar-list.active a {
+  color: #fff;
+  border-left: 3px solid #ff5274;
+  text-indent: 22px;
+  background: #2d3e63;
+}
