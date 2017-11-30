@@ -1,11 +1,11 @@
 {
-  "author": "",
-  "name": "angularjs-dropdown-multiselect-demo",
-  "version": "0.0.0",
-  "description": "",
-  "homepage": "",
+  "author": "pkempenaers@myforce.be",
+  "name": "angularjs-dropdown-multiselect",
+  "version": "1.11.8",
+  "description": "This directive gives you a Bootstrap Dropdown with the power of AngularJS directives.",
+  "homepage": "http://dotansimha.github.io/angularjs-dropdown-multiselect/#/",
   "dependencies": {
-    "source-map": "^0.1.34"
+    "angular": "~1"
   },
   "devDependencies": {
     "express": "~3.4.4",
@@ -21,8 +21,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotansimha/angularjs-dropdown-multiselect.git"
+  },
   "engines": {
     "node": "0.10.10"
+  },
+  "main": "src/angularjs-dropdown-multiselect.js",
+  "keywords": [
+    "angular",
+    "multiselect"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotansimha/angularjs-dropdown-multiselect/issues"
   }
 }
