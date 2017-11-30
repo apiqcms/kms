@@ -1,3 +1,15 @@
+## Version 1.1.0 2017-11-30
+
+* [fixed] fix according to guide from devise
+* [changed] change initializing template manager in before_initialize block
+* [changed] update carrierwave dependency
+* [fixed] Snippet should not be templatable as well
+* [added] ability to edit/update users by admin - closes #24
+* [added] add Ctrl-S hotkey for updating Templates, Pages, Snippets or Assets - closes #25
+* [changed] display errors on failed assets uploads
+* [added] add active state to sidebar menu items
+* [changed] upgrade Angular to 1.6 - closes #22
+
 ## Version 1.0.1 2017-08-05
 
 * [fixed] initializing page parent_id should not happen on edit
