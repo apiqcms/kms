@@ -1,0 +1,231 @@
+zh-CN:
+  login: "登录"
+  sign_up: "注册"
+  sign_out: "注销"
+  forgot_your_password: "忘记你的密码？"
+  remember_me: "记住我"
+  content_management: "内容管理"
+  add_template: "添加模板"
+  create_first_template: "创建第一个模板"
+  new_template: "新建模板"
+  edit_template: "编辑模板"
+  update_template: "更新模板"
+  template_successfully_created: "成功创建模板"
+  template_successfully_updated: "成功更新模板"
+  add_page: "添加页面"
+  create_first_page: "创建一个页面"
+  new_page: "新页面"
+  edit_page: "编辑页面"
+  update_page: "更新页面"
+  page_successfully_created: "成功创建页面"
+  page_successfully_updated: "成功更新页面"
+  update_page_and_continue: "更新页面并继续"
+  update_template_and_continue: "更新模板并继续"
+  update_asset_and_continue: "更新资源并继续"
+  update_snippet_and_continue: "更新片段并继续"
+  add_asset: "添加资源"
+  new_asset: "新资源"
+  edit_asset: "编辑资源"
+  update_asset: "更新资源"
+  asset_successfully_updated: "成功更新资源"
+  upload_assets: "上传资源"
+  add_user: "添加用户"
+  new_user: "新用户"
+  edit_user: "编辑用户"
+  update_user: "更新用户"
+  toggle_fullscreen_mode_instruction: "当光标在编辑器时按下F11键切换到全屏模式。按下ESC键退出全屏编辑。"
+  add_snippet: "添加片段"
+  create_first_snippet: "创建第一个片段"
+  new_snippet: "新片段"
+  edit_snippet: "比较片段"
+  update_snippet: "更新片段"
+  snippet_successfully_created: "成功创建片段"
+  snippet_successfully_updated: "成功更新片段"
+  documentation: "文档"
+  need_help: "需要帮助?"
+  settings: "设置"
+  update_settings: "更新设置"
+  no_settings: "未选定设置"
+  yes_word: "是"
+  no_word: "否"
+  or: "或"
+  are_you_sure: "你确定？"
+  images: "图片"
+  stylesheets: "样式表"
+  javascripts: "Javascript"
+  fonts: "字体"
+  other_assets: "其他"
+  templates_description: "模板就是你的通用HTML代码放置的地方"
+  pages_description: "页面表现了你网站的组织结构并且他们的内容嵌入在模板中"
+  no_templates_yet: "貌似你目前没有模板"
+  snippets_description: "片段是你可以包含在模板或页面中的一小段HTML代码"
+  assets_description: "在这里上传样式表，javascripts, 图片或者其他文件（可以选择多个文件）"
+  assets_drop_description: "或者拖拽文件"
+  roles_description: "管理员可以管理任何内容。内容管理员只能在\"内容管理\"部分访问 \"页面\" 和 \"资源\" (但可以访问其他部分)。第二项区别就是管理员可以在HTML编辑器中查看页面，而内容管理员在所见即所得编辑器中查看"
+  or_hit: "或按下 "
+  while_your_cursor_in_input: " 当你的光标在输入状态"
+  roles:
+    admin: "管理员"
+    content_manager: "内容管理员"
+  liquor_help:
+    header: "Liquor帮助"
+    tags_title: "标签"
+    filters_title: "过滤器"
+    variables_title: "变量"
+    scopes_title: "范围"
+    endpoints_title: "接入点"
+    property: "属性"
+    parameter: "参数"
+    description: "描述"
+    specification: "详细Liquor 描述"
+    tags:
+      declare:
+        main_description: "标签声明可以用于变量声明和表单中的初始值："
+        additional_description: "declare和assign标签的区别 - 使用declare你能在不同的作用域内创建同名变量。"
+      assign:
+        main_description: "标签赋值可以在变量声明时使用并且它的Tag初始值会在这个表单中被设置："
+      if:
+        main_description: "if 标签是一个标准的条件表达式，它有如下的形式："
+      unless:
+        main_description: 'unless 标签在条件表达式的值为假或空的时候执行它的执行体：'
+      for:
+        main_description: "for 标签是一个标准的循环表达式，它有如下的形式："
+      capture:
+        main_description: "capture 标签运行代码并把结果保存到变量中。如果变量中已经有值，capture 会改变它："
+      content_for:
+        main_description: "content_for 标签运行代码并把结果保存："
+      yield:
+        main_description: "yield 标签有三种形式。如果没有任何参数，它会把内容插入到内部模板。如果包含句柄的字符串和 {% content_for %}进行了设置，yield会返回该字串。如果没有包含句柄的字符串，yield返回if_none执行结果，如果没有这样的语句，则返回空字符串："
+      include:
+        main_description: 'include 标签包含片段内容到模板里。唯一的参数就是Snippet ID，在创建片段的时候需要使用。'
+    scopes:
+      find_by:
+        main_description: 'find_by 能让你在一个集合中按照条件查找一个元素'
+      find_all_by:
+        main_description: 'find_all_by 能够找到所有符合条件的集合元素'
+      except:
+        main_description: 'except 返回除了参数中提供元素以外的所有集合元素'
+      find_except_by:
+        main_description: 'find_except_by 找到所有不匹配查找条件的集合元素'
+      limit:
+        main_description: 'limit 方法集合SQL中的limit一样，用来限定集合中元素的数量'
+      offset:
+        main_description: 'offset 方法和SQL中的类似方法相同，用来按照偏移量查找记录'
+      first:
+        main_description: '返回集合中的首元素'
+      last:
+        main_description: '返回集合中的末元素'
+      by_index:
+        main_description: '按索引返回元素'
+      pluck:
+        main_description: '返回集合中元素的某个域值（非整个对象）'
+    variables:
+      var_loop:
+        main_description: '变量提供一种访问当前循环状态的方式。只能在for循环中使用。var_loop - 通用名，用来在你需要组合循环变量名和_loop时访问循环变量。例如：'
+        properties:
+          length: "循环计数 (集合大小)"
+          index: "当前循环索引 - 元素索引"
+      page:
+        main_description: '变量 "page" 可以在任何模板中被访问并作为当前页面的引用：'
+        properties:
+          slug: '"别名"域的值'
+          fullpath: '页面的全路径'
+          title: '"标题"域的值'
+          published: '"已发表" 域的值'
+          hidden: '"隐藏 (从导航)"域的值'
+          templatable: ' "作为模板使用"域的值'
+          children: '返回 "子" 集合 - 在"父页面"域中将这个页面作为父页面的所有页面。'
+          parent: '父页面引用'
+      index:
+        main_description: '"index"变量可以在根页面的模板和引用中访问（使用"index"别名）。 对象属性和"页面"变量一样。'
+      request:
+        main_description: '"request"变量给出访问当前请求一些属性的方法：'
+        properties:
+          path: '返回要求的相对路径'
+          url: '返回请求地址'
+          host: '返回主机名 - 域名或IP地址'
+          base_url: '返回请求根地址 - 协议 + 域名或IP，例如： "http://example.com"'
+          referer: '返回初始化现在请求的页面地址'
+          form_authenticity_token: '返回现在请求的认证令牌 - 用于保护表单免受 CSRF 攻击'
+          param: "返回地址参数。例如: request.param('page')"
+      item:
+        main_description: '"item"变量让你能够在"templatable"页面那个访问对应的对象。"Templatable" - 包含有激活"作为对象模板使用"域的页面。"item"属性依赖于具体对象。'
+      search:
+        main_description: "'search'变量让你能够访问搜索结果。支持请求中包含'query'参数，例如：/some_path?query=text。Object 'search'对象 - 搜索结果数组 (SearchItem 对象)。SearchItem 的属性显示如下。"
+      search_item:
+        main_description: 'search_item是搜索结果元素 （"search"集合元素）。'
+        properties:
+          title: '页面标题'
+          content: '搜索内容'
+          link: '到页面的链接，包含查询'
+    filters:
+      asset_path:
+        main_description: '"asset_path"过滤器能让你在"资源"模块通过文件名获取文件相对路径：'
+      asset_tag:
+        main_description: '"asset_tag"过滤器能让你包含上传到"区段"的javascript 和 css 文件：'
+      resize:
+        main_description: '这个功能/过滤器帮助动态改变图片尺寸。要想使用这个过滤器，你需要使用绝对图片地址并提供"format"参数。返回的也是地址。要想得到绝对地址（在"Assets"区段的任何资源只有相对地址），你需要使用"request.base_url"：'
+      add_watermark:
+        main_description: '它允许你给图片添加水印。你需要图片地址和三个参数："image" - 水印图片, "dissolve" - 透明度和 "position" - 位置。返回值也是地址：'
+      ends_with:
+        main_description: '允许检查字符串是否允许以特定模式结尾：'
+      currency:
+        main_description: '设定货币格式。接受的格式：precision, delimiter, separator, format, unit:'
+  activerecord:
+    errors:
+      models:
+        kms/page:
+          attributes:
+            template:
+              required: "不能为空"
+    models:
+      kms/template:
+        one: "模板"
+        few: "模板"
+        many: "模板"
+        other: "模板"
+      kms/page:
+        one: "页面"
+        few: "页面"
+        many: "页面"
+        other: "页面"
+      kms/asset:
+        one: "资源"
+        few: "资源"
+        many: "资源"
+        other: "资源"
+      kms/user:
+        one: "用户"
+        few: "用户"
+        many: "用户"
+        other: "用户"
+      kms/snippet:
+        one: "片段"
+        few: "片段"
+        many: "片段"
+        other: "片段"
+    attributes:
+      kms/template:
+        name: "名字"
+        content: "内容"
+      kms/page:
+        title: "标题"
+        content: "内容"
+        slug: "别名"
+        published: "已发表"
+        template: "模板"
+        parent: "父页面"
+        templatable: "作为对象模板使用"
+        templatable_type: "对象"
+        hidden: '隐藏 (从导航中)'
+      kms/asset:
+        file: "文件"
+      kms/user:
+        email: "电子邮件"
+        password: "密码"
+        password_confirmation: "密码确认"
+        role: "角色"
+      kms/snippet:
+        name: "姓名"
+        slug: "别名/ID"
+        content: "内容"
