@@ -2,6 +2,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
   $scope.editorOptions =
     filebrowserUploadUrl: '/kms/assets/ckeditor'
     entities: false
+    language: '<%= I18n.locale.to_s %>'
   $scope.codeMirrorOptions =
     lineNumbers: true
     mode:'htmlmixed'
