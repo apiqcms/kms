@@ -1,4 +1,7 @@
-## :muscle: Simple and powerful Ruby on Rails CMS for developers :muscle:
+<p align="center">
+        <img src="https://www.apiq.io/images/logo.png"> 
+</p>
+<h2 align="center">:muscle: Simple and powerful Ruby on Rails CMS for developers :muscle:</h2>
 
 [![Join the chat at https://gitter.im/kms-app/Lobby](https://badges.gitter.im/kms-app/Lobby.svg)](https://gitter.im/kms-app/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Gem Version](https://badge.fury.io/rb/kms.svg)](https://badge.fury.io/rb/kms) [![Build Status](https://travis-ci.org/apiqcms/kms.svg?branch=master)](https://travis-ci.org/apiqcms/kms) [![Code Climate](https://codeclimate.com/github/apiqcms/kms/badges/gpa.svg)](https://codeclimate.com/github/apiqcms/kms)
