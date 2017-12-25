@@ -17,6 +17,7 @@ PagesController = ($scope, $state, $cookieStore, Restangular, $stateParams, Aler
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
       "Esc": (cm)->
         if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
+      "Tab": 'emmetExpandAbbreviation'
 
   $scope.$watch 'page.title', (newValue, oldValue) ->
     if newValue? and $scope.page.slug != 'index' and !$scope.page.id

@@ -22,6 +22,7 @@
 //= require "codemirror/addon/edit/closebrackets"
 //= require "codemirror/addon/display/fullscreen"
 //= require "codemirror/addon/selection/active-line"
+//= require "emmet-codemirror-plugin"
 //= require "ng-ckeditor/libs/ckeditor/ckeditor"
 //= require "angular/angular.js"
 //= require "angular-i18n/angular-locale_ru-ru.js"
