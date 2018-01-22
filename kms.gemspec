@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'devise'
   s.add_dependency 'cancancan', '~> 2.0.0'
   s.add_dependency 'dragonfly', '~> 1.1.3'
-  s.add_dependency 'pg'
+  s.add_dependency 'pg', '~> 0.21'
   s.add_dependency 'textacular', '~> 5.0.0'
 
   s.add_development_dependency 'combustion', '~> 0.5.4'
