@@ -11,7 +11,7 @@ module Kms
       if @settings.update(settings_params)
         render json: @settings
       else
-        render json: @settings.to_json(methods: :errors), status: :unprocessable_entity
+        render json: { errors: @settings.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 

@@ -12,7 +12,7 @@ module Kms
       if @snippet.save
         head :no_content
       else
-        render json: {errors: @snippet.errors}.to_json, status: :unprocessable_entity
+        render json: { errors: @snippet.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 
@@ -21,7 +21,7 @@ module Kms
       if @snippet.update(snippet_params)
         head :no_content
       else
-        render json: {errors: @snippet.errors}.to_json, status: :unprocessable_entity
+        render json: { errors: @snippet.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 

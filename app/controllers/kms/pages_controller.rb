@@ -12,7 +12,7 @@ module Kms
       if @page.save
         head :no_content
       else
-        render json: {errors: @page.errors}.to_json, status: :unprocessable_entity
+        render json: { errors: @page.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 
@@ -21,7 +21,7 @@ module Kms
       if @page.update(page_params)
         head :no_content
       else
-        render json: {errors: @page.errors}.to_json, status: :unprocessable_entity
+        render json: { errors: @page.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 

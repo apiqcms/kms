@@ -11,28 +11,28 @@ module Kms
       if @template.save
         head :no_content
       else
-        render json: {errors: @template.errors}.to_json, status: :unprocessable_entity
+        render json: { errors: @template.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 
     def update
       @template = Template.find(params[:id])
       if @template.update(template_params)
-        render json: @template.to_json
+        head :no_content
       else
-        render json: @template.to_json(methods: :errors), status: :unprocessable_entity
+        render json: { errors: @template.errors.full_messages }.to_json, status: :unprocessable_entity
       end
     end
 
     def show
       @template = Template.find(params[:id])
-      render json: @template.to_json
+      render json: @template
     end
 
     def destroy
       @template = Template.find(params[:id])
       @template.destroy
-      render json: @template.to_json
+      head :no_content
     end
 
     protected
