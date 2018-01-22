@@ -13,6 +13,7 @@ SnippetsController = ($scope, $state, Restangular, $stateParams, Alertify, Error
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
       "Esc": (cm)->
         if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
+      "Tab": 'emmetExpandAbbreviation'
 
   $scope.store = Restangular.all('snippets')
   $scope.store.getList().then (snippets)->

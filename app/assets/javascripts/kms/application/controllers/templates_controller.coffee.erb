@@ -13,6 +13,7 @@ TemplatesController = ($scope, $state, $cookieStore, Restangular, $stateParams, 
         cm.setOption("fullScreen", !cm.getOption("fullScreen"))
       "Esc": (cm)->
         if cm.getOption("fullScreen") then cm.setOption("fullScreen", false)
+      "Tab": 'emmetExpandAbbreviation'
 
   $scope.store = Restangular.all('templates')
   $scope.store.getList().then (templates)->
