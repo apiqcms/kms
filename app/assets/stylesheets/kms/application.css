@@ -15,6 +15,7 @@
  *= require angular-ui-tree/dist/angular-ui-tree.min
  *= require codemirror/lib/codemirror
  *= require codemirror/addon/display/fullscreen
+ *= require liquor
  *= require angular-ui-select/dist/select
  *= require angular-toggle-switch/angular-toggle-switch
  *= require angular-toggle-switch/angular-toggle-switch-bootstrap

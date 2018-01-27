@@ -1,0 +1,79 @@
+/* Everything Liquid */
+.CodeMirror .cm-liquor {
+  color: #000;
+  /*background-color: #EEE;
+  background-color: rgba(200, 200, 200, 0.5); /* for newer browsers, use transparent background, so selection is visible behind it */*/
+}
+.cm-liquor.CodeMirror-searching {
+  background: #FFA;
+  background: rgba(255, 255, 0, .4);
+}
+/* Every whitespace inside Liquid markup (except inside string constants) */
+.CodeMirror .cm-liquor-whitespace {
+
+}
+/* Number constants */
+.CodeMirror .cm-liquor-atom {
+  color: #164;
+}
+/* Variables, keywords and operators. Assigned by the Tokenizer which cannot differentiate between these */
+.CodeMirror .cm-liquor-word {
+
+}
+/* String constants */
+.CodeMirror .cm-liquor-string {
+  color: #228811;
+}
+/* {{, }}, {%, %} */
+.CodeMirror .cm-liquor-markup-delimiter {
+  color: #555;
+}
+/* The name of a Liquid tag (if, assign, for, ...) */
+.CodeMirror .cm-liquor-tag-name {
+  font-weight: bold;
+  color: #708;
+}
+/* The closing name of a Liquid block tag (endif, endfor) */
+.CodeMirror .cm-liquor-endtag-name {
+  font-weight: bold;
+  color: #708;
+}
+/* Keywords (in, reversed, with, ...) */
+.CodeMirror .cm-liquor-keyword {
+  font-weight: bold;
+  color: #708;
+}
+/* Operators */
+.CodeMirror .cm-liquor-operator {
+
+}
+/* The name of a Tag attribute (limit, offset) */
+.CodeMirror .cm-liquor-tag-attribute-name {
+  font-style: italic;
+}
+/* A Variable */
+.CodeMirror .cm-liquor-variable {
+  color: #05a;
+
+}
+/* A method of a drop */
+.CodeMirror .cm-liquor-method {
+  font-style: italic;
+}
+/* The name one can give to a cycle tag */
+.CodeMirror .cm-liquor-tag-cycle-name {
+  font-style: italic;
+}
+/* A filter in output markdown */
+.CodeMirror .cm-liquor-filter {
+  font-style: italic;
+  color: #708;
+}
+/* Every output markup, including the {{ and }} */
+.CodeMirror .cm-liquor-output-markup {
+
+}
+/* Every tag markup, including the {% and %} */
+.CodeMirror .cm-liquor-tag-markup {
+
+}
