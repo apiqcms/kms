@@ -1,3 +1,13 @@
+## Version 1.2.0 2018-02-09
+
+* [added] added zh-CN locale files
+* [added] add Emmet support to CodeMirror editors - closes #30
+* [added] syntax highlight for Liquor
+* [fixed] fix icon for active sidebar item
+* [fixed] use current locale for CKEditor - closes #29
+* [fixed] strict pg gem version because 1.0.0 is not supported yet by Rails
+* [changed] much better validation errors displaying
+
 ## Version 1.1.0 2017-11-30
 
 * [fixed] fix according to guide from devise
