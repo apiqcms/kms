@@ -1,8 +1,6 @@
 /* Everything Liquid */
 .CodeMirror .cm-liquor {
   color: #000;
-  /*background-color: #EEE;
-  background-color: rgba(200, 200, 200, 0.5); /* for newer browsers, use transparent background, so selection is visible behind it */*/
 }
 .cm-liquor.CodeMirror-searching {
   background: #FFA;
