@@ -7,7 +7,9 @@ module Kms
     def process
       template_document = Nokogiri::HTML @template.content
       template_document.search('script, link[rel="stylesheet"]').each do |tag|
-        tag.replace "{{ '#{File.basename(tag['src'] || tag['href'])}' | asset_tag }}"
+        url = tag['src'] || tag['href']
+        next unless url
+        tag.replace "{{ '#{File.basename(url)}' | asset_tag }}"
       end
       # can't use Nokogiri for images because of Nokogiri escaping
       template_document.search('img').each do |tag|
