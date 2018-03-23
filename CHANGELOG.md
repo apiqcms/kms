@@ -1,3 +1,9 @@
+## Version 1.2.1 2018-03-23
+
+* [fixed] fix comment in css that brakes precompilation
+* [fixed] fix TemplateProcessor - if no src or href attributes
+* [fixed] fix crashing on incorrect encoding Asset upload
+
 ## Version 1.2.0 2018-02-09
 
 * [added] added zh-CN locale files
