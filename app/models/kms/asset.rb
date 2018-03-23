@@ -7,6 +7,7 @@ module Kms
     # inspired by Locomotive
     before_validation :store_text
 
+    validate :encoded_as_utf8, on: :create
     validate :unique_filename, on: :create
 
     attr_accessor :text, :performing_plain_text
@@ -68,9 +69,15 @@ module Kms
 
     protected
 
+    def encoded_as_utf8
+      text.encode('UTF-8')
+    rescue Encoding::UndefinedConversionError
+      self.errors.add(:file, I18n.t(:wrong_encoding, scope: [:activerecord, :errors, :messages]))
+    end
+
     def unique_filename
       if Asset.where(file: file.filename).exists?
-        self.errors.add(:file, "is duplicate")
+        self.errors.add(:file, I18n.t(:duplicate, scope: [:activerecord, :errors, :messages]))
       end
     end
 

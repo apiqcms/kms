@@ -173,6 +173,9 @@ en:
         main_description: 'Formats currency values. Possible options: precision, delimiter, separator, format, unit:'
   activerecord:
     errors:
+      messages:
+        wrong_encoding: "is not in UTF-8 encoding"
+        duplicate: "is duplicate"
       models:
         kms/page:
           attributes:
