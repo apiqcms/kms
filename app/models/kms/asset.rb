@@ -81,14 +81,16 @@ module Kms
       end
     end
 
+    # this would replace any url(...) in css files
+    # with correct urls to assets that already exist
     def replace_urls(text)
       return if text.blank?
 
-      text.gsub(/url\((.+)\)/) do |path|
-        asset_name = $1.split("/")[-1]
+      text.gsub(/url\((\S+)\)/) do |path|
+        asset_name = File.basename($1)
 
-        if asset = Asset.where(file: asset_name.gsub(/['"]/, '')).first
-          "url(#{asset.file.url})"
+        if asset = Asset.where(file: asset_name.gsub(/['"]/, '').gsub(/\?.*/, '')).first
+          "url('#{asset.file.url}')"
         else
           path
         end
