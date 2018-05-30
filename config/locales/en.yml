@@ -174,7 +174,6 @@ en:
   activerecord:
     errors:
       messages:
-        wrong_encoding: "is not in UTF-8 encoding"
         duplicate: "is duplicate"
       models:
         kms/page:

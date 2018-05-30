@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'dragonfly', '~> 1.1.3'
   s.add_dependency 'pg', '~> 0.21'
   s.add_dependency 'textacular', '~> 5.0.0'
+  s.add_dependency 'rchardet', '~> 1.7.0'
 
   s.add_development_dependency 'combustion', '~> 0.5.4'
   s.add_development_dependency 'factory_girl_rails'

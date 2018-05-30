@@ -7,7 +7,6 @@ module Kms
     # inspired by Locomotive
     before_validation :store_text
 
-    validate :encoded_as_utf8, on: :create
     validate :unique_filename, on: :create
 
     attr_accessor :text, :performing_plain_text
@@ -57,7 +56,10 @@ module Kms
 
       return if !text_or_javascript? || data.blank?
 
-      sanitized_source = replace_urls(data)
+      cd = CharDet.detect(data)
+      encoded_source = data.force_encoding(cd['encoding']).encode('UTF-8') rescue data
+
+      sanitized_source = replace_urls(encoded_source)
 
       self.file = ::CarrierWave::SanitizedFile.new({
         tempfile: StringIO.new(sanitized_source),
@@ -68,12 +70,6 @@ module Kms
     end
 
     protected
-
-    def encoded_as_utf8
-      text.encode('UTF-8')
-    rescue Encoding::UndefinedConversionError
-      self.errors.add(:file, I18n.t(:wrong_encoding, scope: [:activerecord, :errors, :messages]))
-    end
 
     def unique_filename
       if Asset.where(file: file.filename).exists?

@@ -174,7 +174,6 @@ ru:
   activerecord:
     errors:
       messages:
-        wrong_encoding: "с некорректной кодировкой (необходима UTF-8)"
         duplicate: "с таким именем уже существует"
       models:
         kms/page:
